@@ -15,7 +15,13 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->float('price');
+            $table->string('description');
+            $table->string('urlImage');
+            $table->integer('purchaseNumber');
+            $table->integer('stock');
+            $timestamps = false;
         });
     }
 

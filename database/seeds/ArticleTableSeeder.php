@@ -2,15 +2,15 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ArticleTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(ArticleTableSeeder::class);
+        factory('App\Article', 10)->create();
     }
 }
