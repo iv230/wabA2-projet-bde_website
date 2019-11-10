@@ -11,9 +11,9 @@
       <li>Description: {{ $event->description }}</li>
       <li>Location: {{ $event->location }}</li>
       <li>Recurrence: {{ $event->recurrence }}</li>
-      <li>State: {{ $event->state }}</li>
-      <li>Price: {{ $event->price }}</li>
       <li>Event date: {{ $event->date_event }}</li>
+      <li>Price: {{ $event->price }}</li>
+      <li>State: {{ $event->state }}</li>
     </ul>
     @endforeach
   </body>

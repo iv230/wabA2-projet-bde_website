@@ -10,9 +10,11 @@
       <li>Description: {{ $event->description }}</li>
       <li>Location: {{ $event->location }}</li>
       <li>Recurrence: {{ $event->recurrence }}</li>
-      <li>State: {{ $event->state }}</li>
+      <li>Event date: {{ $event->date_event }}</li>
       <li>Price: {{ $event->price }}</li>
-      <li>Event date: {{$event->date_event }}</li>
+      <li>State: {{ $event->state }}</li>
     </ul>
+    <a href="/events/{{ $event->id }}/edit"> Edition </a>
+    <a href="/events/{{ $event->id }}/delete"> Delete </a>
   </body>
 </html>

@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('events', 'EventController');
+Route::get('events/{id}/delete', 'EventController@destroy');

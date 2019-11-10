@@ -26,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -37,7 +37,18 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Events;
+        $event -> name = $request -> input('name');
+        $event -> description = $request -> input('description');
+        $event -> location = $request -> input('location');
+        $event -> recurrence = $request -> input('recurrence');
+        $event -> date_event = $request -> input('date_event');
+        $event -> price = $request -> input('price');
+        $event -> state = 1;
+
+        $event -> save();
+
+        return("New Event added");
     }
 
     /**
@@ -60,7 +71,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Events::find($id);
+        return view('events.edit', array('event' => $event));
     }
 
     /**
@@ -72,7 +84,18 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Events::find($id);
+        $event -> name = $request -> input('name');
+        $event -> description = $request -> input('description');
+        $event -> location = $request -> input('location');
+        $event -> recurrence = $request -> input('recurrence');
+        $event -> date_event = $request -> input('date_event');
+        $event -> price = $request -> input('price');
+        $event -> state = $request -> input('state');
+
+        $event -> save();
+
+        return("Event updated");
     }
 
     /**
@@ -83,6 +106,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Events::find($id);
+        $event -> destroy($id);
+        return redirect('events');
     }
 }
