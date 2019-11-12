@@ -16,7 +16,7 @@
             </div>
             <div class="input-group">
                 <label>Image</label>
-                <input type="file" name="image" placeholder="Image de l'article" />
+                <input type="text" name="urlImage" placeholder="Image de l'article" />
             </div>
             <div class="input-group">
                 <label>Description</label>
