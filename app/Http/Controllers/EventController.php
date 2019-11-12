@@ -16,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('events.index', array('events' => $events));
+        return view('adminevents.index', array('events' => $events));
     }
 
     /**
@@ -26,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('adminevents.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Events::find($id);
-        return view('events.show', array('event' => $event));
+        return view('adminevents.show', array('event' => $event));
     }
 
     /**
@@ -72,7 +72,7 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Events::find($id);
-        return view('events.edit', array('event' => $event));
+        return view('adminevents.edit', array('event' => $event));
     }
 
     /**
@@ -108,6 +108,6 @@ class EventController extends Controller
     {
         $event = Events::find($id);
         $event -> destroy($id);
-        return redirect('events');
+        return redirect('adminevents');
     }
 }

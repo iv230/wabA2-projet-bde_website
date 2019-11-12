@@ -8,7 +8,7 @@
     <h1>Edition Event {{ $event->id }} :</h1>
 
 
-  <form action="/events/{{$event->id}}" method="POST">
+  <form action="/adminevents/{{$event->id}}" method="POST">
   @csrf
   {{ method_field('PATCH') }}
 

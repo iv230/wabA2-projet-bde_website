@@ -35,7 +35,7 @@
         <p class="description">{{ $event->description }}</p>
         
         <p>State: {{ $event->state }}</p>
-        <a class="show" href="/events/{{ $event->id }}/edit"> En savoir plus </a>
+        <a class="show" href="/publicevents/{{ $event->id }}/edit"> En savoir plus </a>
         </div>
     
       @endforeach

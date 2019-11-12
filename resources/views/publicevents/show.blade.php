@@ -14,7 +14,5 @@
       <li>Price: {{ $event->price }}</li>
       <li>State: {{ $event->state }}</li>
     </ul>
-    <a href="/events/{{ $event->id }}/edit"> Edition </a>
-    <a href="/events/{{ $event->id }}/delete"> Delete </a>
   </body>
 </html>

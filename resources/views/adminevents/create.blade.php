@@ -8,7 +8,7 @@
     <h1>Event Creation :</h1>
 
 
-  <form action="/events" method="POST">
+  <form action="/adminevents" method="POST">
   @csrf
 
     <div>
