@@ -2,21 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Gestion\APIRequestGestion;
 use App\Gestion\UserAuthApiGestion;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use mysql_xdevapi\Exception;
 
 class UserController extends Controller
 {
+    private $token;
+
+    public function __construct()
+    {
+        try
+        {
+            $this->token = UserAuthApiGestion::authenticate();
+
+            if($this->token == null)
+                throw new Exception('Couldn\'t get token');
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            exit();
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function index()
     {
-        $token = UserAuthApiGestion::authenticate();
-        echo $token;
-        die;
+        $users = APIRequestGestion::get('/users', $this->token, null);
+        foreach($users as $user)
+        {
+            echo $user->{'name'} . `<br/>`;
+        }
     }
 
     /**
@@ -26,7 +49,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -48,7 +70,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = APIRequestGestion::get('/users', $this->token, array('id' => $id))[0];
+        return new Response($user->{'name'} . `<br/>`);
     }
 
     /**
