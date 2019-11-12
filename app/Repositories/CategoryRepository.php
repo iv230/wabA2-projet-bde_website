@@ -17,11 +17,6 @@ class CategoryRepository
     private function save(Category $category, Array $inputs)
     {
         $category->name = $inputs['name'];
-        $category->description = $inputs['description'];
-        $category->price = $inputs['price'];
-        $category->image = $inputs['image'];
-        $category->purchaseNumber = 0;
-        $category->stock = 1;
         $category->save();
     }
 
@@ -29,11 +24,6 @@ class CategoryRepository
     {
         $category = new $this->category;
         $category->name = $inputs['name'];
-        $category->description = $inputs['description'];
-        $category->price = $inputs['price'];
-        $category->image = $inputs['image'];
-        $category->purchaseNumber = 0;
-        $category->stock = 1;
         $this->save($category, $inputs);
         return $category;
     }
