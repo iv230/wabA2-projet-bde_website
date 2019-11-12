@@ -22,7 +22,7 @@
 
       <article>
       <h2> Évènements actuels </h2>
-      <h3> Inscrivez-vous à nos évènements du moment !</h2>
+      <h3> Inscrivez-vous à nos évènements du moment !</h3>
 
       
       @foreach ($events as $event)
@@ -46,7 +46,7 @@
     </div>
     <article>
       <h2> Évènements passés </h2>
-      <h3> Commentez et ajoutez des photos !</h2>
+      <h3> Commentez et ajoutez des photos !</h3>
     </main>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
   </body>
