@@ -3,26 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>BDE</title>
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
 </head>
 <body>
     <!-- Include navbar -->
 
-    <article>
-        <div>
-            <img src="/img/58ab32e5a85a2.png" />
-            <h1>BDE CESI NICE</h1>
-        </div>
+    <aside class="welcome">
+      
+      <img class="welcome_img" src="/img/bde.jpeg" alt="BDE"/>
+      <div class="presentation">
+      <img class="logo" src="/img/logo.png"/>
+      <h1 class="titre" >BDE CESI NICE</h1>
+      </div>
 
-        <div>
-            <h2><a href="./publicevents">Accédez à nos évènnements</a></h2>
-        </div>
 
-        <div>
-            <h2><a href="./shop">Accédez à notre boutique</a></h2>
-        </div>
+    </aside>
+        <div class="blue_bar"></div>
+    <article class="welcome">
+        
+            <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
+            <a class="show" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a>
+        
+        </article>
+            <div class="blue_bar"></div>
+        <article class="welcome">
+            <img class="welcome_img" src="/img/boutique.jpg" alt="BDE"/>
+            <a class="show" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a>
+        
     </article>
 
     <!-- Include footer -->
 </body>
 </html>
+
