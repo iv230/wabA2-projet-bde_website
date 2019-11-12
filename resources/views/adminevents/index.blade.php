@@ -36,7 +36,7 @@
         <p class="description">{{ $event->description }}</p>
         
         <p>State: {{ $event->state }}</p>
-        <a class="show" href="/adminevents/{{ $event->id }}"> En savoir plus </a>
+        <a class="show" href="/adminevents/{{ $event->id }}"> Editer </a>
         </div>
         </div>
     
@@ -48,5 +48,6 @@
       <h2> Évènements passés </h2>
       <h3> Commentez et ajoutez des photos !</h2>
     </main>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>
