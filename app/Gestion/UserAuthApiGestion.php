@@ -11,7 +11,7 @@ class UserAuthApiGestion
 {
     const USER =  "utilisateurultrasecretdelapi";
     const PASSWORD = "motdepasseultrascretdelapi";
-    const API_PATH = "http://127.0.0.1:8080/auth";
+    const API_PATH = "http://app-nodejs:8080/auth";
 
     static function authenticate()
     {
