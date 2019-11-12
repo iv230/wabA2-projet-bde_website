@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('image');
             $table->integer('purchaseNumber');
             $table->integer('stock');
-            $table->string('categorie');
+            $table->string('category');
             $timestamps = false;
         });
     }

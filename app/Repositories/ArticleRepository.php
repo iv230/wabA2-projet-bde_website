@@ -20,6 +20,7 @@ class ArticleRepository
         $article->description = $inputs['description'];
         $article->price = $inputs['price'];
         $article->image = $inputs['image'];
+        $article->category = $inputs['category'];
         $article->purchaseNumber = 0;
         $article->stock = 1;
         $article->save();
@@ -32,6 +33,7 @@ class ArticleRepository
         $article->description = $inputs['description'];
         $article->price = $inputs['price'];
         $article->image = $inputs['image'];
+        $article->category = $inputs['category'];
         $article->purchaseNumber = 0;
         $article->stock = 1;
         $this->save($article, $inputs);
