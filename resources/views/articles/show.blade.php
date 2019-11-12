@@ -15,5 +15,11 @@
       <li>Purchase number: {{ $article->purchaseNumber }}</li>
       <li>Catégorie: {{ $article->category }}</li>
     </ul>
+    <div>
+      <input type='button' value='delete' onclick="location.href='/articles/{{ $article->id }}/delete';">
+    </div>
+    <div>
+      <input type='button' value='edit' onclick="location.href='/articles/{{ $article->id }}/edit';">
+    </div>
   </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 use App\Repositories\ArticleRepository;
 
 class ArticleController extends Controller
@@ -34,7 +35,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        $categories = Category::all();
+        return view('adminshop.create', array('categories' => $categories));
     }
 
     /**
@@ -73,7 +75,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        return view('articles.edit', array('article' => $article));
+        $category = Category::all();
+        return view('adminshop.edit', array('article' => $article), array('category' => $category));
     }
 
     /**
@@ -85,7 +88,8 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->articleRepository->update($id, $request->all());
+        $this->repository->update($id, $request->all());
+
         return redirect('articles/')->withOk("L'article " . $request->input('name') . " a été modifié.");
     }
 
@@ -97,7 +101,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $this->articleRepository->destroy($id);
+        $this->repository->destroy($id);
         return redirect('articles');
     }
 }
