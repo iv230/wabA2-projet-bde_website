@@ -14,8 +14,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::all();
-        return view('publicevents.show', array('comments' => $comments));
+        //
     }
 
     /**
