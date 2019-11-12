@@ -1,24 +1,36 @@
 @import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+
+body,html
+{
+    font-family: 'Roboto Slab';
+    margin:0;
+}
 
 // WELCOME ASIDE
 
-/*aside
+aside
 {
-    position: relative;
-}*/
+    display: flex;
+    justify-content: center;
+}
 
-
-
+.welcome
+{
+    width: 100%;
+    opacity: 0.6;
+}
 aside > h1
 {
     font-size: 250%;
     background-color: $blue;
     color : $white;
     text-align: center;
-    //position: absolute;
-
-    width: 50%;
+    font-weight : normal;
+    width: 450px;
+    position: absolute;
+    margin : 15%;
 
 }
 
@@ -29,6 +41,7 @@ h2
     color : $black;
     text-align: center;
     font-size: 180%;
+    font-weight : normal;
 
 }
 
@@ -37,6 +50,11 @@ h3
     color: $black;
     font-size: 140%;
     font-weight: normal;
+}
+
+.event
+{
+    display: flex;
 }
 
 .event_date
@@ -70,4 +88,9 @@ p
     
     
 
+}
+
+.eventimg
+{
+   width: 100%; 
 }

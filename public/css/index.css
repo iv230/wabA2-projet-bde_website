@@ -1,26 +1,42 @@
 /*$font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
-/*aside
-{
-    position: relative;
-}*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+body, html {
+  font-family: 'Roboto Slab';
+  margin: 0; }
+
+aside {
+  display: flex;
+  justify-content: center; }
+
+.welcome {
+  width: 100%;
+  opacity: 0.6; }
+
 aside > h1 {
   font-size: 250%;
   background-color: #5D89DA;
   color: #FFFFFF;
   text-align: center;
-  width: 50%; }
+  font-weight: normal;
+  width: 450px;
+  position: absolute;
+  margin: 15%; }
 
 h2 {
   color: #000000;
   text-align: center;
-  font-size: 180%; }
+  font-size: 180%;
+  font-weight: normal; }
 
 h3 {
   color: #000000;
   font-size: 140%;
   font-weight: normal; }
+
+.event {
+  display: flex; }
 
 .event_date {
   color: #FFC252;
@@ -41,5 +57,8 @@ p {
   text-decoration: none;
   font-size: 120%;
   padding: 10px; }
+
+.eventimg {
+  width: 100%; }
 
 /*# sourceMappingURL=index.css.map */
