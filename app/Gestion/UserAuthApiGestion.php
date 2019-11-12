@@ -43,7 +43,7 @@ class UserAuthApiGestion
                 self::API_PATH,
                 [
                     'form_params' => [
-                        'user' => self::USER,
+                        'username' => self::USER,
                         'password' => self::PASSWORD
                     ]
                 ]
@@ -52,8 +52,7 @@ class UserAuthApiGestion
             $headers = $response->getHeaders();
             $body = $response->getBody();
 
-            // Output headers and body for debugging purposes
-            var_dump($headers, $body);
+            echo $response->getBody()->getContents();
         } catch (GuzzleException $e) {
             echo $e->getMessage();
         }
