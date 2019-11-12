@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Article;
-use App\Repositories\ArticleRepository;
+use App\Category;
+use App\Repositories\CategoryRepository;
 
-class ArticleController extends Controller
+class CategoryController extends Controller
 {
 
     protected $repository;
 
-    public function __construct(ArticleRepository $repository)
+    public function __construct(CategoryRepository $repository)
     {
         $this->repository = $repository;
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +23,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        return view('articles.index', array('articles' => $articles));
+        $categories = Category::all();
+        return view('categories.index', array('categories' => $categories));
     }
 
     /**
@@ -34,7 +34,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        return view('categories.create');
     }
 
     /**
@@ -45,11 +45,9 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->file('image')->store('images');
+        $category = $this->repository->store($request->all());
 
-        $article = $this->repository->store($request->all());
-
-        return redirect('articles')->withOk("L'article " . $article->name . " a été créé.");
+        return redirect('categories')->withOk("La catégorie " . $category->name . " a été créé.");
     }
 
     /**
@@ -60,8 +58,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id);
-        return view('articles.show', array('article' => $article));
+        //
     }
 
     /**
@@ -72,8 +69,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::find($id);
-        return view('articles.edit', array('article' => $article));
+        //
     }
 
     /**
@@ -85,8 +81,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->articleRepository->update($id, $request->all());
-        return redirect('articles/')->withOk("L'article " . $request->input('name') . " a été modifié.");
+        //
     }
 
     /**
@@ -97,7 +92,6 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $this->articleRepository->destroy($id);
-        return redirect('articles');
+        //
     }
 }

@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('articles', 'ArticleController');
+Route::resource('categories', 'CategoryController');
 
 Route::resource('adminevents', 'EventController');
 Route::resource('publicevents', 'PublicEventController');
 Route::resource('publicevents', 'CommentController@index');
 Route::get('adminevents/{id}/delete', 'EventController@destroy');
+
+Route::resource('/users', 'UserController');
