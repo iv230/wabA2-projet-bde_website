@@ -1,0 +1,119 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+
+body,html
+{
+    font-family: 'Roboto Slab';
+    margin:0;
+}
+
+// BLUE BAR OF SEPARATION
+
+.blue_bar
+{
+    background-color: $blue;
+    width: 100%;
+    height: 10px;
+}
+
+
+// WELCOME ASIDE
+
+aside
+{
+    display: flex;
+    justify-content: center;
+}
+
+.welcome
+{
+    width: 100%;
+    opacity: 0.6;
+}
+aside > h1
+{
+    font-size: 250%;
+    background-color: $blue;
+    color : $white;
+    text-align: center;
+    font-weight : normal;
+    width: 450px;
+    position: absolute;
+    margin : 15%;
+
+}
+
+// ACTUAL EVENTS
+
+h2
+{
+    color : $black;
+    text-align: center;
+    font-size: 180%;
+    font-weight : normal;
+
+}
+
+h3
+{
+    color: $black;
+    font-size: 140%;
+    font-weight: normal;
+}
+
+h2+h3
+{
+    margin : 20px;
+}
+
+.event
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.texte
+{
+    width: 150%;
+    margin: 20px;
+}
+
+.event_date
+{
+    color: $orange;
+    font-weight: bold;
+}
+
+p
+{
+    color: $black;
+    font-size: 120%;
+}
+
+.name
+{
+    color: $orange;
+    font-size: 150%;
+    text-transform: uppercase;
+}
+
+
+.show
+{
+    background-color : $blue;
+    color : $white;
+    text-decoration: none;
+    font-size: 120%;
+    padding : 10px;
+    float: right;
+
+
+}
+
+.img_event
+{ 
+   width: 100%; 
+   margin : 20px;
+}
