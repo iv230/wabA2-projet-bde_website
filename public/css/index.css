@@ -1,0 +1,45 @@
+/*$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;*/
+/*aside
+{
+    position: relative;
+}*/
+aside > h1 {
+  font-size: 250%;
+  background-color: #5D89DA;
+  color: #FFFFFF;
+  text-align: center;
+  width: 50%; }
+
+h2 {
+  color: #000000;
+  text-align: center;
+  font-size: 180%; }
+
+h3 {
+  color: #000000;
+  font-size: 140%;
+  font-weight: normal; }
+
+.event_date {
+  color: #FFC252;
+  font-weight: bold; }
+
+p {
+  color: #000000;
+  font-size: 120%; }
+
+.name {
+  color: #FFC252;
+  font-size: 150%;
+  text-transform: uppercase; }
+
+.show {
+  background-color: #5D89DA;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 120%;
+  padding: 10px; }
+
+/*# sourceMappingURL=index.css.map */
