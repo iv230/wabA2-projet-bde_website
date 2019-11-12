@@ -8,7 +8,7 @@
   <body>
     <aside>
       
-      <img class="welcome" src="/public/img/fond_events.jpg" alt="Events">
+      <img class="welcome" src="/img/fond_events.jpg" alt="Events">
       <h1> PARTIPEZ À NOS ÉVÈNEMENTS ! </h1>
       
 
@@ -24,7 +24,7 @@
       @foreach ($events as $event)
 
         <div class="image_event">  
-        <img class="event" src="public/img/event.jpg" > 
+        <img class="event" src="/img/event.jpg" > 
         </div>
 
         <div class="event">
