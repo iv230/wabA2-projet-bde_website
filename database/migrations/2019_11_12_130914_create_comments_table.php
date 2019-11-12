@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('autor');
             $table->string('comment_content');
-            $table->date('comment_date');
+            $table->dateTime('comment_date');
             $table->timestamps();
             $table->bigInteger('id_event')->unsigned();
             $table->foreign('id_event')->references('id')->on('events');
