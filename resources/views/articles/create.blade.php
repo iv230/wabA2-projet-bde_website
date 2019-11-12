@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>Créer un article</h1>
-        <form action="/articles" method="POST" class="form-beau">
+        <form action="/articles" method="POST" class="form-beau" enctype="multipart/form-data">
             <div class="input-group">
                 <label>Nom</label>
                 <input type="text" name="name" placeholder="Nom de l'article"/>
@@ -16,7 +16,8 @@
             </div>
             <div class="input-group">
                 <label>Image</label>
-                <input type="text" name="urlImage" placeholder="Image de l'article" />
+                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                <input type="file" name="image" placeholder="Image de l'article"/>
             </div>
             <div class="input-group">
                 <label>Description</label>

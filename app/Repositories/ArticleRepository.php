@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Article;
+
 class ArticleRepository
 {
 
@@ -16,9 +17,9 @@ class ArticleRepository
     private function save(Article $article, Array $inputs)
     {
         $article->name = $inputs['name'];
-        $article->price = $inputs['price'];
         $article->description = $inputs['description'];
-        $article->urlImage = $inputs['urlImage'];
+        $article->price = $inputs['price'];
+        $article->image = $inputs['image'];
         $article->purchaseNumber = 0;
         $article->stock = 1;
         $article->save();
@@ -30,7 +31,7 @@ class ArticleRepository
         $article->name = $inputs['name'];
         $article->description = $inputs['description'];
         $article->price = $inputs['price'];
-        $article->urlImage = $inputs['urlImage'];
+        $article->image = $inputs['image'];
         $article->purchaseNumber = 0;
         $article->stock = 1;
         $this->save($article, $inputs);
