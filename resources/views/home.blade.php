@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('welcome')
 
 @section('content')
 <div class="container">
@@ -20,4 +21,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('sidebar')
+
+<h2> VFSVDGSDGFDbdsb </h2>
+
 @endsection
