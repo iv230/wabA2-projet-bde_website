@@ -9,7 +9,7 @@
         <li>Role: {{ $user->role }}</li>
     </ul>
 
-    <a href="/users" type="button">En savoir moins</a>
+    <a href="/users" type="button">Retour à l'index</a>
 
     @if(session()->has('user'))
         @if(session('user') == $user->id)
@@ -18,7 +18,7 @@
             <form method="POST" action="/users/{{ $user->id }}">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <input type="submit" value="Supprimer de l'espace intersidéral"/>
+                <input type="submit" value="Supprimer l'utilisateur"/>
             </form>
 
         @endif

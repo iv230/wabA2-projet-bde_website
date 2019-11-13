@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Liste des utilisateurs utilisés à des fins d'utilisation utile</h1>
+    <h1>Liste des utilisateurs</h1>
 
     @if(session()->has('user'))
         <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>. Ton ID : {{ session('user') }}. Ton rôle : {{ session('role') }}.</p>
@@ -22,7 +22,7 @@
             <li>Role: {{ $user->role }}</li>
         </ul>
 
-        <a href="/users/{{ $user->id }}" type="button">En savoir plus</a><br/>
+        <a href="/users/{{ $user->id }}" type="button">Détails</a><br/>
         @if(session()->has('user'))
             @if(session('user') == $user->id)
 
@@ -30,7 +30,7 @@
                 <form method="POST" action="/users/{{ $user->id }}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <input type="submit" value="Supprimer de l'espace intersidéral"/>
+                    <input type="submit" value="Supprimer l'utilisateur"/>
                 </form>
 
             @endif
