@@ -10,6 +10,6 @@ $factory->define(Comment::class, function (Faker $faker) {
         'autor' => $faker->firstName,
     	'comment_content' => $faker->text,
     	'id_event' => 1,
-    	'comment_date' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = 'Europe/Paris'),
+    	'comment_date' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = 'Europe/Paris'),
     ];
 });

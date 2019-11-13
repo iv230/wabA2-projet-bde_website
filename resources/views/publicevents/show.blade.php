@@ -16,13 +16,15 @@
         <li>State: {{ $event->state }}</li>
       </ul>
     </div>
+    <h3>Comments: </h3>
     @foreach ($comments as $comment)
-    <h2>Comments {{ $comment->id }}</h2>
+    @if ($comment->id_event == $event->id)
+    <h4>Comment {{ $comment->id }}</h4>
     <ul>
-      <li>Autor: {{ $comment->autor }}</li>
-      <li>Content: {{ $comment->comment_content }}</li>
-      <li>Date: {{ $comment->comment_date }}</li>
+      <li>{{ $comment->comment_date }} / {{ $comment->autor }}: </li>
+      {{ $comment->comment_content }} 
     </ul>
+    @endif
     @endforeach
   </body>
 </html>
