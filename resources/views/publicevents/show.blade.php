@@ -18,11 +18,13 @@
     </div>
     <h3>Comments: </h3>
     @foreach ($comments as $comment)
+    @if ($comment->id_event == $event->id)
     <h4>Comment {{ $comment->id }}</h4>
     <ul>
       <li>{{ $comment->comment_date }} / {{ $comment->autor }}: </li>
       {{ $comment->comment_content }} 
     </ul>
+    @endif
     @endforeach
   </body>
 </html>
