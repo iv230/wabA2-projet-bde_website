@@ -22,9 +22,9 @@ body, html {
 .presentation {
   position: absolute;
   display: flex;
-  border: solid;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin: 15%; }
 
 .logo {
   width: 50%; }
@@ -33,8 +33,7 @@ body, html {
   font-size: 250%;
   color: #000000;
   text-align: center;
-  font-weight: bold;
-  border: solid; }
+  font-weight: bold; }
 
 .link {
   position: absolute;

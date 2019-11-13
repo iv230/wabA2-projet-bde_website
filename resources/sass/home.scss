@@ -36,9 +36,10 @@ body,html
 {
     position: absolute;
     display: flex;
-    border: solid;
+    //border: solid;
     align-items: center;
     flex-direction: column;
+    margin:15%;
 }
 
 .logo
@@ -53,7 +54,7 @@ body,html
     color : $black;
     text-align: center;
     font-weight : bold;
-    border:solid;
+    //border:solid;
 
 }
 
