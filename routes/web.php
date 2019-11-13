@@ -21,7 +21,10 @@ Route::resource('categories', 'CategoryController');
 
 Route::resource('adminevents', 'EventController');
 Route::resource('publicevents', 'PublicEventController');
-Route::resource('publicevents', 'CommentController@index');
+//Route::resource('publicevents', 'CommentController');
 Route::get('adminevents/{id}/delete', 'EventController@destroy');
 
 Route::resource('/users', 'UserController');
+Route::get('/login', 'UserController@login');
+Route::post('/users/connect', 'UserController@connect');
+Route::get('/logout', 'UserController@logout');
