@@ -3,33 +3,14 @@
 namespace App;
 
 
-class User
+class User extends APIBaseModel
 {
-    protected $id;
-    protected $name;
-    protected $email;
-    protected $passwordHash;
-    protected $school;
-    protected $role;
-
-    /**
-     * User constructor.
-     * @param $id
-     * @param $name
-     * @param $email
-     * @param $passwordHash
-     * @param $school
-     * @param $role
-     */
-    public function __construct($id, $name, $email, $passwordHash, $school, $role)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->email = $email;
-        $this->passwordHash = $passwordHash;
-        $this->school = $school;
-        $this->role = $role;
-    }
+    public $id;
+    public $name;
+    public $email;
+    public $passwordHash;
+    public $school;
+    public $role;
 
     /**
      * @return mixed
@@ -126,6 +107,4 @@ class User
     {
         $this->role = $role;
     }
-
-
 }

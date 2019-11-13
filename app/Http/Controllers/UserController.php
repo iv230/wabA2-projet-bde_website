@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gestion\APIRequestGestion;
 use App\Gestion\UserAuthApiGestion;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use mysql_xdevapi\Exception;
@@ -49,6 +50,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -70,8 +72,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = APIRequestGestion::get('/users', $this->token, array('id' => $id))[0];
-        return new Response($user->{'name'} . `<br/>`);
+        $user = new User();
+        $user = $user->hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $id))[0]);
+
+        return view('test', array('user' => $user));
     }
 
     /**
