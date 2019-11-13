@@ -142,6 +142,7 @@ class UserController extends Controller
         {
             session(['user'     => $user->id]);
             session(['username' => $user->name]);
+            session(['role'     => $user->role]);
             return redirect('/users');
         }
         else

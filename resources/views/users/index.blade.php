@@ -5,7 +5,7 @@
     <h1>Liste des utilisateurs utilisés à des fins d'utilisation utile</h1>
 
     @if(session()->has('user'))
-        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a></p>
+        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>. Ton ID : {{ session('user') }}. Ton rôle : {{ session('role') }}.</p>
         <a href="/logout" type="button">Je rentre à ma maison</a>
     @else
         <a href="/users/create" type="button">Je veux faire partie de cette aventure tumultueuse et semée d'embûches !</a><br/>
