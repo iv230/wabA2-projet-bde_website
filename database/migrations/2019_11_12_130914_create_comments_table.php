@@ -18,9 +18,12 @@ class CreateCommentsTable extends Migration
             $table->string('autor');
             $table->string('comment_content');
             $table->dateTime('comment_date');
-            $table->timestamps();
             $table->bigInteger('id_event')->unsigned();
-            $table->foreign('id_event')->references('id')->on('events');
+            $table->timestamps();
+        });
+
+        Schema::table('comments', function($table){
+            $table->foreign('id_event')->references('id')->on('events')->onDelete('cascade');
         });
     }
 
@@ -31,6 +34,7 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
+        Schema::dropForeign(['id_event']);
         Schema::dropIfExists('comments');
     }
 }
