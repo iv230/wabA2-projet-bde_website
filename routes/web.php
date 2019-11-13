@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('template_welcome');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,35 +4,60 @@
     <meta charset="utf-8">
     <title>BDE</title>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 </head>
 <body>
-
-
-<aside class="welcome">
-      
-      <img class="welcome_img" src="/img/bde.jpeg" alt="BDE"/>
-      <div class="presentation">
-      <img class="logo" src="/img/logo.png"/>
-      <h1 class="titre" >BDE CESI NICEgdfgdggggfsg</h1>
-      </div>
-
-
-    </aside>
-
-    @yield('blue')
-
-    <article class="welcome">
+<!-- NAV BAR -->
+<header role="header">
         
-            <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
-            <a class="show" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a>
+        <nav class="menu" role="navigation">
+            <div class="inner">
+                    <div class="cesi">
+                            <img class="logocesi" src="./img/logo.png" alt="logo cesi">
+                    </div>
+                    <div class="m-left">
+                            <h1 class="logo">bde cesi nice</h1>
+                    </div>
         
-        </article>
-            <div class="blue_bar"></div>
-        <article class="welcome">
-            <img class="welcome_img" src="/img/boutique.jpg" alt="BDE"/>
-            <a class="show" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a>
-        
-    </article>
+                    <div class="m-right">
+                        <span class="searchbar">
+                                <input type="text" placeholder="Search..">
+                        </span>
+                        <a href="#" class="m-link"><i class="fa fa-shopping-basket"></i> Panier</a>
+                        <a href="#" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
+                        <a href="#" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                    </div>
+
+                    <div class="m-nav-toggle">
+                        <span class="m-toggle-icon"></span>
+                    </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="articles"></div>
+        <div class="article"></div>
+        <div class="article"></div>
+        <div class="article"></div>
+
+    <!-- END OF NAV BAR -->
+
+    @yield('welcome')
+    @yield('welcome_events')
+
+    <div class="blue_bar"></div>
+
+    @yield('link_event')
+    @yield('actual_events')
+
+    <div class="blue_bar"></div>
+
+    @yield('link_shop')
+    @yield('past_events')
+
+    <script src="./js/nav_bar.js" charset="utf-8"></script>
 
 </body>
 </html>

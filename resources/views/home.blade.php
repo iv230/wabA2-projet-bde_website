@@ -1,6 +1,6 @@
-@extends('welcome')
+@extends('layouts.app')
 
-<!--@section('content')
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,10 +20,4 @@
         </div>
     </div>
 </div>
-@stop-->
-
-@section('blue')
-<div class="blue_bar"></div>
-<h2> dsjfjhjfhjshjhg </h2>
-
-@endsection
+@stop
