@@ -22,8 +22,7 @@ class APIRequestGestion
             $i = 1;
             $getParams .= '?';
 
-            foreach($params as $key => $value)
-            {
+            foreach ($params as $key => $value) {
                 $getParams .= $key . '=' . $value . ($i < count($params) ? '&' : '');
                 $i++;
             }
@@ -41,28 +40,31 @@ class APIRequestGestion
             );
 
             $response = json_decode($request->getBody()->getContents());
-
             if(!isset($response->{'code'}))
                 throw new Exception('404: Cannot reach authentication server.');
 
             if($response->{'code'} == 200)
             {
-                $content = $response->{'content'};
-
-                if($content == null)
-                    throw new Exception('404: No resource has been found');
-
-                if(is_array($content))
+                if(isset($response->{'content'}))
                 {
-                    if(empty($content))
+                    $content = $response->{'content'};
+
+                    if($content == null)
                         throw new Exception('404: No resource has been found');
+
+                    if(is_array($content))
+                    {
+                        if(empty($content))
+                            throw new Exception('404: No resource has been found');
+                    }
+
+                    return $content;
                 }
 
-                return $content;
+                return null;
             }
 
-            else
-                throw new Exception($response->{'message'});
+            throw new Exception($response->{'message'});
         }
         catch (GuzzleException | \Exception $e)
         {

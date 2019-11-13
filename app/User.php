@@ -3,7 +3,7 @@
 namespace App;
 
 
-class User extends APIBaseModel
+class User
 {
     public $id;
     public $name;
