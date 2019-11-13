@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>BDE</title>
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+    
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    @yield('home_scss')
+    @yield('index_scss')
+   
 </head>
 <body>
 <!-- NAV BAR -->
@@ -18,7 +20,7 @@
                             <img class="logocesi" src="./img/logo.png" alt="logo cesi">
                     </div>
                     <div class="m-left">
-                            <h1 class="logo">bde cesi nice</h1>
+                            <h1 class="bde">bde cesi nice</h1>
                     </div>
         
                     <div class="m-right">
@@ -34,13 +36,15 @@
                         <span class="m-toggle-icon"></span>
                     </div>
             </div>
-        </nav>
-    </header>
 
-    <div class="articles"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
+        </nav>
+    <div class="nav_left">
+        
+            <img class="logo_cesi_ingenieur" src="./img/logo_cesi.png" alt="logo cesi ingenieur">
+        
+    </div>
+    
+    </header>
 
     <!-- END OF NAV BAR -->
 
@@ -60,4 +64,14 @@
     <script src="./js/nav_bar.js" charset="utf-8"></script>
 
 </body>
+<footer>
+    <div class="logo_footer">
+        <img class="footer_cesi" src="./img/logo_cesi.png" alt="logo cesi ingenieur">
+        <img class="footer_bde" src="./img/logo.png" alt="logo cesi">
+
+    </div>
+    <a href="#" class="footer_link"> Mentions légales </a>
+    <a href="#" class="footer_link"> Conditions générales de vente </a>
+    <a href="#" class="footer_link"> C CESI 2019 </a>
+</footer>
 </html>
