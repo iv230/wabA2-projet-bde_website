@@ -64,24 +64,29 @@
         </style>
     </head>
     <body>
+    <h2> dlkfjsdjgfd</h2>
+        
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            <!--@if (Route::has('login'))-->
+            
                 <div class="top-right links">
-                    @auth
+                
+
+                    <!--@auth
                         <a href="{{ url('/home') }}">Home</a>
-                    @else
+                    @else-->
                         <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
+                        <!--@if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
-                    @endauth
+                    @endauth-->
                 </div>
-            @endif
+            <!--@endif-->
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravelhghgtyj
                 </div>
 
                 <div class="links">
@@ -94,6 +99,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                @yield('sidebar')
             </div>
         </div>
     </body>
