@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events as Events;
+use App\Comment as Comment;
 
 class PublicEventController extends Controller
 {
@@ -27,6 +28,7 @@ class PublicEventController extends Controller
     public function show($id)
     {
         $event = Events::find($id);
-        return view('publicevents.show', array('event' => $event));
+        $comments = Comment::all();
+        return view('publicevents.show', array('event' => $event), array('comments' => $comments));
     }
 }
