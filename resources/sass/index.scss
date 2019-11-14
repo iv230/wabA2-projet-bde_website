@@ -39,7 +39,7 @@ aside > h1
 
 }
 
-// ACTUAL EVENTS
+// ACTUAL EVENTS & PAST EVENTS
 
 .events
 {
@@ -53,6 +53,12 @@ h2
     font-size: 180%;
     font-weight : normal;
 
+}
+
+.t2
+{
+    font-size: 160%;
+    text-align: left;
 }
 
 h3
@@ -113,7 +119,19 @@ p
 }
 
 .img_event
-{ 
-   width: 100%; 
+{
+   width: 100%;
    margin : 20px;
+}
+
+// CREATE EVENT
+
+.create
+{
+    background-color : $blue;
+    color : $white;
+    text-decoration: none;
+    font-size: 120%;
+    padding : 10px;
+    margin: 15%;
 }
