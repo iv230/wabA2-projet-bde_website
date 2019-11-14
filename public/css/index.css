@@ -2,10 +2,6 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-body, html {
-  font-family: 'Roboto Slab';
-  margin: 0; }
-
 .blue_bar {
   background-color: #5D89DA;
   width: 100%;
@@ -13,7 +9,8 @@ body, html {
 
 aside {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-left: 15%; }
 
 .welcome {
   width: 100%;
@@ -28,6 +25,9 @@ aside > h1 {
   width: 450px;
   position: absolute;
   margin: 15%; }
+
+.events {
+  margin-left: 15%; }
 
 h2 {
   color: #000000;

@@ -12,5 +12,6 @@
       <li>Date: {{ $comment->comment_date }}</li>
     </ul>
     @endforeach
+    
   </body>
 </html>

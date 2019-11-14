@@ -11,10 +11,8 @@
       <img class="welcome" src="/img/fond_events.jpg" alt="Events">
       <h1> PARTIPEZ À NOS ÉVÈNEMENTS ! </h1>
       
-      
-
     </aside>
-    <div class="blue_bar">
+    
     </div>
 
 
@@ -22,7 +20,7 @@
 
       <article>
       <h2> Évènements actuels </h2>
-      <h3> Inscrivez-vous à nos évènements du moment !</h2>
+      <h3> Inscrivez-vous à nos évènements du moment !</h3>
 
       
       @foreach ($events as $event)
@@ -46,7 +44,8 @@
     </div>
     <article>
       <h2> Évènements passés </h2>
-      <h3> Commentez et ajoutez des photos !</h2>
+      <h3> Commentez et ajoutez des photos !</h3>
+    </article>
     </main>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
   </body>

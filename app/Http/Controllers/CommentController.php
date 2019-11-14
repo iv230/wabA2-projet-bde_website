@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment as Comment;
+use App\Events as Events;
 
 class CommentController extends Controller
 {
@@ -15,7 +16,7 @@ class CommentController extends Controller
     public function index()
     {
         $comments = Comment::all();
-        return view('publicevents.show', array('comments' => $comments));
+        return view('comments.index', array('comments' => $comments));
     }
 
     /**
@@ -30,13 +31,21 @@ class CommentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $comment = new Comment;
+        $comment -> autor = $request -> input('autor');
+        $comment -> comment_content = $request -> input('comment_content');
+        $comment -> comment_date = date("Y-m-d H:i:s");
+        $comment -> id_event = $request -> input('idevent');
+        
+        $comment -> save();
+
+        return redirect('publicevents/'.$comment->id_event);
     }
 
     /**

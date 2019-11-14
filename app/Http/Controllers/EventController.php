@@ -16,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('adminevents.index', array('events' => $events));
+        return view('adminevents.template_events_index', array('events' => $events));
     }
 
     /**

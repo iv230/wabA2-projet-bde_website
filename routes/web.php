@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template_welcome');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -25,7 +25,11 @@ Route::get('/articles/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController');
 Route::resource('publicevents', 'PublicEventController');
-Route::resource('publicevents', 'CommentController@index');
+Route::resource('comments', 'CommentController');
+Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
 Route::get('adminevents/{id}/delete', 'EventController@destroy');
 
 Route::resource('/users', 'UserController');
+Route::get('/login', 'UserController@login');
+Route::post('/users/connect', 'UserController@connect');
+Route::get('/logout', 'UserController@logout');
