@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Articles</title>
+    <title>Panier</title>
   </head>
   <body>
-    <input type='button' value='Panier' onclick="location.href='/basket';">
+    <h1>Votre panier :</h1>
     @foreach ($articles as $article)
-    <h1><a href='/articles/{{ $article->id }}'>Article {{ $article->id }}</a></h1>
+    <h2><a href='/articles/{{ $article->articleId }}'>Article {{ $article->articleId }}</a></h2>
     <img src='{{ $article->image }}' alt='Ceci est une image'/>
     <ul>
       <li>Name: {{ $article->name }}</li>
       <li>Price: {{ $article->price }}</li>
     </ul>
     @endforeach
-    <input type='button' value='create' onclick="location.href='/articles/create';">
+    <input type='button' value='Valider les achats' onclick="location.href='/purchases/';">
   </body>
 </html>

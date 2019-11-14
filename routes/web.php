@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articles', 'ArticleController');
 Route::resource('categories', 'CategoryController');
+Route::resource('purchases', 'PurchaseController');
+Route::resource('baskets', 'BasketController');
+Route::resource('toHave', 'ToHaveController');
 Route::get('/articles/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController');

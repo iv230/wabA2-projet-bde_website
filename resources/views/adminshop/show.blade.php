@@ -15,11 +15,14 @@
       <li>Purchase number: {{ $article->purchaseNumber }}</li>
       <li>Catégorie: {{ $article->category }}</li>
     </ul>
+    <form action="/basket" method="POST" enctype="multipart/form-data">
+      <button type=submit>Ajouter au panier</button>
+    </form>
     <div>
-      <input type='button' value='delete' onclick="location.href='/articles/{{ $article->id }}/delete';">
+      <input type='button' value='Supprimer' onclick="location.href='/articles/{{ $article->id }}/delete';">
     </div>
     <div>
-      <input type='button' value='edit' onclick="location.href='/articles/{{ $article->id }}/edit';">
+      <input type='button' value='Modifier' onclick="location.href='/articles/{{ $article->id }}/edit';">
     </div>
   </body>
 </html>

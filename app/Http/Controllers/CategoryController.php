@@ -69,7 +69,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.edit', array('category' => $category));
     }
 
     /**
@@ -81,7 +82,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->repository->update($id, $request->all());
+
+        return redirect('categories/')->withOk("La catégorie " . $request->input('name') . " a été modifiée.");
     }
 
     /**
