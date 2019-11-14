@@ -1,5 +1,10 @@
 @extends('welcome')
 
+@section('index_scss')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+@endsection
+
+
 @section('welcome_events')
 <aside>
       
@@ -11,7 +16,7 @@
 
 
 @section('actual_events')
-<article>
+<article class="events">
       <h2> Évènements actuels </h2>
       <h3> Inscrivez-vous à nos évènements du moment !</h2>
 
@@ -36,7 +41,7 @@
 @endsection
 
 @section('past_events')
-<article>
+<article class="events">
       <h2> Évènements passés </h2>
       <h3> Commentez et ajoutez des photos !</h2>
 </article>

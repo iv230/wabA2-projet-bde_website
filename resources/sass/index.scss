@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
 
-body,html
-{
-    font-family: 'Roboto Slab';
-    margin:0;
-}
-
 // BLUE BAR OF SEPARATION
 
 .blue_bar
@@ -24,6 +18,7 @@ aside
 {
     display: flex;
     justify-content: center;
+    margin-left: 15%
 }
 
 .welcome
@@ -45,6 +40,11 @@ aside > h1
 }
 
 // ACTUAL EVENTS
+
+.events
+{
+    margin-left: 15%
+}
 
 h2
 {

@@ -1,5 +1,9 @@
 @extends('welcome')
 
+@section('home_scss')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+@endsection
+
 @section('welcome')
 
 <aside class="welcome">
