@@ -162,7 +162,7 @@ class UserController extends Controller
         }
         else
         {
-            return redirect('/login')->withErrors(array('password' => 'Password and email don\'t match'));
+            return redirect('/login')->withErrors(array('password' => 'Email ou mot de passe incorrect'));
         }
     }
 
