@@ -12,9 +12,9 @@
 </head>
 <body>
 <!-- NAV BAR -->
-<header role="header">
+<header >
 
-        <nav class="menu" role="navigation">
+        <nav class="menu">
             <div class="inner">
                     <div class="cesi">
                             <img class="logocesi" src="./img/logo.png" alt="logo cesi">

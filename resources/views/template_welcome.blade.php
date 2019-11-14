@@ -7,10 +7,10 @@
 @section('welcome')
 
 <aside class="welcome">
-      
+
       <img class="welcome_img" src="/img/bde.jpeg" alt="BDE"/>
       <div class="presentation">
-      <img class="logo" src="/img/logo.png"/>
+      <img class="logo" src="/img/logo.png" alt="logo CESI">
       <h1 class="titre" >BDE CESI NICE</h1>
       </div>
 
@@ -21,10 +21,10 @@
 
 @section('link_event')
 <article class="welcome">
-        
+
         <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
-        <a class="show" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a>
-    
+    <h2 class="show"><a class="link" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a></h2>
+
     </article>
 @endsection
 
@@ -32,8 +32,8 @@
 
 <article class="welcome">
             <img class="welcome_img" src="/img/boutique.jpg" alt="BDE"/>
-            <a class="show" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a>
-        
+            <h2 class="show"><a class="link" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a></h2>
+
     </article>
 
 @endsection

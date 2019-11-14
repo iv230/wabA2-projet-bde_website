@@ -52,23 +52,27 @@
 
 }
 
-// EVENTS AND SHOP PRESENTATION
-
+// EVENTS AND SHOP LINK
 
 .show
 {
-
-    background-color: $blue;
-    color : $white;
-    text-align: center;
     position: absolute;
-    font-size: 36pt;
     width: 450px;
+    font-size: 36pt;
+    text-align: center;
+    background-color: $blue;
     font-weight : normal;
     margin-top : 10%;
-    text-decoration: none;
 
 }
+
+.link
+{
+    text-decoration: none;
+    color : $white;
+}
+
+
 
 
 //MEDIA QUERIES FOR PC AND IPAD
