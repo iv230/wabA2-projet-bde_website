@@ -51,7 +51,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.creation');
+        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
+        return view('users.creation', array('schools' => $schools));
     }
 
     /**
@@ -94,7 +95,10 @@ class UserController extends Controller
     {
         $user = new User();
         $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $id))[0]);
-        return view('users.edit', array('user' => $user));
+
+        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
+
+        return view('users.edit', array('user' => $user, 'schools' => $schools));
     }
 
     /**
