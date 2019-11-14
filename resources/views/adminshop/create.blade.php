@@ -24,9 +24,13 @@
                 <textarea rows="10" cols="40" name="description" placeholder="Description"></textarea>
             </div>
             <div class="input-group">
-                <label>Catégorie</label>
-                <input type="text" name="category" placeholder="Nom de la catégorie"/>
-            </div>            
+                <label>Category</label>
+                <select name="category">
+                    @foreach ($categories as $category)
+                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>         
             <button type="submit">Ajouter</button>
             {{ csrf_field() }}
         </form>

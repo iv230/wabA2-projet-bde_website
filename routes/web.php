@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articles', 'ArticleController');
 Route::resource('categories', 'CategoryController');
+Route::get('/articles/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController');
 Route::resource('publicevents', 'PublicEventController');
