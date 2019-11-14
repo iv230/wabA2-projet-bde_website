@@ -132,11 +132,22 @@ class UserController extends Controller
         return redirect('/logout');
     }
 
+    /**
+     * Show to form to initialize session
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function login()
     {
         return view('users.connection');
     }
 
+    /**
+     * Initialize the session
+     *
+     * @param UserLoginRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function connect(UserLoginRequest $request)
     {
         $params = array('email' => $request->input('email'));
@@ -155,6 +166,12 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Ends the session
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function logout(Request $request)
     {
         if($request->session()->has('user'))
