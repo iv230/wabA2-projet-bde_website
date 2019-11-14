@@ -10,10 +10,10 @@
 @endsection
 
 @section('welcome_events')
-<aside>
+<aside class="welcome">
 
-      <img class="welcome" src="/img/fond_events.jpg" alt="Events">
-      <h1> PARTIPEZ À NOS ÉVÈNEMENTS ! </h1>
+      <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
+      <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
 
 </aside>
 @endsection
@@ -29,7 +29,7 @@
       @if ($event->state == 1)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+        <img class="img_event" src="/img/event.jpg" alt="Event">
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
@@ -54,7 +54,7 @@
       @if ($event->state == 0)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+        <img class="img_event" src="/img/event.jpg" alt="Event" >
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
