@@ -95,8 +95,15 @@ $line-height-base: 1.6;*/
     min-width: 180px;
     font-size: 200%; }
 
+  .event {
+    flex-direction: column;
+    align-items: center; }
+
   .img_event {
-    width: 300px; } }
+    width: 550px; }
+
+  .texte {
+    width: 550px; } }
 @media all and (max-device-width: 480px) {
   .welcome_t {
     font-size: 25pt;
