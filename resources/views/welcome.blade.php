@@ -30,8 +30,8 @@
                         </div>
                         
                         <a href="#" class="m-link"><i class="fa fa-shopping-basket"></i> Panier</a>
-                        <a href="#" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
-                        <a href="#" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                        <a href="users/create" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
+                        <a href="/login" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
                     </div>
 
                     <div class="m-nav-toggle">

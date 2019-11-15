@@ -23,7 +23,12 @@ Route::get('/articles/{id}/delete', 'ArticleController@destroy');
 Route::resource('adminevents', 'EventController');
 Route::resource('publicevents', 'PublicEventController');
 Route::resource('comments', 'CommentController');
+Route::get('participants', 'ParticipantController@index');
+Route::get('participants/{id_event}', 'ParticipantController@show');
+Route::post('participants', 'ParticipantController@createParticipant');
+
 Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
+
 Route::get('adminevents/{id}/delete', 'EventController@destroy');
 
 Route::resource('/users', 'UserController');
