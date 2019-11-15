@@ -63,9 +63,6 @@
     @yield('link_shop')
     @yield('past_events')
 
-    <script src="./js/nav_bar.js" charset="utf-8"></script>
-
-</body>
 <footer>
     <div class="logo_footer">
         <img class="footer_cesi" src="./img/logo_cesi.png" alt="logo cesi ingenieur">
@@ -76,4 +73,6 @@
     <a href="#" class="footer_link"> Conditions générales de vente </a>
     <a href="#" class="footer_link"> C CESI 2019 </a>
 </footer>
+</body>
+<script src="./js/nav_bar.js" charset="utf-8"></script>
 </html>

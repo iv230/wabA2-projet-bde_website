@@ -1,7 +1,7 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
-
+body{ overflow-y: hidden}
 // BLUE BAR OF SEPARATION
 
 .blue_bar
@@ -111,7 +111,6 @@
     {
 
         font-size: 25pt;
-        color: red;
     }
 
     .show

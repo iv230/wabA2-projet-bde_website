@@ -2,6 +2,9 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+body {
+  overflow-y: hidden; }
+
 .blue_bar {
   background-color: #5D89DA;
   width: 100%;
@@ -63,8 +66,7 @@ $line-height-base: 1.6;*/
     width: 240px; }
 
   .titre {
-    font-size: 25pt;
-    color: red; }
+    font-size: 25pt; }
 
   .show {
     font-size: 25pt;
