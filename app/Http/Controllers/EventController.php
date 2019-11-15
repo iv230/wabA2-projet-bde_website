@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Gestion\FileUploadGestion;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
 use App\Events as Events;
-use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -45,10 +46,25 @@ class EventController extends Controller
         $event -> location = $request -> input('location');
         $event -> recurrence = $request -> input('recurrence');
         $event -> date_event = $request -> input('date_event');
+        $event -> time_event = $request -> input('time');
         $event -> price = $request -> input('price');
         $event -> state = 1;
         $event -> save();
 
+        $image = $request->file('photo');
+        $extension = $image->getClientOriginalExtension();
+        $picture_name = 'event_' . $event->id;
+
+        FileUploadGestion::uploadFile($image, $picture_name, '/img/events');
+
+        $path = '/img/events/' . $picture_name . '.' .$extension;
+
+        $image = new Image;
+        $image -> path = $path;
+        $image -> save();
+
+        $event -> image_id = $image->id;
+        $event -> save();
 
         return redirect('adminevents/' . $event->id);
     }
@@ -97,7 +113,25 @@ class EventController extends Controller
 
         $event -> save();
 
-        return("Event updated");
+        $image = $request->file('photo');
+
+        if (isset($image)) {
+            $extension = $image->getClientOriginalExtension();
+            $picture_name = 'event_' . $event->id;
+
+            FileUploadGestion::uploadFile($image, $picture_name, '/img/events');
+
+            $path = '/img/events/' . $picture_name . '.' .$extension;
+
+            $image = new Image;
+            $image -> path = $path;
+            $image -> save();
+
+            $event -> image_id = $image->id;
+            $event -> save();
+        }
+
+        return redirect('adminevents/' . $event->id);
     }
 
     /**

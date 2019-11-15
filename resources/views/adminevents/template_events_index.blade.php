@@ -25,9 +25,13 @@
       @if ($event->state == 1)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+        @if(isset($event->image))
+            <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
+        @else
+            <img class="img_event" src="/img/event.jpg" alt="Image de couverture">
+        @endif
         <div class=texte>
-        <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
+        <h3 class="event_date">{{ $event->date_event }} {{ $event->time }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
         <h1 class="name">{{ $event->name }}</h1>
         <p class="description">{{ substr($event->description,0,100) }}...</p>
@@ -56,7 +60,11 @@
       @if ($event->state == 0)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+        @if(isset($event->image))
+            <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
+        @else
+            <img class="img_event" src="/img/event.jpg" alt="Image de couverture">
+        @endif
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
