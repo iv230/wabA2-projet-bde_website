@@ -19,9 +19,7 @@ class ArticleRepository
         $article->name = $inputs['name'];
         $article->description = $inputs['description'];
         $article->price = $inputs['price'];
-        $article->category = $inputs['category'];
-        $article->purchaseNumber = 0;
-        $article->stock = 1;
+        $article->categoryId = $inputs['category'];
         $article->save();
     }
 
@@ -31,9 +29,7 @@ class ArticleRepository
         $article->name = $inputs['name'];
         $article->description = $inputs['description'];
         $article->price = $inputs['price'];
-        $article->category = $inputs['category'];
-        $article->purchaseNumber = 0;
-        $article->stock = 1;
+        $article->categoryId = $inputs['category'];
         $this->save($article, $inputs);
         return $article;
     }

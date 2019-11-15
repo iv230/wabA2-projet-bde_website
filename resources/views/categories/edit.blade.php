@@ -10,7 +10,7 @@
                 <label>Nom</label>
                 <input type="text" name="name" placeholder="Nom de la catégorie" value="{{ $category->name }}"/>
             </div>
-            <button type="submit">Ajouter</button>
+            <button type="submit">Modifier</button>
             <input type="hidden" name="id" value="{{ $category->id }}">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
