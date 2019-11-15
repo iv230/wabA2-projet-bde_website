@@ -30,8 +30,14 @@
                         </div>
 
                         <a href="#" class="m-link"> <img class="basket" src="/img/basket.png" alt="Logo panier"> Panier</a>
+
+                        @if(session()->has('user'))
+                        <a class="m-link">{{ session('username') }}</a>
+                        <a href="/logout" class="m-link"><img class="co" src="/img/user.png" alt="Logo deconnexion"> Deconnexion</a>
+                        @else
                         <a href="users/create" class="m-link"><img class="login" src="/img/login.png" alt="Logo inscription"> Inscription</a>
                         <a href="/login" class="m-link"><img class="co" src="/img/user.png" alt="Logo connexion"> Connexion</a>
+                        @endif
                     </div>
 
                     <div class="m-nav-toggle">
