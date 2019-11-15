@@ -11,7 +11,7 @@
       <li>Description: {{ $article->description }}</li>
       <li>Catégorie: {{ $category->name }}</li>
     </ul>
-    <form action="/basket" method="POST" enctype="multipart/form-data">
+    <form action="/shop/{{ $article->id }}/addtocart" method="POST">
       <button type=submit>Ajouter au panier</button>
     </form>
     <div>

@@ -14,6 +14,7 @@ class CreateToContainsTable extends Migration
     public function up()
     {
         Schema::create('to_contains', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('articleId');
             $table->integer('basketId');
             $timestamps = false;

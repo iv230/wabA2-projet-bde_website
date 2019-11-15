@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\BasketRepository;
+use App\Repositories\ToContainRepository;
+use App\ToContain;
 use Illuminate\Http\Request;
 use App\PublicArticles;
 use App\Article;
+use App\Basket;
 
 class PublicArticlesController extends Controller
 {
+    protected $basketRepository, $containRepository;
+
+    public function __construct(BasketRepository $basketRepository, ToContainRepository $containRepository)
+    {
+        $this->basketRepository = $basketRepository;
+        $this->containRepository = $containRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -84,5 +95,25 @@ class PublicArticlesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addtocart($id)
+    {
+        $article = Article::find($id);
+        $baskets = Basket::all();
+        $condition = True;
+        foreach($baskets as $basket){
+            if($basket->userId == session('user')){
+                $condition = False;
+                $contain = ToContain::where('basketId', $basket->id);
+                break;
+            }
+        }
+        if($condition) {
+            $baskets = $this->basketRepository->store(session('user'));
+            $contain = $this->containRepository->store($article->all(), $baskets->all());
+        }
+        $this->containRepository->update($contain->id, $article->all(), $baskets->all());
+        return view('basket.index', array('article' => $article));
     }
 }

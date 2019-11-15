@@ -24,9 +24,9 @@ class BasketController extends Controller
      */
     public function index()
     {
-        $baskets = Basket::all();
-        $contain = Contain::where('basketId', 'basketId')->get();
-        $articles = Article::where('articleId', 'articleId')->get();
+        $basket = Basket::where('userId', session('user'))->get();
+        $contain = Contain::where('basketId', $basket->id)->get();
+        $articles = Article::where('id', $contain->articleId)->get();
         return view('articles.index', array('articles' => $articles));
     }
 

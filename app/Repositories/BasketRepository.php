@@ -17,7 +17,6 @@ class BasketRepository
     private function save(basket $basket, Array $inputs)
     {
         $basket->userId = $inputs['userId'];
-        $basket->articleId = $inputs['articleId'];
         $basket->save();
     }
 
@@ -25,7 +24,6 @@ class BasketRepository
     {
         $basket = new $this->basket;
         $basket->userId = $inputs['userId'];
-        $basket->articleId = $inputs['articleId'];
         $this->save($basket, $inputs);
         return $basket;
     }
