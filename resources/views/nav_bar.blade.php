@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="public/css/normalize.css">
   <link rel="stylesheet" href="public/css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
 </head>
 
@@ -41,13 +38,14 @@
         </nav>
     </header>
 
-    <div class="articles"></div>
+        <div class="articles"></div>
         <div class="article"></div>
         <div class="article"></div>
         <div class="article"></div>
 
-
-    <script src="public/js/app.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="public/js/nav_bar.js" charset="utf-8"></script>
+    <script src="script.js"></script>
 </body>
 
 

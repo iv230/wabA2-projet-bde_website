@@ -17,6 +17,7 @@
     position: fixed;
 }
 
+
 .logo_cesi_ingenieur
 {
     background-color: white;
@@ -131,25 +132,25 @@ span.m-toggle-icon:after{top: -14px;}
  }
 
  .m-right.is-open{
-     transform: translateX(0);
-     top: 66px;
- }
+    transform: translateX(0);
+    top: 66px;
+}
 
- .m-nav-toggle.is-open span.m-toggle-icon{
-    background: transparent;
- }
+.m-nav-toggle.is-open span.m-toggle-icon{
+   background: transparent;
+}
 
- .m-nav-toggle.is-open span.m-toggle-icon:before, .m-nav-toggle.is-open span.m-toggle-icon:after{
-    transform-origin: center;
-    transform: rotate(45deg);
-    top: 0;
- }
+.m-nav-toggle.is-open span.m-toggle-icon:before, .m-nav-toggle.is-open span.m-toggle-icon:after{
+   transform-origin: center;
+   transform: rotate(45deg);
+   top: 0;
+}
 
- .m-nav-toggle.is-open span.m-toggle-icon:after{
-    transform: rotate(-45deg);     
- }
+.m-nav-toggle.is-open span.m-toggle-icon:after{
+   transform: rotate(-45deg);     
+}
 
- span.searchbar{
+.span.searchbar{
      float: left;
      display: block;
      color: black;
@@ -159,7 +160,7 @@ span.m-toggle-icon:after{top: -14px;}
      font-size: 17px;
  }
 
- footer
+.footer
  {
     display: flex;
     justify-content: space-between;
@@ -195,4 +196,8 @@ span.m-toggle-icon:after{top: -14px;}
      text-decoration: none;
      color: white;
      margin: 5%;
+ }
+
+ .md-form {
+    float: left;
  }
