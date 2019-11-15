@@ -16,7 +16,7 @@ class PublicEventController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('publicevents.index', array('events' => $events));
+        return view('publicevents.template_public_events_index', array('events' => $events));
     }
 
     /**

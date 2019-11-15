@@ -1,10 +1,10 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events as Events;
+use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -29,13 +29,14 @@ class EventController extends Controller
         return view('adminevents.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\EventRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $event = new Events;
         $event -> name = $request -> input('name');
@@ -45,10 +46,10 @@ class EventController extends Controller
         $event -> date_event = $request -> input('date_event');
         $event -> price = $request -> input('price');
         $event -> state = 1;
-
         $event -> save();
 
-        return("New Event added");
+
+        return redirect('adminevents/' . $event->id);
     }
 
     /**

@@ -16,18 +16,23 @@
         <li>State: {{ $event->state }}</li>
       </ul>
     </div>
+
+
     <a href="">J'aime (15)</a>
+
+
+
     @if ($event-> state == 1)
     <a href="">Participer</a>
     @endif
-    
+
     <h3>Comments: </h3>
     @foreach ($comments as $comment)
     @if ($comment->id_event == $event->id)
     <!--<h4>Comment {{ $comment->id }}</h4>-->
     <ul>
       <li>{{ $comment->comment_date }} | {{ $comment->autor }}: </li>
-      {{ $comment->comment_content }} 
+      {{ $comment->comment_content }}
     </ul>
     @endif
     @endforeach

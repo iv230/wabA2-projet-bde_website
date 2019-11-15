@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="./css/header.css">
     @yield('home_scss')
     @yield('index_scss')
-   
+
 </head>
 <body>
 <!-- NAV BAR -->
-<header role="header">
-        
-        <nav class="menu" role="navigation">
+<header >
+
+        <nav class="menu">
             <div class="inner">
                     <div class="cesi">
                             <img class="logocesi" src="./img/logo.png" alt="logo cesi">
@@ -23,7 +23,7 @@
                     <div class="m-left">
                             <h1 class="bde">bde cesi nice</h1>
                     </div>
-        
+
                     <div class="m-right">
                     <div class="md-form mt-0">
                              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
@@ -42,9 +42,10 @@
         </nav>
     <div class="nav_left">       
             <img class="logo_cesi_ingenieur" src="./img/logo_cesi.png" alt="logo cesi ingenieur">
-        
+            @yield('admin')
+
     </div>
-    
+
     </header>
 
     <!-- END OF NAV BAR -->
@@ -56,6 +57,7 @@
 
     @yield('link_event')
     @yield('actual_events')
+    @yield('create_event')
 
     <div class="blue_bar"></div>
 
