@@ -2,6 +2,9 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+body {
+  overflow-y: hidden; }
+
 .blue_bar {
   background-color: #5D89DA;
   width: 100%;
@@ -10,10 +13,15 @@ $line-height-base: 1.6;*/
 .welcome {
   display: flex;
   justify-content: center;
-  margin-left: 15%; }
+  margin-left: 15%;
+  margin-top: 66px;
+  /*background-image: url("/img/bde.jpeg");
+  background-position: center;
+  height: 800px;
+  width: 100%;*/ }
 
 .welcome_img {
-  width: 100%;
+  width: 100vw;
   opacity: 0.6; }
 
 .presentation {
@@ -21,7 +29,7 @@ $line-height-base: 1.6;*/
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 50pt; }
+  margin-top: 10px; }
 
 .logo {
   width: 50%;
@@ -32,6 +40,22 @@ $line-height-base: 1.6;*/
   color: #000000;
   text-align: center;
   font-weight: bold; }
+
+/*.welcome1
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    background-image: url("/img/evenement.jpeg");
+    background-position: center;
+    height: 800px;
+    width: 100vw;
+
+}*/
+.welcome_link {
+  display: flex;
+  justify-content: center;
+  margin-left: 15%; }
 
 .show {
   position: absolute;
@@ -46,28 +70,42 @@ $line-height-base: 1.6;*/
   text-decoration: none;
   color: #FFFFFF; }
 
-@media screen and (max-width: 1100px) {
-  .presentation {
-    width: 20%;
-    min-width: 150px; }
+/*@media screen and (max-width: 1100px)
+{
+    .presentation
+    {
+        width: 20%;
+        min-width: 150px ;
+    }
 
-  .titre {
-    font-size: 120%; }
+    .titre
+    {
+        font-size: 120%;
+    }
 
-  .show {
-    width: 20%;
-    min-width: 180px;
-    font-size: 120%; } }
+    .show
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
+}*/
 @media all and (max-device-width: 480px) {
   .presentation {
-    width: 240px; }
+    width: 160px; }
 
   .titre {
-    font-size: 25pt;
-    color: red; }
+    font-size: 15pt; }
 
   .show {
-    font-size: 25pt;
-    width: 350px; } }
+    font-size: 15pt;
+    width: 150px; } }
+/*@media all and (device-width: 812px) and (device-height: 375px)
+{
+    .welcome_img
+    {
+        height: 800px;
+    }
+}*/
 
 /*# sourceMappingURL=home.css.map */

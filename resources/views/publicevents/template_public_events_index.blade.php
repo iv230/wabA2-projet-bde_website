@@ -10,10 +10,10 @@
 @endsection
 
 @section('welcome_events')
-<aside>
+<aside class="welcome">
 
-      <img class="welcome" src="/img/fond_events.jpg" alt="Events">
-      <h1> PARTIPEZ À NOS ÉVÈNEMENTS ! </h1>
+      <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
+      <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
 
 </aside>
 @endsection
@@ -66,7 +66,7 @@
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
-        <h1 class="name">{{ $event->name }}</h1>
+        <h2 class="name">{{ $event->name }}</h2>
         <p class="description">{{substr($event->description,0,100) }}...</p>
 
         <a class="show" href="/publicevents/{{ $event->id }}"> En savoir plus </a>
