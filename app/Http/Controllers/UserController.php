@@ -40,8 +40,10 @@ class UserController extends Controller
     public function index()
     {
         $users = ApiModelHydrator::hydrateAll('App\User', APIRequestGestion::get('/users', $this->token, null));
+        $role = ApiModelHydrator::hydrate('App\Role', APIRequestGestion::get('/roles', $this->token, array('id' => session('role')))[0]);
+        $school = ApiModelHydrator::hydrate('App\School', APIRequestGestion::get('/schools', $this->token, array('id' => session('school')))[0]);
 
-        return view('users.index', array('users' => $users));
+        return view('users.index', array('users' => $users, 'role' => $role, 'school' => $school));
     }
 
     /**
@@ -51,7 +53,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.creation');
+        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
+        return view('users.creation', array('schools' => $schools));
     }
 
     /**
@@ -94,7 +97,10 @@ class UserController extends Controller
     {
         $user = new User();
         $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $id))[0]);
-        return view('users.edit', array('user' => $user));
+
+        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
+
+        return view('users.edit', array('user' => $user, 'schools' => $schools));
     }
 
     /**
@@ -128,29 +134,47 @@ class UserController extends Controller
         return redirect('/logout');
     }
 
+    /**
+     * Show to form to initialize session
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function login()
     {
         return view('users.connection');
     }
 
+    /**
+     * Initialize the session
+     *
+     * @param UserLoginRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function connect(UserLoginRequest $request)
     {
         $params = array('email' => $request->input('email'));
         $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, $params)[0]);
 
-        if(password_verify($request->input('passwordHash'), $user->passwordHash))
+        if (password_verify($request->input('passwordHash'), $user->passwordHash))
         {
             session(['user'     => $user->id]);
             session(['username' => $user->name]);
             session(['role'     => $user->role]);
+            session(['school'   => $user->school]);
             return redirect('/users');
         }
         else
         {
-            return redirect('/login')->withErrors(array('password' => 'Password and email don\'t match'));
+            return redirect('/login')->withErrors(array('password' => 'Email ou mot de passe incorrect'));
         }
     }
 
+    /**
+     * Ends the session
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function logout(Request $request)
     {
         if($request->session()->has('user'))

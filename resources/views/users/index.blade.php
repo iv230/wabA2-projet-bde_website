@@ -5,11 +5,15 @@
     <h1>Liste des utilisateurs</h1>
 
     @if(session()->has('user'))
-        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>. Ton ID : {{ session('user') }}. Ton rôle : {{ session('role') }}.</p>
-        <a href="/logout" type="button">Je rentre à ma maison</a>
+        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>.
+            <br/>Ton ID : {{ session('user') }}
+            <br/>Ton centre : {{ $school->name }}
+            <br/>Ton rôle : {{ $role->name }}
+        </p>
+        <a href="/logout" type="button">Déconnexion</a>
     @else
-        <a href="/users/create" type="button">Je veux faire partie de cette aventure tumultueuse et semée d'embûches !</a><br/>
-        <a href="/login" type="button">Je suis un aventurier et je veux me faire entendre !</a><br/>
+        <a href="/users/create" type="button">Inscription</a><br/>
+        <a href="/login" type="button">Connexion</a><br/>
     @endif
 
     @foreach($users as $user)
