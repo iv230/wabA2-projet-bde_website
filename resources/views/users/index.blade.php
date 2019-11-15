@@ -5,7 +5,11 @@
     <h1>Liste des utilisateurs</h1>
 
     @if(session()->has('user'))
-        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>. Ton ID : {{ session('user') }}. Ton rôle : {{ session('role') }}.</p>
+        <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>.
+            <br/>Ton ID : {{ session('user') }}
+            <br/>Ton centre : {{ $school->name }}
+            <br/>Ton rôle : {{ $role->name }}
+        </p>
         <a href="/logout" type="button">Déconnexion</a>
     @else
         <a href="/users/create" type="button">Inscription</a><br/>

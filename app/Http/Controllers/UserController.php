@@ -40,8 +40,10 @@ class UserController extends Controller
     public function index()
     {
         $users = ApiModelHydrator::hydrateAll('App\User', APIRequestGestion::get('/users', $this->token, null));
+        $role = ApiModelHydrator::hydrate('App\Role', APIRequestGestion::get('/roles', $this->token, array('id' => session('role')))[0]);
+        $school = ApiModelHydrator::hydrate('App\School', APIRequestGestion::get('/schools', $this->token, array('id' => session('school')))[0]);
 
-        return view('users.index', array('users' => $users));
+        return view('users.index', array('users' => $users, 'role' => $role, 'school' => $school));
     }
 
     /**
@@ -153,11 +155,12 @@ class UserController extends Controller
         $params = array('email' => $request->input('email'));
         $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, $params)[0]);
 
-        if(password_verify($request->input('passwordHash'), $user->passwordHash))
+        if (password_verify($request->input('passwordHash'), $user->passwordHash))
         {
             session(['user'     => $user->id]);
             session(['username' => $user->name]);
             session(['role'     => $user->role]);
+            session(['school'   => $user->school]);
             return redirect('/users');
         }
         else
