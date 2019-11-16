@@ -11,6 +11,7 @@
 .nav_left
 {
     background-color: black;
+    top:66px;
     width: 15%;
     height: 100%;
     z-index: 9;
@@ -23,9 +24,8 @@
     background-color: white;
     width: 80%;
     z-index: 23;
-    margin-top: 66px;
+    top: 66px;
     padding: 10%;
-    /*box-shadow: 8px 8px 8px #aaa;*/
 }
 
 .bde{
@@ -33,7 +33,6 @@
     padding: 0;
     color: white;
     text-transform: uppercase;
-    font-family: 'Roboto';
     font-weight: 900;
     font-size: 35px;
     letter-spacing: 1px;
@@ -67,11 +66,10 @@
     text-transform: uppercase;
     font-weight: 700;
     padding: 0;
-    margin: 0 15px;
-    border-bottom: 2px solid transparent;
+    margin: 0 15px ;
+    border-bottom: 3px solid transparent;
     height: 64px;
-
-
+    display:flex;
 }
 
 .m-link:hover{
@@ -89,10 +87,19 @@
     cursor: pointer;
 }
 
+.link_nav
+{
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+
 .basket , .login , .co
 {
     width: 35px;
-
+    height: 35px;
+    margin-top: 12px;
     margin-right: 5px;
 }
 
@@ -165,29 +172,44 @@ footer
         position: absolute;
         top: 0;left: 0;right: 0;
         width: 100%;
-        height: auto;
+        height: 72px;
         background: black;
         transform: translateY(-100%);
         transition: all 0.3s ease-in-out;
         z-index: -1;
     }
+
+    .md-form
+    {
+        margin-top:5px;
+        margin-left: 5px;
+    }
     .m-link{
-        display: block;
+        display: flex;
         text-align: center ;
         padding: 0;
-        margin: 0 20px;
+        margin: 15px 20px;
         height: 55px;
         width: 200px;
-        margin: auto;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .basket, .login, .co
+    {
+        margin-top: 0;
+        margin-right: 10px;
     }
         .m-nav-toggle{
         display: flex;
     }
 
+
     .footer_cesi
     {
-        width:60px;
-        height: 25px;
+        width:90px;
+        height: 35px;
     }
 
 
@@ -196,7 +218,7 @@ footer
 
 .m-right.is-open{
     transform: translateX(0);
-    top: 66px;
+    top: 65px;
 }
 
 .m-nav-toggle.is-open span.m-toggle-icon{
@@ -229,49 +251,125 @@ footer
     float: left;
 }
 
-
+/*MEDIA QUERIES FOR PHONE*/
 
 @media all and (max-device-width : 480px ) {
 
+    /*NAV BAR*/
+
+    .menu
+    {
+        height: 160px;
+        line-height: 160px;
+
+    }
+
+    .m-left
+    {
+        height: 160px;
+    }
 
     .bde
     {
-        font-size: 12pt;
+
+        font-size: 46pt;
+    }
+
+    .cesi
+    {
+        max-width: 150px;
+        max-height: 150px;
+        margin: 0 20px 0 0;
     }
 
     .logocesi
     {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
     }
 
-    .menu
+    .m-nav-toggle
     {
-    height:66px;
+        height: 160px;
+        width: 90px;
     }
+
+    .m-right
+    {
+        line-height: 0;
+    }
+
+    .m-right.is-open
+    {
+        height:160px;
+        top:158px;
+        line-height: 160px;
+    }
+
+
+    .m-link
+    {
+        height: 160px;
+        font-size: 22pt;
+
+    }
+
+    .link_nav
+    {
+    height: 160px;
+    }
+
+    .m-link
+    {
+        margin:0;
+        width: 400px;
+
+    }
+
+    .basket, .login, .co
+    {
+        height: 60px;
+        width: 60px;
+    }
+
+    /*NAV LEFT*/
+    .nav_left
+    {
+        width:210px;
+        top: 160px;
+    }
+
+    /*FOOTER*/
 
     .footer_link
     {
-        font-size:7pt;
+        padding: 0;
+        font-size:20pt;
         text-align: center;
+        margin: 0 20px;
+        margin-bottom: 15px;
     }
+
 
     .footer_cesi
     {
-        width: 45px;
-        height: 15px;
+        width: 140px;
+        height: 55px;
         margin-bottom: 10px;
 
     }
 
     .footer_bde
     {
-        width:25px;
+        width:55px;
     }
 
     .logo_footer
     {
        flex-direction: column ;
+        width:230px;
+        height: 160px;
+
     }
 }
 
