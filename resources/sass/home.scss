@@ -21,10 +21,6 @@ body{ overflow-y: hidden}
     justify-content: center;
     margin-left: 15%;
     margin-top: 66px;
-    /*background-image: url("/img/bde.jpeg");
-    background-position: center;
-    height: 800px;
-    width: 100%;*/
 }
 
 .welcome_img
@@ -61,17 +57,6 @@ body{ overflow-y: hidden}
 
 // EVENTS AND SHOP LINK
 
-/*.welcome1
-{
-    display: flex;
-    justify-content: center;
-    margin-left: 15%;
-    background-image: url("/img/evenement.jpeg");
-    background-position: center;
-    height: 800px;
-    width: 100vw;
-
-}*/
 
 .welcome_link
 {
@@ -126,22 +111,38 @@ body{ overflow-y: hidden}
 
 @media all and (max-device-width : 480px )
 {
-    .presentation
+    .blue_bar
     {
-        width: 160px;
+        height:30px
+    }
+
+    .welcome
+    {
+        margin-top: 160px;
 
     }
 
     .titre
     {
 
-        font-size: 15pt;
+        font-size: 42pt;
+        color: red;
     }
 
     .show
     {
-        font-size: 15pt;
-        width: 150px;
+        font-size: 42pt;
+        width: 400px;
+    }
+
+    /*.welcome_link
+    {
+        height: 270px;
+    }*/
+
+    footer
+    {
+    height: 160px;
     }
 
 
