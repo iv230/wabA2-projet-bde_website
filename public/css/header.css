@@ -165,6 +165,7 @@ footer
     text-decoration: none;
     color: white;
     margin: 5%;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1100px){
@@ -205,17 +206,24 @@ footer
         display: flex;
     }
 
+    .logo_footer
+    {
+        flex-direction: column;
+    }
+
 
     .footer_cesi
     {
-        width:90px;
-        height: 35px;
+        width:60px;
+        height: 25px;
     }
 
     .link_nav
     {
         height: 66px;
     }
+
+
 
 
  }
@@ -255,6 +263,7 @@ footer
 .md-form {
     float: left;
 }
+
 
 /*MEDIA QUERIES FOR PHONE*/
 
@@ -298,17 +307,27 @@ footer
         height: 160px;
         width: 90px;
     }
+    .md-form
+    {
+        margin-left:40%;
+    }
+
 
     .m-right
     {
         line-height: 0;
+
+
     }
 
     .m-right.is-open
     {
-        height:160px;
+        height:480px;
         top:158px;
         line-height: 160px;
+
+
+
     }
 
 
@@ -321,7 +340,10 @@ footer
 
     .link_nav
     {
-    height: 160px;
+        height: 160px;
+        flex-direction: column;
+
+        margin:0;
     }
 
     .m-link
@@ -340,8 +362,7 @@ footer
     /*NAV LEFT*/
     .nav_left
     {
-        width:210px;
-        top: 160px;
+        width:0;
     }
 
     /*FOOTER*/
@@ -355,7 +376,7 @@ footer
     {
         padding: 0;
         font-size:20pt;
-        text-align: center;
+
         margin: 0 20px;
         margin-bottom: 15px;
     }
