@@ -80,7 +80,8 @@ body {
     height: 30px; }
 
   .welcome {
-    margin-top: 160px; }
+    margin-top: 160px;
+    margin-left: 210px; }
 
   .titre {
     font-size: 42pt;

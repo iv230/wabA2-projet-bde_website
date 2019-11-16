@@ -13,21 +13,22 @@ body {
 .welcome {
   display: flex;
   justify-content: center;
-  margin-left: 15%; }
+  margin-left: 15%;
+  margin-top: 66px; }
 
 .welcome_img {
-  width: 100%;
+  width: 100vw;
   opacity: 0.6; }
 
 .welcome_t {
-  font-size: 250%;
+  font-size: 36pt;
   background-color: #5D89DA;
   color: #FFFFFF;
   text-align: center;
   font-weight: normal;
   width: 450px;
   position: absolute;
-  margin-top: 15%; }
+  margin-top: 10%; }
 
 .events {
   margin-left: 16%; }
@@ -61,7 +62,7 @@ body {
   color: #FFC252;
   font-weight: bold; }
 
-.location + .description {
+.location, .description {
   color: #000000;
   font-size: 120%; }
 
@@ -70,7 +71,7 @@ body {
   font-size: 150%;
   text-transform: uppercase; }
 
-.show {
+.show, .show_admin {
   background-color: #5D89DA;
   color: #FFFFFF;
   text-decoration: none;
@@ -79,6 +80,10 @@ body {
   float: right;
   margin-right: 10px;
   margin-bottom: 10px; }
+
+.show_admin {
+  font-size: 100%;
+  float: left; }
 
 .img_event {
   width: 600px;
@@ -93,11 +98,6 @@ body {
   margin: 15%; }
 
 @media screen and (max-width: 1100px) {
-  .welcome_t {
-    width: 320px;
-    min-width: 180px;
-    font-size: 200%; }
-
   .event {
     flex-direction: column;
     align-items: center; }
@@ -108,8 +108,54 @@ body {
   .texte {
     width: 550px; } }
 @media all and (max-device-width: 480px) {
+  .blue_bar {
+    height: 30px; }
+
+  .welcome {
+    margin-top: 160px;
+    margin-left: 210px; }
+
+  .events {
+    margin-left: 210px; }
+
   .welcome_t {
     font-size: 25pt;
-    width: 350px; } }
+    width: 350px; }
+
+  .event {
+    flex-direction: column;
+    align-items: center; }
+
+  .welcome_t {
+    font-size: 42pt;
+    width: 450px; }
+
+  .t1 {
+    font-size: 30pt; }
+
+  .t2 {
+    margin-left: 5px;
+    font-size: 24pt; }
+
+  .img_event {
+    width: 550px; }
+
+  .texte {
+    width: 550px; }
+
+  .event_date {
+    font-size: 24pt; }
+
+  .location, .description {
+    font-size: 23pt; }
+
+  .name {
+    font-size: 24pt; }
+
+  .show {
+    font-size: 23pt; }
+
+  .show_admin {
+    font-size: 19pt; } }
 
 /*# sourceMappingURL=index.css.map */
