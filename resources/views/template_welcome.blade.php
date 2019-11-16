@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/header.css">
     @yield('home_scss')
     @yield('index_scss')
+    @yield('show_scss')
 
 </head>
 <body>
@@ -60,18 +61,22 @@
     @yield('welcome')
     @yield('welcome_events')
 
-    <div class="blue_bar"></div>
+    @yield('blue_bar')
 
     @yield('link_event')
     @yield('actual_events')
     @yield('create_event')
 
-    <div class="blue_bar"></div>
+    @yield('blue_bar')
 
     @yield('link_shop')
     @yield('past_events')
 
-
+    @yield('event')
+    @yield('like')
+    @yield('participation')
+    @yield('return')
+    @yield('comments')
 
 <!-- FOOTER -->
 <footer >

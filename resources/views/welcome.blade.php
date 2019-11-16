@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
 @endsection
 
+@section('blue_bar')
+    <div class="blue_bar"></div>
+@endsection
+
 @section('welcome')
 
 <aside class="welcome">
