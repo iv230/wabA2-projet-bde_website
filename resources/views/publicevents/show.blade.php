@@ -18,7 +18,7 @@
                 <img class="img_event" src="/img/event.jpg" alt="Image de couverture">
             @endif
             <div class=texte>
-                <p class="description">{{ $event->description}}...</p>
+                <p class="description">{{ $event->description}}</p>
             </div>
         </div>
         @if($event->price == 0)

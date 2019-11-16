@@ -105,9 +105,44 @@ body{ overflow-y: hidden}
     float: right;
     margin-right:10px ;
     margin-bottom: 10px;
+    border:none;
+    border-radius:2px;
+    box-shadow:2px 2px 6px #999;
 }
 
+.buttons_action
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 10px;
 
+}
+
+.like
+{
+    margin-left: 16%;
+    text-decoration: none;
+    color: $black;
+    font-size: 18pt;
+}
+
+button
+{
+    font-size: 18pt;
+    border:none;
+    background-color: $blue;
+    padding:6px;
+    border-radius:2px;
+    box-shadow:2px 2px 6px #999;
+    color: $white;
+
+}
+
+button:hover
+{
+    background-color: $orange;
+}
 
 
 

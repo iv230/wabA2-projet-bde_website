@@ -81,6 +81,11 @@ body {
   margin-right: 10px;
   margin-bottom: 10px; }
 
+.show {
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999; }
+
 .show_admin {
   font-size: 100%;
   float: left; }

@@ -77,7 +77,34 @@ body {
   padding: 10px;
   float: right;
   margin-right: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999; }
+
+.buttons_action {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 10px; }
+
+.like {
+  margin-left: 16%;
+  text-decoration: none;
+  color: #000000;
+  font-size: 18pt; }
+
+button {
+  font-size: 18pt;
+  border: none;
+  background-color: #5D89DA;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999;
+  color: #FFFFFF; }
+
+button:hover {
+  background-color: #FFC252; }
 
 @media screen and (max-width: 1100px) {
   .event {
