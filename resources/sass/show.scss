@@ -216,3 +216,55 @@ button:hover
     }
 
 }
+//MEDIA QUERIES FOR PHONE
+
+@media all and (max-device-width : 480px )
+{
+
+    .events
+    {
+        margin-left: 210px;
+        margin-top: 160px;
+    }
+
+    .event
+    {
+
+        flex-direction :column;
+        align-items: center;
+
+    }
+
+    .img_event
+    {
+        width: 550px;
+        border-bottom: 30px solid $blue;
+    }
+
+    .texte
+    {
+        width: 550px;
+        border-bottom: 30px solid $blue;
+    }
+
+    .event_date
+    {
+        font-size: 34pt;
+    }
+
+    .location, .description
+    {
+        font-size: 33pt;
+    }
+
+    .name{
+        font-size: 44pt;
+    }
+
+    .show
+    {
+        font-size: 23pt;
+    }
+
+
+}
