@@ -86,18 +86,7 @@ body {
     font-size: 42pt;
     width: 400px; }
 
-  /*.welcome_link
-  {
-      height: 270px;
-  }*/
   footer {
     height: 160px; } }
-/*@media all and (device-width: 812px) and (device-height: 375px)
-{
-    .welcome_img
-    {
-        height: 800px;
-    }
-}*/
 
 /*# sourceMappingURL=home.css.map */

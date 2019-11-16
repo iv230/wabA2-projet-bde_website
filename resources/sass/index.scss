@@ -176,8 +176,49 @@ body{ overflow-y: hidden}
     }
     .show_admin
     {
-        font-size: 8pt;
+        font-size: 10pt;
     }
+
+}
+
+//MEDIA QUERIES FOR PC AND IPAD
+@media screen and (max-width: 800px)
+{
+    .welcome_t
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
+
+
+    .show_admin
+    {
+        font-size: 55%;
+        padding: 5px;
+
+    }
+
+    .t1
+    {
+        font-size:20pt;
+    }
+
+    .t2
+    {
+        font-size: 15pt;
+    }
+
+    .img_event
+    {
+        width:400px;
+    }
+
+    .texte
+    {
+        width: 400px;
+    }
+
 
 }
 
@@ -193,12 +234,12 @@ body{ overflow-y: hidden}
     .welcome
     {
         margin-top: 160px;
-        margin-left: 210px;
+        margin-left: 0;
     }
 
     .events
     {
-        margin-left: 210px;
+        margin-left: 0;
     }
 
     .welcome_t
@@ -230,6 +271,7 @@ body{ overflow-y: hidden}
     {
         margin-left: 5px;
         font-size: 24pt;
+        text-align: center;
     }
 
     .img_event

@@ -148,10 +148,16 @@ button:hover {
     border-radius: 2px;
     box-shadow: 2px 2px 6px #999;
     color: #FFFFFF; } }
+@media screen and (max-width: 800px) {
+  .img_event {
+    width: 400px; }
+
+  .texte {
+    width: 400px; } }
 @media all and (max-device-width: 480px) {
   .events {
-    margin-left: 210px;
-    margin-top: 160px; }
+    margin-left: 0;
+    margin-top: 220px; }
 
   .event {
     flex-direction: column;
@@ -169,12 +175,28 @@ button:hover {
     font-size: 34pt; }
 
   .location, .description {
-    font-size: 33pt; }
+    font-size: 33pt;
+    margin: 30px; }
 
   .name {
-    font-size: 44pt; }
+    font-size: 44pt;
+    margin: 40px; }
+
+  .like {
+    font-size: 33pt;
+    margin: 0; }
 
   .show {
-    font-size: 23pt; } }
+    font-size: 30pt;
+    /*margin-right: 130px;*/
+    float: left;
+    margin: 3% 30%;
+    text-align: center; }
+
+  .price {
+    font-size: 32pt; }
+
+  button {
+    font-size: 33pt; } }
 
 /*# sourceMappingURL=show.css.map */

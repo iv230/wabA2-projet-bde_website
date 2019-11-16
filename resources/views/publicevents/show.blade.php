@@ -69,6 +69,7 @@
 
 @section('comments')
 
+    @if($event->state == 0)
     @foreach ($comments as $comment)
     @if ($comment->id_event == $event->id)
     <!--<h4>Comment {{ $comment->id }}</h4>-->
@@ -102,6 +103,7 @@
       <input type="hidden" name="idevent" value="{{$event->id}}">
 
     </form>
+    @endif
     @endif
 @endsection
 

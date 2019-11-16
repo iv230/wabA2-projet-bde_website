@@ -216,6 +216,22 @@ button:hover
     }
 
 }
+
+
+//MEDIA QUERIES FOR PC AND IPAD
+@media screen and (max-width: 800px)
+{
+    .img_event
+    {
+        width:400px;
+    }
+
+    .texte
+    {
+        width: 400px;
+    }
+}
+
 //MEDIA QUERIES FOR PHONE
 
 @media all and (max-device-width : 480px )
@@ -223,8 +239,8 @@ button:hover
 
     .events
     {
-        margin-left: 210px;
-        margin-top: 160px;
+        margin-left: 0;
+        margin-top: 220px;
     }
 
     .event
@@ -255,15 +271,40 @@ button:hover
     .location, .description
     {
         font-size: 33pt;
+        margin:30px;
     }
 
     .name{
         font-size: 44pt;
+        margin:40px;
+
+    }
+
+    .like
+    {
+        font-size: 33pt;
+        margin: 0;
     }
 
     .show
     {
-        font-size: 23pt;
+        font-size: 30pt;
+        /*margin-right: 130px;*/
+        float:left;
+       margin: 3% 30%;
+        text-align: center;
+
+
+    }
+
+    .price
+    {
+        font-size: 32pt;
+    }
+
+    button
+    {
+        font-size: 33pt;
     }
 
 
