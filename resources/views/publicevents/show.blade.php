@@ -26,35 +26,40 @@
         @else
             <p class="price">Coût de l'évènement : {{$event->price}} EUR</p>
         @endif
+
     </article>
 @endsection
 
-@section('like')
-    <a href="">J'aime (15)</a><br>
-@endsection
 
 @section('participation')
 
     @if(session()->has('user'))
     @if (session('role') == 2)
+        <div class="participate">
         <a href="/participants/{{ $event->id }}">Dl</a>
     <!--<a href="http://localhost:3000/participants/{{ $event->id }}" download="Liste_des_participants.csv">Liste des participants</a>-->
+        </div>
     @endif
     @endif
+    <div class="buttons_action">
+    <a class="like" href="">J'aime (15)</a><br>
     @if ($event-> state == 1)
 
+    <div class="participate">
         <form action="/participants" method="POST">
             @csrf
 
             <div>
-                <button type="submit"> Participate </button>
+                <button type="submit"> Participer </button>
             </div>
 
             <input type="hidden" name="iduser" value="{{ session('user') }}">
 
             <input type="hidden" name="idevent" value="{{$event->id}}">
         </form>
+    </div>
     @endif
+    </div> <br>
 
 @endsection
 
@@ -64,7 +69,6 @@
 
 @section('comments')
 
-    <h3>Comments: </h3>
     @foreach ($comments as $comment)
     @if ($comment->id_event == $event->id)
     <!--<h4>Comment {{ $comment->id }}</h4>-->

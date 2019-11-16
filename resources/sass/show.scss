@@ -107,6 +107,11 @@ body{ overflow-y: hidden}
     margin-bottom: 10px;
 }
 
+
+
+
+
+
 //MEDIA QUERIES FOR PC AND IPAD
 
 
@@ -145,6 +150,33 @@ body{ overflow-y: hidden}
         font-size: 16pt;
         margin: 10px 0 10px 0;
         width:100%;
+
+    }
+
+    .buttons_action
+    {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .like
+    {
+        margin-left: 16%;
+        text-decoration: none;
+        color: $black;
+        font-size: 18pt;
+    }
+
+    button
+    {
+        font-size: 18pt;
+        border:none;
+        background-color: $blue;
+        padding:6px;
+        border-radius:2px;
+        box-shadow:2px 2px 6px #999;
+        color: $white;
 
     }
 

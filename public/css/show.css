@@ -101,6 +101,25 @@ body {
   .price {
     font-size: 16pt;
     margin: 10px 0 10px 0;
-    width: 100%; } }
+    width: 100%; }
+
+  .buttons_action {
+    display: flex;
+    justify-content: space-evenly; }
+
+  .like {
+    margin-left: 16%;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18pt; }
+
+  button {
+    font-size: 18pt;
+    border: none;
+    background-color: #5D89DA;
+    padding: 6px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px #999;
+    color: #FFFFFF; } }
 
 /*# sourceMappingURL=show.css.map */
