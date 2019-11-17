@@ -1,11 +1,3 @@
-.menu {
-  background: black;
-  width: 100%;
-  height: 66px;
-  line-height: 66px;
-  position: fixed;
-  z-index: 10; }
-
 .nav_left {
   background-color: black;
   top: 66px;
@@ -13,6 +5,9 @@
   height: 100%;
   z-index: 9;
   position: fixed; }
+  @media all and (max-device-width: 480px) {
+    .nav_left {
+      width: 0; } }
 
 .logo_cesi_ingenieur {
   background-color: white;
@@ -20,6 +15,75 @@
   z-index: 23;
   top: 66px;
   padding: 10%; }
+
+.logo_footer {
+  z-index: 92;
+  background-color: white;
+  width: 15%;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.link_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%; }
+
+.footer_cesi {
+  height: 40px;
+  width: 95px;
+  padding-right: 5%; }
+
+.footer_bde {
+  width: 20%; }
+
+.footer_link {
+  text-decoration: none;
+  color: white;
+  margin: 5%;
+  text-align: center; }
+
+@media only screen and (max-width: 1100px) {
+  .logo_footer {
+    flex-direction: column; }
+
+  .footer_cesi {
+    width: 60px;
+    height: 25px; }
+
+  .link_nav {
+    height: 66px; } }
+@media all and (max-device-width: 480px) {
+  footer {
+    max-height: 160px; }
+
+  .footer_link {
+    padding: 0;
+    font-size: 20pt;
+    margin: 0 20px;
+    margin-bottom: 15px; }
+
+  .footer_cesi {
+    width: 140px;
+    height: 55px;
+    margin-bottom: 10px; }
+
+  .footer_bde {
+    width: 55px; }
+
+  .logo_footer {
+    flex-direction: column;
+    width: 230px;
+    height: 160px; } }
+.menu {
+  background: black;
+  width: 100%;
+  height: 66px;
+  line-height: 66px;
+  position: fixed;
+  z-index: 10; }
 
 .bde {
   margin: 0;
@@ -43,7 +107,7 @@
 
 .m-left {
   float: left;
-  height: 66px; }
+  /*height: 66px;*/ }
 
 .m-right {
   float: right; }
@@ -60,7 +124,8 @@
   display: flex; }
 
 .m-link:hover {
-  border-color: white; }
+  border-color: white;
+  transition: 0.2s ease-in-out; }
 
 .m-nav-toggle {
   width: 40px;
@@ -72,7 +137,7 @@
 
 .link_nav {
   display: flex;
-  flex-wrap: nowrap; }
+  flex-wrap: wrap; }
 
 .basket, .login, .co {
   width: 35px;
@@ -104,35 +169,6 @@ footer {
   bottom: 0;
   width: 100%;
   max-height: 66px; }
-
-.logo_footer {
-  z-index: 92;
-  background-color: white;
-  width: 15%;
-  height: 66px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.link_footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 85%; }
-
-.footer_cesi {
-  height: 40px;
-  width: 95px;
-  padding-right: 5%; }
-
-.footer_bde {
-  width: 20%; }
-
-.footer_link {
-  text-decoration: none;
-  color: white;
-  margin: 5%;
-  text-align: center; }
 
 @media only screen and (max-width: 1100px) {
   .m-right {
@@ -166,17 +202,7 @@ footer {
     margin-right: 10px; }
 
   .m-nav-toggle {
-    display: flex; }
-
-  .logo_footer {
-    flex-direction: column; }
-
-  .footer_cesi {
-    width: 60px;
-    height: 25px; }
-
-  .link_nav {
-    height: 66px; } }
+    display: flex; } }
 .m-right.is-open {
   transform: translateX(0);
   top: 65px; }
@@ -256,33 +282,6 @@ footer {
 
   .basket, .login, .co {
     height: 60px;
-    width: 60px; }
-
-  /*NAV LEFT*/
-  .nav_left {
-    width: 0; }
-
-  /*FOOTER*/
-  footer {
-    max-height: 160px; }
-
-  .footer_link {
-    padding: 0;
-    font-size: 20pt;
-    margin: 0 20px;
-    margin-bottom: 15px; }
-
-  .footer_cesi {
-    width: 140px;
-    height: 55px;
-    margin-bottom: 10px; }
-
-  .footer_bde {
-    width: 55px; }
-
-  .logo_footer {
-    flex-direction: column;
-    width: 230px;
-    height: 160px; } }
+    width: 60px; } }
 
 /*# sourceMappingURL=nav_bar.css.map */
