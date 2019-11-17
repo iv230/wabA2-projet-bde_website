@@ -1,6 +1,6 @@
 @extends('template_welcome')
 
-@section('index_scss')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
 @endsection
 

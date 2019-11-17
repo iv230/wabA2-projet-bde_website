@@ -1,6 +1,6 @@
 @extends('template_shop')
 
-@section('index_scss')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
 @endsection
 

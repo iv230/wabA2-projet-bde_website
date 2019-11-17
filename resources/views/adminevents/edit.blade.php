@@ -1,6 +1,6 @@
 @extends('template_welcome')
 
-@section('index_scss')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
 @endsection
 
@@ -50,7 +50,7 @@
         </label>
     </div>
 
-    <div>
+    <div >
         <label class="label" for="number"> Etat :
             <input type="number" name="state" value= "{{ $event-> state}}" min="0" max="1" placeholder="New state">
         </label>
