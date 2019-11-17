@@ -5,9 +5,13 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 
-@section('admin')
-    <a class="show_admin" href="/adminevents">Administration </a>
-@endsection
+@if(session()->has('user'))
+    @if(session('role') == 2 || session('role') == 4)
+        @section('admin')
+            <a class="show_admin" href="/adminevents">Administration </a>
+        @endsection
+    @endif
+@endif
 
 
 @section('welcome_events')

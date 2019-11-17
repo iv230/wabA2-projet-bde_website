@@ -161,7 +161,7 @@ class UserController extends Controller
             session(['role'     => $user->role]);
             session(['school'   => $user->school]);
 
-            return redirect('/home');
+            return redirect('/');
         }
         else  {
             return redirect('/login')->withErrors(array('password' => 'Email ou mot de passe incorrect'));
