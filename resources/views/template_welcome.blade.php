@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     @yield('css')
-
+    @yield('prout')
 </head>
 <body>
 <!-- NAV BAR -->
@@ -41,7 +41,7 @@
                     <div class="m-nav-toggle">
                         <span class="m-toggle-icon"></span>
                     </div>
-            </div>
+                    </div></div>
 
         </nav>
     <div class="nav_left">
