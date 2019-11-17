@@ -57,7 +57,7 @@
 @section('past_events')
 
     <hr class="blue_bar">
-    <article class="events" class="past_events">
+    <article class="events" >
         <h2 class="t1"> Évènements passés</h2>
         <p class="t2"> Commentez et ajoutez des photos !</p>
 
