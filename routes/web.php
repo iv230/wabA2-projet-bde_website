@@ -31,7 +31,7 @@ Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentCon
 
 Route::get('adminevents/{id}/delete', 'EventController@destroy');
 
-Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController')->middleware('App\Http\Middleware\UserAuth');
 Route::get('/login', 'UserController@login');
 Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');

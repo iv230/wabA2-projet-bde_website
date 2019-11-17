@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminEventAuth
+class UserAuth
 {
     /**
      * Handle an incoming request.
@@ -21,8 +21,8 @@ class AdminEventAuth
 
         $role = session('role');
 
-        if ($role != 2 && $role != 4) {
-            abort('403', 'Forbidden - L\'accès à cette page est réservée aux membres du BDE');
+        if ($role != 4) {
+            abort('403', 'Forbidden - L\'accès à cette page est réservé aux administrateurs');
         }
 
         return $next($request);
