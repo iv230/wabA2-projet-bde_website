@@ -17,10 +17,10 @@
         <nav class="menu">
             <div class="inner">
                     <div class="cesi">
-                            <img class="logocesi" src="/img/logo.png" alt="logo cesi">
+                            <a href=""><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                     </div>
                     <div class="m-left">
-                            <h1 class="bde">bde cesi nice</h1>
+                            <a href="" class="bde">bde cesi nice</a>
                     </div>
 
                     <div class="m-right">
