@@ -140,6 +140,9 @@ body {
   justify-content: center;
   align-items: flex-start; }
 
+.past_events {
+  margin-bottom: 80px; }
+
 .img_event {
   width: 600px;
   margin: 20px; }

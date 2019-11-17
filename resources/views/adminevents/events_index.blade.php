@@ -30,6 +30,7 @@
         @foreach ($events as $event)
             @if ($event->state == 1)
 
+                <hr>
                 <div class="event">
                     @if(isset($event->image))
                         <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
@@ -46,6 +47,7 @@
                     </div>
                 </div>
             @endif
+
         @endforeach
     </article>
     <a class="create" href="/adminevents/create"> Ajouter un évènement </a>
@@ -55,13 +57,14 @@
 @section('past_events')
 
     <hr class="blue_bar">
-    <article class="events">
+    <article class="events" class="past_events">
         <h2 class="t1"> Évènements passés</h2>
         <p class="t2"> Commentez et ajoutez des photos !</p>
 
         @foreach ($events as $event)
             @if ($event->state == 0)
 
+                <hr>
                 <div class="event">
                     @if(isset($event->image))
                         <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
