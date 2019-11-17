@@ -31,7 +31,6 @@ class EventController extends Controller
         return view('adminevents.create');
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
