@@ -4,10 +4,6 @@
 <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
 @endsection
 
-@section('blue_bar')
-    <div class="blue_bar"></div>
-@endsection
-
 @section('welcome')
 
 <aside class="welcome">
@@ -19,7 +15,7 @@
       </div>
 
 
-</aside>
+</aside><hr class="blue_bar">
 
 @endsection
 
@@ -29,7 +25,7 @@
         <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
     <h2 class="show"><a class="link" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a></h2>
 
-    </article>
+    </article><hr class="blue_bar">
 @endsection
 
 @section('link_shop')

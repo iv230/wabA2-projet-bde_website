@@ -7,7 +7,7 @@ body {
 
 .blue_bar {
   background-color: #5D89DA;
-  width: 100%;
+  width: 6000px;
   height: 10px; }
 
 .welcome {
@@ -31,7 +31,7 @@ body {
   margin-top: 10%; }
 
 .events {
-  margin-left: 16%; }
+  margin-left: 15%; }
 
 .t1 {
   color: #000000;

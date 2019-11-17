@@ -61,13 +61,10 @@
     @yield('welcome')
     @yield('welcome_events')
 
-    @yield('blue_bar')
-
     @yield('link_event')
     @yield('actual_events')
     @yield('create_event')
 
-    @yield('blue_bar')
 
     @yield('link_shop')
     @yield('past_events')

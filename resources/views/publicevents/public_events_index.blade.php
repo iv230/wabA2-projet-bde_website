@@ -9,9 +9,6 @@
     <a class="show_admin" href="/adminevents">Administration </a>
 @endsection
 
-@section('blue_bar')
-    <div class="blue_bar"></div>
-@endsection
 
 @section('welcome_events')
 <aside class="welcome">
@@ -46,7 +43,7 @@
 
         <a class="show" href="/publicevents/{{ $event->id }}"> En savoir plus </a>
         </div>
-        </div>
+        </div><hr class="blue_bar">
 
       @endif
       @endforeach
@@ -75,7 +72,7 @@
 
         <a class="show" href="/publicevents/{{ $event->id }}"> En savoir plus </a>
         </div>
-        </div>
+        </div><hr class="blue_bar">
 
       @endif
       @endforeach
