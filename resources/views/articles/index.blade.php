@@ -1,4 +1,4 @@
-@extends('template_welcome')
+@extends('template_shop')
 
 @section('index_scss')
     <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />

@@ -26,13 +26,10 @@
                     </div>
 
                     <div class="m-right">
-                    <div class="md-form mt-0">
-                             <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-
+                        @yield('search_bar')
                         <div class="link_nav">
-                        <a href="#" class="m-link"> <img class="basket" src="/img/basket.png" alt="Logo panier"> Panier</a>
 
+                        @yield('basket')
                         @if(session()->has('user'))
                         <a class="m-link">{{ session('username') }}</a>
                         <a href="/logout" class="m-link"><img class="co" src="/img/user.png" alt="Logo deconnexion"> Deconnexion</a>
@@ -40,6 +37,7 @@
                         <a href="users/create" class="m-link"><img class="login" src="/img/login.png" alt="Logo inscription"> Inscription</a>
                         <a href="/login" class="m-link"><img class="co" src="/img/user.png" alt="Logo connexion"> Connexion</a>
                         @endif
+
                     </div>
 
                     <div class="m-nav-toggle">
