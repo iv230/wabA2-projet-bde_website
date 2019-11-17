@@ -1,9 +1,15 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+html
+{
+    height:100%;
+}
+
 body{ overflow-y: hidden;
     min-height:100%;
-    position: relative;}
+    position: relative;
+    }
 
 .events
 {
@@ -217,6 +223,13 @@ button:hover
 
     }
 
+    .show
+    {
+        float:right;
+        margin-bottom: 80px;
+        margin-right: 25%;
+    }
+
 }
 
 
@@ -231,6 +244,12 @@ button:hover
     .texte
     {
         width: 400px;
+    }
+    .show
+    {
+        float:right;
+        margin-bottom: 80px;
+        margin-right: 12%;
     }
 }
 
