@@ -1,6 +1,10 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;
+}
 
 // BLUE BAR OF SEPARATION
 
@@ -9,6 +13,7 @@
     background-color: $blue;
     width: 100%;
     height: 10px;
+    margin:0;
 }
 
 
@@ -18,12 +23,13 @@
 {
     display: flex;
     justify-content: center;
-    margin-left: 15%
+    margin-left: 15%;
+    margin-top: 66px;
 }
 
 .welcome_img
 {
-    width: 100%;
+    width: 100vw;
     opacity: 0.6;
 }
 
@@ -31,51 +37,124 @@
 {
     position: absolute;
     display: flex;
-    //border: solid;
     align-items: center;
     flex-direction: column;
-    margin:15%;
+    margin-top: 10px;
+
 }
 
 .logo
 {
-
     width: 50%;
     z-index: 8;
 }
 
 .titre
 {
-    font-size: 250%;
+    font-size: 36pt;
     color : $black;
     text-align: center;
     font-weight : bold;
-    //border:solid;
+
+
+}
+
+// EVENTS AND SHOP LINK
+
+
+.welcome_link
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+}
+
+.show
+{
+    position: absolute;
+    width: 450px;
+    font-size: 36pt;
+    text-align: center;
+    background-color: $blue;
+    font-weight : normal;
+    margin-top : 10%;
 
 }
 
 .link
 {
-    position: absolute;
-    font-size: 250%;
-    width: 450px;
-    text-align: center;
-    font-weight : normal;
-    margin : 15%;
-    
-}
-
-.show
-{
-
-    background-color: $blue;
-    color : $white;
-    text-align: center;
-    position: absolute;
-    font-size: 250%;
-    width: 450px;
-    font-weight : normal;
-    margin : 15%;
     text-decoration: none;
+    color : $white;
+}
+
+
+//MEDIA QUERIES FOR PC AND IPAD
+
+@media screen and (max-width: 600px)
+{
+    .presentation
+    {
+        width: 20%;
+        min-width: 150px ;
+    }
+
+    .titre
+    {
+        font-size: 120%;
+    }
+
+    .show
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
+}
+
+//MEDIA QUERIES FOR PHONE
+
+@media all and (max-device-width : 480px )
+{
+    .blue_bar
+    {
+        height:30px
+    }
+
+
+
+    .welcome
+    {
+        margin:0;
+        margin-top: 160px;
+        width: 100%;
+
+
+    }
+
+    .welcome_link
+    {
+        margin:0;
+    }
+
+    .titre
+    {
+
+        font-size: 42pt;
+    }
+
+    .show
+    {
+        font-size: 42pt;
+        width: 400px;
+
+    }
+
+
+    footer
+    {
+    height: 160px;
+    }
+
 
 }
+

@@ -18,10 +18,12 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('location');
-            $table->string('recurrence');
+            $table->string('recurrence')->nullable();
             $table->boolean('state');
             $table->double('price');
             $table->date('date_event');
+            $table->time('time_event');
+            $table->bigInteger('image_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

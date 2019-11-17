@@ -1,9 +1,11 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
+use App\Gestion\FileUploadGestion;
+use App\Image;
 use Illuminate\Http\Request;
+use App\Http\Request\EventRequest;
 use App\Events as Events;
 
 class EventController extends Controller
@@ -16,7 +18,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('adminevents.template_events_index', array('events' => $events));
+        return view('adminevents.events_index', array('events' => $events));
     }
 
     /**
@@ -29,13 +31,14 @@ class EventController extends Controller
         return view('adminevents.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\EventRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $event = new Events;
         $event -> name = $request -> input('name');
@@ -43,12 +46,27 @@ class EventController extends Controller
         $event -> location = $request -> input('location');
         $event -> recurrence = $request -> input('recurrence');
         $event -> date_event = $request -> input('date_event');
+        $event -> time_event = $request -> input('time');
         $event -> price = $request -> input('price');
         $event -> state = 1;
-
         $event -> save();
 
-        return("New Event added");
+        $image = $request->file('photo');
+        $extension = $image->getClientOriginalExtension();
+        $picture_name = 'event_' . $event->id;
+
+        FileUploadGestion::uploadFile($image, $picture_name, '/img/events');
+
+        $path = '/img/events/' . $picture_name . '.' .$extension;
+
+        $image = new Image;
+        $image -> path = $path;
+        $image -> save();
+
+        $event -> image_id = $image->id;
+        $event -> save();
+
+        return redirect('adminevents/' . $event->id);
     }
 
     /**
@@ -95,7 +113,25 @@ class EventController extends Controller
 
         $event -> save();
 
-        return("Event updated");
+        $image = $request->file('photo');
+
+        if (isset($image)) {
+            $extension = $image->getClientOriginalExtension();
+            $picture_name = 'event_' . $event->id;
+
+            FileUploadGestion::uploadFile($image, $picture_name, '/img/events');
+
+            $path = '/img/events/' . $picture_name . '.' .$extension;
+
+            $image = new Image;
+            $image -> path = $path;
+            $image -> save();
+
+            $event -> image_id = $image->id;
+            $event -> save();
+        }
+
+        return redirect('adminevents/' . $event->id);
     }
 
     /**

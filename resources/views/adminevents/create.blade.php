@@ -1,45 +1,62 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Creation</title>
-  </head>
-  <body>
+@extends('template_welcome')
 
-    <h1>Event Creation :</h1>
+@section('index_scss')
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}" />
+@endsection
+
+@section('create_event')
+    <section class="creation">
+    <h1 class="t1">Création d'un évènement</h1>
 
 
-  <form action="/adminevents" method="POST">
+  <form class="create" action="/adminevents" method="POST" enctype="multipart/form-data">
   @csrf
 
     <div>
-      <input type="text" name="name" placeholder="Event name">
+        {!! $errors->first('name', '<small>:message</small>') !!}
+        <input type="text" name="name" placeholder="Nom">
     </div>
 
     <div>
-      <textarea name="description" placeholder=" Event description"></textarea>
+        {!! $errors->first('description', '<small>:message</small>') !!}
+        <textarea name="description" placeholder="Description"></textarea>
     </div>
 
     <div>
-      <input type="text" name="location" placeholder="Event location">
+        {!! $errors->first('location', '<small>:message</small>') !!}
+        <input type="text" name="location" placeholder="Lieu">
     </div>
 
     <div>
-      <input type="text" name="recurrence" placeholder="Event recurrence">
+        {!! $errors->first('recurrence', '<small>:message</small>') !!}
+        <input type="text" name="recurrence" placeholder="Recurrence si oui">
     </div>
 
     <div>
-      <input type="date" name="date_event" placeholder="Event date">
+        {!! $errors->first('date_event', '<small>:message</small>') !!}
+        <input type="date" name="date_event" placeholder="Date">
+    </div>
+
+      <div>
+          {!! $errors->first('time', '<small>:message</small>') !!}
+          <input type="time" name="time" placeholder="Heure de l'évènement">
+      </div>
+
+    <div>
+        {!! $errors->first('price', '<small>:message</small>') !!}
+        <input type="number" name="price" placeholder="Prix">
     </div>
 
     <div>
-      <input type="number" name="price" placeholder="Price">
+        {!! $errors->first('photo', '<small>:message</small>') !!}
+        <input type="file" name="photo">
     </div>
 
     <div>
-      <button type="submit"> Add </button>
+      <button type="submit"> Ajouter </button>
     </div>
 
   </form>
+</section>
+@endsection
 
-  </body>
-</html>
