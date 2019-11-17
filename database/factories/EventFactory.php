@@ -14,5 +14,6 @@ $factory->define(Events::class, function (Faker $faker) {
     	'state' => $faker->boolean,
         'price' => $faker->numberBetween(20, 100),
         'date_event' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = 'Europe/Paris'),
+        'time_event' => $faker->time($format = 'H:i')
     ];
 });

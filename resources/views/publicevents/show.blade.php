@@ -6,6 +6,13 @@
   <body>
     <div>
         <h1>Event {{ $event->id }}</h1>
+
+        @if(isset($event->image))
+        <img src="{{ $event->image->path }}" alt="Image de couverture"/>
+        @else
+        <img src="/img/event.jpg" alt="Image de couverture"/>
+        @endif
+
       <ul>
         <li>Name: {{ $event->name }}</li>
         <li>Description: {{ $event->description }}</li>

@@ -8,7 +8,7 @@
     <h1>Edition Event {{ $event->id }} :</h1>
 
 
-  <form action="/adminevents/{{$event->id}}" method="POST">
+  <form action="/adminevents/{{$event->id}}" method="POST" enctype="multipart/form-data">
   @csrf
   {{ method_field('PATCH') }}
 
@@ -39,6 +39,11 @@
     <div>
       <input type="number" name="state" value= "{{ $event-> state}}" min="0" max="1" placeholder="New state">
     </div>
+
+      <div>
+          {!! $errors->first('photo', '<small>:message</small>') !!}
+          <input type="file" name="photo">
+      </div>
 
     <div>
       <button type="submit"> Edit </button>

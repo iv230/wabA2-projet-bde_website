@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->boolean('state');
             $table->double('price');
             $table->date('date_event');
+            $table->time('time_event');
+            $table->bigInteger('image_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

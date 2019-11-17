@@ -29,7 +29,11 @@
       @if ($event->state == 1)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+            @if(isset($event->image))
+                <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
+            @else
+                <img class="img_event" src="/img/event.jpg" alt="Image de couverture">
+            @endif
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
@@ -54,7 +58,11 @@
       @if ($event->state == 0)
 
         <div class="event">
-        <img class="img_event" src="/img/event.jpg" >
+            @if(isset($event->image))
+                <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
+            @else
+                <img class="img_event" src="/img/event.jpg" alt="Image de couverture">
+            @endif
         <div class=texte>
         <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
         <p class="location">{{ $event->location }}</p>
