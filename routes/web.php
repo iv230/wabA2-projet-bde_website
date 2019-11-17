@@ -36,6 +36,3 @@ Route::get('/login', 'UserController@login');
 Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');
 
-Route::resource ('image', 'ImageController', [
-    'only' => ['create', 'store', 'destroy', 'update']
-]);
