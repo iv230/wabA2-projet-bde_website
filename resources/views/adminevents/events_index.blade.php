@@ -5,7 +5,7 @@
 @endsection
 
 @section('admin')
-    <a class="show_admin" href="/adminevents">Administration </a>
+    <a class="show_admin" href="/publicevents">Site public </a>
 @endsection
 
 
@@ -42,7 +42,7 @@
                         <h2 class="name">{{ $event->name }}</h2>
                         <p class="description">{{ substr($event->description,0,150) }}...</p>
 
-                        <a class="show" href="/adminevents/{{ $event->id }}/edit"> Éditer </a>
+                        <a class="show" href="/adminevents/{{ $event->id }}"> Éditer </a>
                     </div>
                 </div>
             @endif

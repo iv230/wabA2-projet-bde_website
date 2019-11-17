@@ -1,6 +1,11 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+html
+{
+    height:100%;
+}
+
 body{ overflow-y: hidden;
     min-height:100%;
     position: relative;}
@@ -118,7 +123,7 @@ body{ overflow-y: hidden;
     text-decoration: none;
     font-size: 120%;
     padding : 10px;
-    float: right;
+
     margin-right:10px ;
     margin-bottom: 10px;
 
@@ -131,10 +136,18 @@ body{ overflow-y: hidden;
     box-shadow:2px 2px 6px #999;
 }
 
+.show
+{
+    margin-bottom: 80px;
+    float: right;
+
+}
+
 .show_admin
 {
     font-size: 100%;
     float: left;
+
 }
 
 .img_event
@@ -321,19 +334,29 @@ body{ overflow-y: hidden;
 
     .show
     {
-        font-size: 23pt;
+        padding: 2% 10%;
+        font-size: 27pt;
+        margin-bottom: 180px;
     }
 
     .show_admin
     {
-        font-size: 19pt;
+        padding : 10px;
+        float: left;
+        margin:1% ;
+        font-size: 30pt;
+        border:none;
+        border-radius:2px;
+        box-shadow:2px 2px 6px #999;
+        margin-top: 70px;
     }
 
     .create
     {
         float: left;
         margin:1% 30%;
-        font-size: 23pt;
+        font-size: 26pt;
+
     }
 
 

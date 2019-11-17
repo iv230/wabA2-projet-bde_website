@@ -2,6 +2,9 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+html {
+  height: 100%; }
+
 body {
   overflow-y: hidden;
   min-height: 100%;
@@ -81,7 +84,6 @@ body {
   text-decoration: none;
   font-size: 120%;
   padding: 10px;
-  float: right;
   margin-right: 10px;
   margin-bottom: 10px; }
 
@@ -89,6 +91,10 @@ body {
   border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999; }
+
+.show {
+  margin-bottom: 80px;
+  float: right; }
 
 .show_admin {
   font-size: 100%;
@@ -197,14 +203,23 @@ body {
     font-size: 24pt; }
 
   .show {
-    font-size: 23pt; }
+    padding: 2% 10%;
+    font-size: 27pt;
+    margin-bottom: 180px; }
 
   .show_admin {
-    font-size: 19pt; }
+    padding: 10px;
+    float: left;
+    margin: 1%;
+    font-size: 30pt;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px #999;
+    margin-top: 70px; }
 
   .create {
     float: left;
     margin: 1% 30%;
-    font-size: 23pt; } }
+    font-size: 26pt; } }
 
 /*# sourceMappingURL=index.css.map */

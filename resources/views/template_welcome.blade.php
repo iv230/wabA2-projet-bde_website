@@ -50,7 +50,7 @@
         </nav>
     <div class="nav_left">
             <img class="logo_cesi_ingenieur" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
-            @yield('admin')
+        @yield('admin')
 
     </div>
 
@@ -61,8 +61,11 @@
     @yield('welcome')
     @yield('welcome_events')
 
+
+
     @yield('link_event')
     @yield('actual_events')
+    @yield('admin_phone')
     @yield('create_event')
     @yield('edit_event')
 

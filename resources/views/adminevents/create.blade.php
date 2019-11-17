@@ -1,7 +1,7 @@
 @extends('template_welcome')
 
 @section('index_scss')
-    <link rel="stylesheet" href="{{ asset('css/create.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
 @endsection
 
 @section('create_event')

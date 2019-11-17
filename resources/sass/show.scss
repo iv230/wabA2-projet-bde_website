@@ -112,10 +112,11 @@ body{ overflow-y: hidden;
     padding : 10px;
     float: right;
     margin-right:10px ;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
     border:none;
     border-radius:2px;
     box-shadow:2px 2px 6px #999;
+
 }
 
 .buttons_action
@@ -150,6 +151,13 @@ button
 button:hover
 {
     background-color: $orange;
+}
+
+.adminevents
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16%;
 }
 
 
@@ -228,6 +236,16 @@ button:hover
         float:right;
         margin-bottom: 80px;
         margin-right: 25%;
+    }
+
+    .adminevents
+    {
+        justify-content: space-around;
+    }
+
+    .adminevents > a
+    {
+        margin-right: 0;
     }
 
 }
@@ -312,20 +330,32 @@ button:hover
         font-size: 30pt;
         /*margin-right: 130px;*/
         float:left;
-       margin: 3% 30%;
+        margin: 3% 30%;
         text-align: center;
+        margin-bottom: 180px;
 
 
     }
 
     .price
     {
-        font-size: 32pt;
+        font-size:15pt;
     }
 
     button
     {
         font-size: 33pt;
+    }
+
+    .adminevents
+    {
+        justify-content: space-around;
+        margin-left: 0;
+    }
+
+    .adminevents > a
+    {
+        margin-left: 0;
     }
 
 
