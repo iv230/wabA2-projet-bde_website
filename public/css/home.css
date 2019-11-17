@@ -3,7 +3,9 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
 body {
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  min-height: 100%;
+  position: relative; }
 
 .blue_bar {
   background-color: #5D89DA;

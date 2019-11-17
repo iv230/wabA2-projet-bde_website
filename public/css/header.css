@@ -123,8 +123,12 @@ footer
     justify-content: space-between;
     align-items: center;
     background-color: black;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 66px;
+    max-height: 66px;
+
+
 }
 
 .logo_footer
@@ -369,7 +373,7 @@ footer
 
     footer
     {
-        height: 160px;
+        max-height: 160px;
     }
 
     .footer_link

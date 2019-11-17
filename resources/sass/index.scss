@@ -1,7 +1,9 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
-body{ overflow-y: hidden}
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;}
 
 // BLUE BAR OF SEPARATION
 
@@ -10,7 +12,7 @@ body{ overflow-y: hidden}
     background-color: $blue;
     width: 6000px;
     height: 10px;
-
+    margin:0;
 }
 
 
@@ -65,6 +67,7 @@ body{ overflow-y: hidden}
     text-align: left;
     color : $black;
     font-weight : normal;
+    margin-left: 1%;
 }
 
 .event_date
@@ -121,7 +124,7 @@ body{ overflow-y: hidden}
 
 }
 
-.show
+.show, .create
 {
     border:none;
     border-radius:2px;
@@ -149,7 +152,10 @@ body{ overflow-y: hidden}
     text-decoration: none;
     font-size: 120%;
     padding : 10px;
-    margin: 15%;
+    margin: 1% 1%;
+    float: right;
+
+
 }
 //MEDIA QUERIES FOR PC AND IPAD
 
@@ -178,6 +184,13 @@ body{ overflow-y: hidden}
     .show_admin
     {
         font-size: 10pt;
+    }
+
+    .create
+    {
+        float: left;
+        margin:1% 26%;
+        font-size: 100%;
     }
 
 }
@@ -219,6 +232,13 @@ body{ overflow-y: hidden}
     {
         width: 400px;
     }
+
+    .create
+    {
+        float: left;
+        margin:1% 30%;
+    }
+
 
 
 }
@@ -308,6 +328,15 @@ body{ overflow-y: hidden}
     {
         font-size: 19pt;
     }
+
+    .create
+    {
+        float: left;
+        margin:1% 30%;
+        font-size: 23pt;
+    }
+
+
 
 
 }

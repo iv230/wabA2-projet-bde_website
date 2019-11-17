@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Event Edition {{ $event->id }}</title>
-  </head>
-  <body>
+@extends('template_welcome')
 
-    <h1>Edition Event {{ $event->id }} :</h1>
+@section('index_scss')
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}" />
+@endsection
+
+@section('edit_event')
+
+    <section class="creation">
+    <h1 class="t1">Edition d'évènement</h1>
 
 
-  <form action="/adminevents/{{$event->id}}" method="POST" enctype="multipart/form-data">
+  <form class="create" action="/adminevents/{{$event->id}}" method="POST" enctype="multipart/form-data">
   @csrf
   {{ method_field('PATCH') }}
 
@@ -50,6 +52,5 @@
     </div>
 
   </form>
-
-  </body>
-</html>
+    </section>
+@endsection

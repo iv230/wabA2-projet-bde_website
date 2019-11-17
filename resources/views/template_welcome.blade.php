@@ -64,6 +64,7 @@
     @yield('link_event')
     @yield('actual_events')
     @yield('create_event')
+    @yield('edit_event')
 
 
     @yield('link_shop')

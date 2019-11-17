@@ -1,7 +1,9 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
-body{ overflow-y: hidden}
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;}
 
 .events
 {

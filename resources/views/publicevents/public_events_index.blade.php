@@ -21,6 +21,7 @@
 
 
 @section('actual_events')
+    <hr class="blue_bar">
 <article class="events">
       <h2 class="t1"> Évènements actuels </h2>
       <p class="t2"> Inscrivez-vous à nos évènements du moment !</p>
@@ -43,7 +44,7 @@
 
         <a class="show" href="/publicevents/{{ $event->id }}"> En savoir plus </a>
         </div>
-        </div><hr class="blue_bar">
+        </div>
 
       @endif
       @endforeach
@@ -51,6 +52,7 @@
 @endsection
 
 @section('past_events')
+    <hr class="blue_bar">
 <article class="events">
       <h2 class="t1"> Évènements passés</h2>
       <p class="t2"> Commentez et ajoutez des photos !</p>
@@ -72,7 +74,7 @@
 
         <a class="show" href="/publicevents/{{ $event->id }}"> En savoir plus </a>
         </div>
-        </div><hr class="blue_bar">
+        </div>
 
       @endif
       @endforeach
