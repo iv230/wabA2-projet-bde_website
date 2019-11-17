@@ -33,13 +33,14 @@ input, textarea {
   background-color: #FFD88F; }
 
 button {
-  font-size: 18pt;
-  border: none;
   background-color: #5D89DA;
-  padding: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999;
-  color: #FFFFFF;
+  font-size: 18pt;
+  padding: 6px;
   float: left;
   margin-top: 10px;
   margin-bottom: 80px;

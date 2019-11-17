@@ -30,11 +30,6 @@ body {
   color: #000000;
   font-weight: normal; }
 
-.event_date {
-  color: #000000;
-  font-size: 140%;
-  font-weight: normal; }
-
 .event {
   display: flex;
   justify-content: center;
@@ -87,6 +82,9 @@ body {
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999; }
 
+.show:hover {
+  background-color: #FFC252; }
+
 .buttons_action {
   display: flex;
   justify-content: space-between;
@@ -100,13 +98,16 @@ body {
   font-size: 18pt; }
 
 button {
-  font-size: 18pt;
-  border: none;
   background-color: #5D89DA;
-  padding: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999;
-  color: #FFFFFF; }
+  font-size: 18pt;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999; }
 
 button:hover {
   background-color: #FFC252; }

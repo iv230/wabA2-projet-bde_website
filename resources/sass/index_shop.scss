@@ -1,0 +1,25 @@
+@import 'general';
+@import 'welcome';
+@import 'admin';
+
+// WELCOME ASIDE
+
+.welcome_t
+{
+    @include bg_blue;
+    font-size: 36pt;
+    text-align: center;
+    font-weight : normal;
+    width: 450px;
+    position: absolute;
+    margin-top : 10%;
+
+    //MEDIA QUERIES FOR PC AND IPAD
+    @media screen and (max-width: 800px)
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
+
+}

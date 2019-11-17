@@ -2,26 +2,57 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+html {
+  height: 100%; }
+
 body {
   overflow-y: hidden;
   min-height: 100%;
   position: relative; }
-
-.blue_bar {
-  background-color: #5D89DA;
-  width: 100%;
-  height: 10px;
-  margin: 0; }
 
 .welcome {
   display: flex;
   justify-content: center;
   margin-left: 15%;
   margin-top: 66px; }
+  @media all and (max-device-width: 480px) {
+    .welcome {
+      margin: 0;
+      margin-top: 160px;
+      width: 100%; } }
 
 .welcome_img {
   width: 100vw;
   opacity: 0.6; }
+
+.welcome_t {
+  background-color: #5D89DA;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 36pt;
+  text-align: center;
+  font-weight: normal;
+  width: 450px;
+  position: absolute;
+  margin-top: 10%; }
+  @media screen and (max-width: 800px) {
+    .welcome_t {
+      width: 20%;
+      min-width: 180px;
+      font-size: 120%; } }
+  @media all and (max-device-width: 480px) {
+    .welcome_t {
+      font-size: 42pt;
+      width: 450px; } }
+
+.blue_bar {
+  background-color: #5D89DA;
+  width: 100%;
+  height: 10px;
+  margin: 0; }
+  @media all and (max-device-width: 480px) {
+    .blue_bar {
+      height: 30px; } }
 
 .presentation {
   position: absolute;
@@ -29,6 +60,10 @@ body {
   align-items: center;
   flex-direction: column;
   margin-top: 10px; }
+  @media screen and (max-width: 600px) {
+    .presentation {
+      width: 20%;
+      min-width: 150px; } }
 
 .logo {
   width: 50%;
@@ -39,6 +74,9 @@ body {
   color: #000000;
   text-align: center;
   font-weight: bold; }
+  @media screen and (max-width: 600px) {
+    .titre {
+      font-size: 120%; } }
 
 .welcome_link {
   display: flex;
@@ -53,32 +91,17 @@ body {
   background-color: #5D89DA;
   font-weight: normal;
   margin-top: 10%; }
+  @media screen and (max-width: 600px) {
+    .show {
+      width: 20%;
+      min-width: 180px;
+      font-size: 120%; } }
 
 .link {
   text-decoration: none;
   color: #FFFFFF; }
 
-@media screen and (max-width: 600px) {
-  .presentation {
-    width: 20%;
-    min-width: 150px; }
-
-  .titre {
-    font-size: 120%; }
-
-  .show {
-    width: 20%;
-    min-width: 180px;
-    font-size: 120%; } }
 @media all and (max-device-width: 480px) {
-  .blue_bar {
-    height: 30px; }
-
-  .welcome {
-    margin: 0;
-    margin-top: 160px;
-    width: 100%; }
-
   .welcome_link {
     margin: 0; }
 

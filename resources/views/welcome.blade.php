@@ -15,7 +15,7 @@
       </div>
 
 
-</aside><hr class="blue_bar">
+</aside><div class="blue_bar"></div>
 
 @endsection
 
@@ -25,7 +25,7 @@
         <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
     <h2 class="show"><a class="link" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a></h2>
 
-    </article><hr class="blue_bar">
+    </article><div class="blue_bar"></div>
 @endsection
 
 @section('link_shop')

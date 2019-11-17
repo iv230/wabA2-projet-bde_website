@@ -1,0 +1,48 @@
+// WELCOME ASIDE
+
+.welcome
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    margin-top: 66px;
+    @media all and (max-device-width: 480px)
+    {
+        margin:0;
+        margin-top: 160px;
+        width: 100%;
+    }
+}
+
+.welcome_img
+{
+    width: 100vw;
+    opacity: 0.6;
+}
+
+
+.welcome_t
+{
+    @include bg_blue;
+    font-size: 36pt;
+    text-align: center;
+    font-weight : normal;
+    width: 450px;
+    position: absolute;
+    margin-top : 10%;
+
+    //MEDIA QUERIES FOR PC AND IPAD
+    @media screen and (max-width: 800px)
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
+
+    @media all and (max-device-width: 480px)
+    {
+        font-size: 42pt;
+        width: 450px;
+    }
+
+}
