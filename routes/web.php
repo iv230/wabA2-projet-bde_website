@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articles', 'ArticleController');
 Route::resource('categories', 'CategoryController');
 Route::get('/articles/{id}/delete', 'ArticleController@destroy');
 
-Route::resource('adminevents', 'EventController');
+Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::resource('publicevents', 'PublicEventController');
 Route::resource('comments', 'CommentController');
 Route::get('participants', 'ParticipantController@index');
