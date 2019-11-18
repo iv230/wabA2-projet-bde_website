@@ -10,9 +10,3 @@
 @section('basket')
     <a href="#" class="m-link"><i class="fa fa-shopping-basket"></i> Panier</a>
 @endsection
-
-
-
-@yield('article')
-
-@yield('shop')

@@ -1,0 +1,32 @@
+.carousel_container {
+    width: 85%;
+    float: right;
+    margin-top: 120px;
+}
+
+#carouselExemple {
+   width: 40%;
+   margin: 0 auto;
+}
+
+.carousel-item img {
+   width: 100%;
+   height: auto;
+   margin-top: 50px;
+}
+
+.carousel_title_container {
+   width: 500px;
+   margin: auto;
+}
+
+.carousel_title {
+   text-align: center;
+   border-bottom: 3px solid #f7b731;
+   display: inline;
+   font-family: 'Roboto';
+   font-size: 30px;
+   color: #333;
+   text-align: center;
+   margin: auto;
+}
