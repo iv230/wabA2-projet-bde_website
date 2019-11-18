@@ -77,11 +77,9 @@
     <h3 class="t3">Commenter:</h3>
 
     <form action="/comments" method="POST">
-    @csrf
+    {{ csrf_field() }}
 
-      <div>
-        <input type="hidden" name="autor" value="{{ session('username') }}">
-      </div>
+    <input type="hidden" name="autor" value="{{ session('username') }}">
 
       <div>
         {!! $errors->first('comment_content', '<small>:message</small>') !!}
