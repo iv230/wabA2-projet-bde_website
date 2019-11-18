@@ -34,7 +34,7 @@
 
 <article class="welcome_link">
     <img class="welcome_img" src="/img/boutique.jpg" alt="BDE" />
-    <h2 class="show"><a class="link" href="/articles">ACCÉDEZ À NOTRE BOUTIQUE</a></h2>
+    <h2 class="show"><a class="link" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a></h2>
 
 </article>
 

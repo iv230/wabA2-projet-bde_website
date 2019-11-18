@@ -14,3 +14,5 @@
 
 
 @yield('article')
+
+@yield('shop')

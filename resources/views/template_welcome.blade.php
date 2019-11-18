@@ -7,6 +7,7 @@
     <title>BDE</title>
 
     <!--css-->
+    <link rel="stylesheet" href="/css/boutique.css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header.css">
     <!-- <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">-->

@@ -19,3 +19,8 @@
     </aside>
 
 @endsection
+
+
+@section('shop')
+
+@endsection
