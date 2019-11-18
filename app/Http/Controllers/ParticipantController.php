@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use App\Gestion\UserAuthApiGestion;
 use App\ApiModelHydrator;
@@ -12,6 +13,8 @@ use App\Events as Events;
 
 class ParticipantController extends Controller
 {
+    private $token;
+
 	public function __construct()
     {
         try
@@ -36,12 +39,12 @@ class ParticipantController extends Controller
 
 	public function show($id_event) {
 
-		$participant = Participant::find($id_event);
+		$participants = Participant::where('id_event', $id_event)->get();
 
-		$user = new User();
-        $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $participant->id_user))[0]);
+		//$user = new User();
+        //$user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $participants->id_user)));
 
-		return view('participants.show', array('participant' => $participant, 'user' => $user));
+		return view('participants.show', array('participants' => $participants, 'id_event' => $id_event));
 	}
 
     public function isParticipating($id_user, $id_event) {
