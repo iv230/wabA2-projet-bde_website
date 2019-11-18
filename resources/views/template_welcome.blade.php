@@ -2,11 +2,18 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+
     <title>BDE</title>
 
+    <!-- font-awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font-awesome-->
+
+    <!--css-links-->
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
+    <!--css-links-->
+    
     @yield('css')
 </head>
 <body>
@@ -16,10 +23,10 @@
         <nav class="menu">
             <div class="inner">
                     <div class="cesi">
-                            <a href="/"><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
+                        <a href="/"><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                     </div>
                     <div class="m-left">
-                            <a href="/" class="bde">bde cesi nice</a>
+                            <a href="#" class="bde">bde cesi nice</a>
                     </div>
 
                     <div class="m-right">
@@ -43,6 +50,7 @@
                     </div></div>
 
         </nav>
+
     <div class="nav_left">
             <img class="logo_cesi_ingenieur" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
         @yield('admin')
