@@ -45,7 +45,7 @@ textarea {
     font-size: 45px; }
 
   .show {
-    margin-bottom: 0px; } }
+    margin-bottom: 0; } }
 .events {
   margin-top: 76px;
   margin-left: 16%; }
@@ -140,7 +140,7 @@ button {
   border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999;
-  font-size: 18pt;
+  font-size: 120%;
   padding: 6px;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999; }
