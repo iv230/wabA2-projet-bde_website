@@ -100,6 +100,7 @@
     @yield('welcome_events')
     @yield('welcome_shop')
     @yield('shop')
+    @yield ('article')
 
     @yield('content')
 

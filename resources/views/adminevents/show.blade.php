@@ -43,7 +43,8 @@
 @endif
 <div class="buttons_action">
     <a class="like" href="">J'aime (15)</a><br>
-    @if ($event-> state == 1)
+</div>
+@if ($event-> state == 1)
 
     <div class="participate">
         <form action="/participants" method="POST">
@@ -59,9 +60,9 @@
 
             <input type="hidden" name="idevent" value="{{$event->id}}">
         </form>
-    </div>
+     </div>
     @endif
-</div> <br>
+<br>
 <div class="adminevents">
     <form method="POST" action="/adminevents/{{ $event->id }}">
         {{ csrf_field() }}

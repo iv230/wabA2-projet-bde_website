@@ -56,29 +56,30 @@ textarea {
   margin-top: 76px;
   margin-left: 16%; }
 
-.img_event {
-  width: 600px;
-  margin: 20px; }
-
-.t1 {
-  color: #000000;
-  text-align: center;
-  font-size: 180%;
-  font-weight: normal; }
-
-.t2 {
-  font-size: 160%;
-  text-align: left;
-  color: #000000;
-  font-weight: normal; }
-
 .event {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media screen and (max-width: 1100px) {
+    .event {
+      flex-direction: column;
+      align-items: center; } }
+
+.img_event {
+  width: 600px;
+  margin: 20px; }
+  @media screen and (max-width: 1100px) {
+    .img_event {
+      width: 550px;
+      margin-bottom: 0;
+      border-bottom: #5D89DA 10px solid; } }
 
 .texte {
   width: 160%; }
+  @media screen and (max-width: 1100px) {
+    .texte {
+      width: 550px;
+      border-bottom: #5D89DA 10px solid; } }
 
 .event_date {
   color: #FFC252;
@@ -110,34 +111,51 @@ textarea {
   margin-left: 20px;
   width: 600px;
   text-align: center; }
+  @media screen and (max-width: 1100px) {
+    .price {
+      margin: 10px 0 10px 0;
+      width: 100%; } }
 
 .show {
   background-color: #5D89DA;
   color: #FFFFFF;
   text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999;
   font-size: 120%;
   padding: 10px;
   float: right;
   margin-right: 10px;
-  margin-bottom: 80px;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 6px #999; }
+  margin-bottom: 80px; }
+  @media screen and (max-width: 1100px) {
+    .show {
+      float: right;
+      margin-bottom: 80px;
+      margin-right: 25%; } }
 
 .show:hover {
   background-color: #FFC252; }
 
-.buttons_like {
-  margin-left: 20px;
+.buttons_action {
+  margin-left: 16%;
   margin-right: 10px;
   width: 600px;
   text-align: center;
   margin-bottom: 5px; }
+  @media screen and (max-width: 1100px) {
+    .buttons_action {
+      width: 100%; } }
 
 .like {
   text-decoration: none;
   color: #000000;
-  font-size: 18pt; }
+  font-size: 18pt;
+  margin-left: 10px; }
+  @media screen and (max-width: 1100px) {
+    .like {
+      font-size: 18pt;
+      margin-right: 140px; } }
 
 button {
   background-color: #5D89DA;
@@ -148,9 +166,10 @@ button {
   box-shadow: 2px 2px 6px #999;
   font-size: 120%;
   padding: 6px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 6px #999;
   margin-right: 10px; }
+  @media screen and (max-width: 1100px) {
+    button {
+      font-size: 18pt; } }
 
 button:hover {
   background-color: #FFC252; }
@@ -159,10 +178,16 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-left: 16%; }
+  @media screen and (max-width: 1100px) {
+    .adminevents {
+      justify-content: space-around; } }
 
 .action {
   margin-left: 20px;
   margin-right: 10px; }
+  @media screen and (max-width: 1100px) {
+    .action {
+      height: 100%; } }
 
 .participate {
   display: flex;
@@ -170,58 +195,11 @@ button:hover {
   font-size: 150%; }
 
 @media screen and (max-width: 1100px) {
-  .event {
-    flex-direction: column;
-    align-items: center; }
-
   .name, .description, .location, .event_date {
     text-align: center; }
 
-  .img_event {
-    width: 550px;
-    margin-bottom: 0;
-    border-bottom: #5D89DA 10px solid; }
-
-  .texte {
-    width: 550px;
-    /*border: 3px orange solid;
-    padding: 5px*/
-    border-bottom: #5D89DA 10px solid; }
-
-  .price {
-    font-size: 16pt;
-    margin: 10px 0 10px 0;
-    width: 100%; }
-
-  .buttons_like {
-    width: 100%;
-    margin: 10px 0 10px 0; }
-
-  .like {
-    font-size: 18pt; }
-
-  button {
-    font-size: 18pt;
-    border: none;
-    background-color: #5D89DA;
-    padding: 6px;
-    border-radius: 2px;
-    box-shadow: 2px 2px 6px #999;
-    color: #FFFFFF; }
-
-  .show {
-    float: right;
-    margin-bottom: 80px;
-    margin-right: 25%; }
-
-  .adminevents {
-    justify-content: space-around; }
-
   .adminevents > a {
-    margin-right: 0; }
-
-  .action {
-    height: 100%; } }
+    margin-right: 0; } }
 @media screen and (max-width: 800px) {
   .img_event {
     width: 400px; }
@@ -278,14 +256,20 @@ button:hover {
     font-size: 44pt;
     margin: 40px; }
 
+  .adminevents {
+    margin: 0; }
+
+  .buttons_action {
+    margin: 0; }
+
   .like {
-    font-size: 33pt;
+    font-size: 27pt;
     margin: 0; }
 
   .show {
     font-size: 30pt;
     float: left;
-    margin: 1% 1%;
+    margin: auto;
     text-align: center;
     margin-bottom: 180px; }
 
@@ -296,6 +280,6 @@ button:hover {
     text-align: justify; }
 
   .price {
-    font-size: 30pt; } }
+    font-size: 27pt; } }
 
 /*# sourceMappingURL=show.css.map */
