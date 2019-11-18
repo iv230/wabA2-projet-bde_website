@@ -8,6 +8,7 @@ class UserAuth
 {
     /**
      * Handle an incoming request.
+     * Used to prevent access to user control panel to non-admins
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

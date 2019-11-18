@@ -8,6 +8,7 @@ class CommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * Must be logged into an account.
      *
      * @return bool
      */
@@ -18,6 +19,7 @@ class CommentRequest extends FormRequest
 
     /**
      * Get the validation rules that apply to the request.
+     * Comment body must not be empty.
      *
      * @return array
      */

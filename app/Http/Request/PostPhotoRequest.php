@@ -8,6 +8,8 @@ class PostPhotoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * Must be logged into an account.
+     * TO DO: Must be a participant of the event
      *
      * @return bool
      */
@@ -19,6 +21,7 @@ class PostPhotoRequest extends FormRequest
 
     /**
      * Get the validation rules that apply to the request.
+     * The photo file must not be empty.
      *
      * @return array
      */

@@ -8,6 +8,7 @@ class UserLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * User must not be logged into an account.
      *
      * @return bool
      */

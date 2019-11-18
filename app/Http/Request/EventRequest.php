@@ -8,6 +8,7 @@ class EventRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * The user must be logged on a BDE or admin account
      *
      * @return bool
      */

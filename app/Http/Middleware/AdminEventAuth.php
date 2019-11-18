@@ -8,6 +8,7 @@ class AdminEventAuth
 {
     /**
      * Handle an incoming request.
+     * Used to prevent access admin page to non-admins
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

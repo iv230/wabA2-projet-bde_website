@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class LikeController extends Controller
 {
     /**
+     * Creates a like on an event
+     *
      * @param LikeRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -25,6 +27,8 @@ class LikeController extends Controller
     }
 
     /**
+     * Return the number of likes for an event
+     *
      * @param $id_event
      * @return int
      */
@@ -34,6 +38,8 @@ class LikeController extends Controller
     }
 
     /**
+     * Say if an user has liked a specific event
+     *
      * @param $id_event
      * @param $id_user
      * @return bool

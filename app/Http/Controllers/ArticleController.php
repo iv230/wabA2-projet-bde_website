@@ -9,14 +9,13 @@ use App\Repositories\ArticleRepository;
 
 class ArticleController extends Controller
 {
-
     protected $repository;
 
     public function __construct(ArticleRepository $repository)
     {
         $this->repository = $repository;
     }
-    
+
     /**
      * Display a listing of the resource.
      *

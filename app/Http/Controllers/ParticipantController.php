@@ -32,12 +32,23 @@ class ParticipantController extends Controller
         }
     }
 
+    /**
+     * Displays a list of all participants for each events
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
 	public function index() {
 		$participants = Participant::all();
 
         return view('participants.index', array('participants' => $participants));
 	}
 
+    /**
+     * Displays the list for an event
+     *
+     * @param $id_event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
 	public function show($id_event) {
 
 		$participants = Participant::where('id_event', $id_event)->get();
@@ -46,6 +57,13 @@ class ParticipantController extends Controller
 		return view('participants.show', array('participants' => $participants, 'event' => $event));
 	}
 
+    /**
+     * Says if an user participates to an event
+     *
+     * @param $id_user
+     * @param $id_event
+     * @return bool
+     */
     public function isParticipating($id_user, $id_event) {
     	//$participants = Participant::where('id_user', '=', $id_user, 'AND', 'id_event', '=', $id_event)->get();
         $participants = Participant::whereRaw('id_user =' . $id_user . ' and id_event=' . $id_event)->get();
@@ -53,6 +71,12 @@ class ParticipantController extends Controller
     	return count($participants) >= 1;
     }
 
+    /**
+     * Make an user participate to an event
+     *
+     * @param ParticipateRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function createParticipant(ParticipateRequest $request) {
     	$participant = new Participant;
     	$participant -> id_event = $request -> input('id_event');

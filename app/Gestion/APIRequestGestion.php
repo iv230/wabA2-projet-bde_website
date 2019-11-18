@@ -11,6 +11,15 @@ class APIRequestGestion
 {
     const API_URL = 'http://app-nodejs:8080';
 
+    /**
+     * Execute a request to the REST API
+     *
+     * @param $method
+     * @param $url
+     * @param $token
+     * @param $params
+     * @return array
+     */
     private static function request($method, $url, $token, $params)
     {
         $client = new GuzzleHttp\Client();
