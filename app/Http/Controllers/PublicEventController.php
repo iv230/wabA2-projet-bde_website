@@ -32,7 +32,12 @@ class PublicEventController extends Controller
     public function show($id)
     {
         $event = Events::find($id);
-        $comments = Comment::all();
+
+        if (!isset($event))
+            abort(404, 'Not Found - L\'évènement #' . $id . 'n\'existe pas.');
+
+        $comments = Comment::where('id_event', $event->id);
+
         return view('publicevents.show', array('event' => $event), array('comments' => $comments));
     }
 
