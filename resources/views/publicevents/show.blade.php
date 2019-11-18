@@ -98,7 +98,11 @@
 
     @if(session()->has('user'))
     @if(session('role') >= 3)
-    <button type="submit"> Supprimer </button>
+    <form action="/comments/{{ $comment->id }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button type="submit"> Supprimer </button>
+    </form>
     @endif
     @endif
     @endif
