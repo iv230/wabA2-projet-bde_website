@@ -24,17 +24,6 @@
       </ul>
     </div>
 
-    {!! Form::open(array('method'=>'post','class'=>$event->id,
-  'action'=>'HomeController@imagelike')) !!}
-    {!! Form::hidden('idevent', $event->id) !!}
-    {!! Form::submit('',array('class'=>'btn btn-primary cherry','id'=>$event->id)) !!}
-    {!!$event->likes!!}
-    <a class="btn btn-default" role="button" data-toggle="modal" data-target="#mypop{{$index}}">Comment</a>
-    {!! Form::close() !!}
-
-    <span class="likebtn-wrapper" data-lang="fr" data-ef_voting="heartbeat" data-identifier="item_1"></span>
-    <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
-
     @if(session()->has('user'))
     @if (session('role') == 2)
         <a href="/participants/{{ $event->id }}">Dl</a>

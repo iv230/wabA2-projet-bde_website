@@ -28,7 +28,6 @@ Route::get('participants/{id_event}', 'ParticipantController@show');
 Route::post('participants', 'ParticipantController@createParticipant');
 
 Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
-Route::post('publicevents/{id}','PublicEventController@toggleFavorite');
 
 Route::resource('/users', 'UserController');
 Route::get('/login', 'UserController@login');
