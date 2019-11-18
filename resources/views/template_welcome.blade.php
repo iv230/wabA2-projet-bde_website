@@ -29,22 +29,22 @@
 <nav class="menu" role="navigation">
             <div class="container_navbar">
                 <div class="cesi">
-                    <img class="logocesi" src="/img/logo.png" alt="logo cesi">
+                    <a href="/" ><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                 </div>
                 <div class="m-left">
-                    <a href="#" class="title"> BDE Cesi Nice</a>
+                    <a href="/" class="title"> BDE Cesi Nice</a>
                 </div>
 
                 <div class="m-right">
                     @yield('search_bar')
 
                     @if(session()->has('user'))
-                    <a class="m-link">{{ session('username') }}</a>
+                    <a href="/users/show" class="m-link">{{ session('username') }}</a>
                     @yield('basket')
                     <a href="/logout" class="m-link"><i class="fa fa-sign-in"></i> Déconnexion</a>
                     @else
-                    <a href="#" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
-                    <a href="#" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                    <a href="/users/create" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
+                    <a href="login" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
                     @endif
                 </div>
 
@@ -131,7 +131,7 @@
         <div class="link_footer">
             <a href="#" class="footer_link"> Mentions légales </a>
             <a href="#" class="footer_link"> Conditions générales de vente </a>
-            <a href="#" class="footer_link"> © CESI 2019 </a>
+            <a class="footer_link"> © CESI 2019 </a>
         </div>
 
 </footer>
