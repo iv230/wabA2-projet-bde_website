@@ -9,17 +9,13 @@
 @endsection
 
 
-@section('welcome_events')
+@section('content')
 
 <aside class="welcome">
     <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
     <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
 </aside>
 
-@endsection
-
-
-@section('actual_events')
 
 <hr class="blue_bar">
 <article class="events">
@@ -52,9 +48,6 @@
 </article>
 <a class="create" href="/adminevents/create"> Ajouter un évènement </a>
 
-@endsection
-
-@section('past_events')
 
 <hr class="blue_bar">
 <article class="events">
@@ -77,7 +70,7 @@
             <h2 class="name">{{ $event->name }}</h2>
             <p class="description">{{substr($event->description,0,100) }}...</p>
 
-            <a class="show" href="/adminevents/{{ $event->id }}/edit"> En savoir plus </a>
+            <a class="show" href="/adminevents/{{ $event->id }}"> Editer </a>
         </div>
     </div>
 

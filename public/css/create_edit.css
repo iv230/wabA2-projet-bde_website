@@ -47,9 +47,22 @@ button {
   float: left;
   margin-top: 10px;
   margin-bottom: 80px;
-  margin-right: 1%;
-  /*max-height: 40px;
-  max-width: 260px;*/ }
+  margin-right: 1%; }
+
+.show {
+  background-color: #5D89DA;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999;
+  text-align: center;
+  font-size: 15pt;
+  padding: 6px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 80px; }
 
 .list {
   background-color: #5D89DA;
@@ -61,6 +74,9 @@ button {
   font-size: 15pt;
   padding: 6px;
   margin-right: 1%; }
+  @media all and (max-device-width: 480px) {
+    .list {
+      font-size: 30pt; } }
 
 .list::-ms-expand {
   display: none; }
@@ -71,6 +87,9 @@ button {
   outline: none; }
 
 button:hover {
+  background-color: #FFC252; }
+
+.show:hover {
   background-color: #FFC252; }
 
 .choice {
@@ -84,7 +103,8 @@ button:hover {
 
   .create {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    justify-content: center; }
 
   .label {
     font-size: 36pt; }
@@ -96,9 +116,10 @@ button:hover {
     font-size: 36pt;
     border: 5px solid #5D89DA; }
 
-  button {
+  button, .show {
     font-size: 46pt;
     padding: 20px 50px;
+    margin: auto;
     margin-bottom: 180px;
     margin-top: 50px;
     margin-left: 1%; } }

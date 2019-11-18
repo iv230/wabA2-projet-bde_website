@@ -22,13 +22,13 @@
 
 <body>
 
-<!--NAV-BAR-->
-<header >
+    <!--NAV-BAR-->
+    <header>
 
-<nav class="menu" role="navigation">
+        <nav class="menu">
             <div class="container_navbar">
                 <div class="cesi">
-                    <a href="/" ><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
+                    <a href="/"><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                 </div>
                 <div class="m-left">
                     <a href="/" class="title"> BDE Cesi Nice</a>
@@ -94,38 +94,18 @@
         </div>
 
     </header>
-<!--END-OF-NAV-BAR-->
+    <!--END-OF-NAV-BAR-->
 
-    @yield('welcome')
-    @yield('welcome_events')
-    @yield('welcome_shop')
-    @yield('shop')
-    @yield ('article')
 
     @yield('content')
 
 
-    @yield('link_event')
-    @yield('actual_events')
-    @yield('admin_phone')
-    @yield('create_event')
-    @yield('edit_event')
 
-
-    @yield('link_shop')
-    @yield('past_events')
-
-    @yield('event')
-    @yield('like')
-    @yield('participation')
-    @yield('return')
-    @yield('comments')
-
-<!--FOOTER-->
-<footer >
-    <div class="logo_footer">
-        <img class="footer_cesi" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
-        <img class="footer_bde" src="/img/logo.png" alt="logo cesi">
+    <!--FOOTER-->
+    <footer>
+        <div class="logo_footer">
+            <img class="footer_cesi" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
+            <img class="footer_bde" src="/img/logo.png" alt="logo cesi">
 
         </div>
         <div class="link_footer">
@@ -134,11 +114,11 @@
             <a class="footer_link"> © CESI 2019 </a>
         </div>
 
-</footer>
-<!--END-OF-FOOTER-->
+    </footer>
+    <!--END-OF-FOOTER-->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/js/nav_bar.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/js/nav_bar.js" charset="utf-8"></script>
 </body>
 
 </html>

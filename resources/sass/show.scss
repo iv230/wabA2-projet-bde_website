@@ -117,7 +117,6 @@
     {
         float:right;
         margin-bottom: 80px;
-        margin-right: 25%;
     }
 
 }
@@ -129,7 +128,6 @@
 
 .buttons_action
 {
-    margin-left: 16%;
     margin-right: 10px;
     width: 600px;
     text-align: center;
@@ -154,9 +152,6 @@
     @media screen and (max-width: 1100px)
     {
         font-size: 18pt;
-        margin-right: 140px;
-
-
     }
 }
 
@@ -185,7 +180,6 @@ button:hover
 {
     display: flex;
     justify-content: space-between;
-    margin-left: 16%;
 
     //MEDIA QUERIES FOR PC
     @media screen and (max-width: 1100px)
@@ -249,6 +243,7 @@ button:hover
         margin-right: 12%;
     }
 
+
     .show_admin {
         font-size: 55%;
         padding: 5px;
@@ -260,16 +255,17 @@ button:hover
     }
 
     button {
-        font-size: 33pt;
+        font-size: 30px;
     }
 
     .adminevents {
-        justify-content: space-around;
+        justify-content: space-between;
         margin-left: 0;
     }
 
     .adminevents > a {
             margin-left: 0;
+
     }
     }
 
@@ -332,14 +328,13 @@ button:hover
     }
 
     .like {
-        font-size: 27pt;
+        font-size: 26pt;
         margin: 0;
     }
 
     .show {
         font-size: 30pt;
         float: left;
-        margin: auto;
         text-align: center;
         margin-bottom: 180px;
     }
@@ -356,7 +351,12 @@ button:hover
 
     .price
     {
-        font-size: 27pt;
+        font-size: 26pt;
+    }
+
+    .action
+    {
+        justify-content: center;
     }
 
 }
