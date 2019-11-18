@@ -45,6 +45,24 @@
         </div>
     @endif
     @endif
+
+        @if(session()->has('user'))
+            <div class="addImage"></div>
+            <form action="/images" method="POST" enctype="multipart/form-data">
+                <div>
+                    {!! $errors->first('photo', '<small>:message</small>') !!}
+                    <input type="file" name="photo">
+                </div>
+
+                <div>
+                    <button type="submit"> Ajouter une photo </button>
+                </div>
+
+                <input type="hidden" name="iduser" value="{{ session('user') }}">
+
+                <input type="hidden" name="idevent" value="{{$event->id}}">
+            </form>
+        @endif
     <div class="buttons_action">
     <a class="like" href="">J'aime (15)</a><br>
     @if ($event-> state == 1)

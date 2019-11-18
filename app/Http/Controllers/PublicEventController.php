@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Gestion\FileUploadGestion;
+use App\Http\Request\EventRequest;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Events as Events;
 use App\Comment as Comment;
@@ -31,5 +34,32 @@ class PublicEventController extends Controller
         $event = Events::find($id);
         $comments = Comment::all();
         return view('publicevents.show', array('event' => $event), array('comments' => $comments));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\EventRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeImage(Request $request)
+    {
+
+        $image = $request->file('photo');
+        $extension = $image->getClientOriginalExtension();
+        $picture_name = 'event_' . $event->id;
+
+        FileUploadGestion::uploadFile($image, $picture_name, '/img/eventsUser');
+
+        $path = '/img/eventsUser/' . $picture_name . '.' .$extension;
+
+        $image = new Image;
+        $image -> path = $path;
+        $image -> save();
+
+        $event -> image_id = $image->id;
+        $event -> save();
+
+        return redirect('publicevents/' . $event->id);
     }
 }
