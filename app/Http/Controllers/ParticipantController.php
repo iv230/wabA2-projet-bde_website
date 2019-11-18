@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Request\ParticipateRequest;
 use Exception;
 use Illuminate\Http\Request;
 use App\Gestion\UserAuthApiGestion;
@@ -46,15 +47,16 @@ class ParticipantController extends Controller
 	}
 
     public function isParticipating($id_user, $id_event) {
-    	$participant = Participant::where('id_user', '=', $id_user, 'AND', 'id_event', '=', $id_event)->get();
+    	//$participants = Participant::where('id_user', '=', $id_user, 'AND', 'id_event', '=', $id_event)->get();
+        $participants = Participant::whereRaw('id_user =' . $id_user . ' and id_event=' . $id_event)->get();
 
-    	return isset($participant);
+    	return count($participants) >= 1;
     }
 
-    public function createParticipant(Request $request) {
+    public function createParticipant(ParticipateRequest $request) {
     	$participant = new Participant;
-    	$participant -> id_event = $request -> input('idevent');
-    	$participant -> id_user = $request -> input('iduser');
+    	$participant -> id_event = $request -> input('id_event');
+    	$participant -> id_user = $request -> input('id_user');
 
     	$participant -> save();
 

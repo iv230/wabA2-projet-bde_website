@@ -76,9 +76,9 @@
                     <button type="submit"> Participer </button>
                 </div>
 
-                <input type="hidden" name="iduser" value="{{ session('user') }}">
+                <input type="hidden" name="id_user" value="{{ session('user') }}">
 
-                <input type="hidden" name="idevent" value="{{$event->id}}">
+                <input type="hidden" name="id_event" value="{{$event->id}}">
             </form>
         </div>
 
