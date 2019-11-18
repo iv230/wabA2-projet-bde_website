@@ -49,6 +49,14 @@
 
 .m-right{
     float: right;
+    display: flex;
+
+}
+
+.md-form
+{
+    display: flex;
+    align-items: center;
 }
 
 .m-link{
@@ -107,6 +115,7 @@ span.m-toggle-icon:after{top: -14px;}
         transform: translateY(-100%);
         transition: all 0.2s ease-in-out;
         z-index: -1;
+        display: block;
     }
     .m-link{
         display: block;
@@ -145,7 +154,7 @@ span.m-toggle-icon:after{top: -14px;}
 
 @media all and (max-device-width : 480px ) {
 
-    /*NAV BAR*/
+
 
     .menu
     {
@@ -165,14 +174,7 @@ span.m-toggle-icon:after{top: -14px;}
         font-size: 46pt;
     }
 
-    .cesi
-    {
-        max-width: 150px;
-        max-height: 150px;
-        margin: 0 20px 0 0;
-    }
-
-    .logocesi
+    .logocesi, .cesi
     {
         width: 150px;
         height: 150px;
@@ -199,8 +201,6 @@ span.m-toggle-icon:after{top: -14px;}
         top:158px;
         line-height: 160px;
 
-
-
     }
 
 
@@ -224,5 +224,20 @@ span.m-toggle-icon:after{top: -14px;}
         margin:auto;
         width: 400px;
 
+    }
+
+    .title
+    {
+        font-size: 46pt;
+    }
+
+    .md-form
+    {
+        margin: 0 30%;
+    }
+
+    .form-control
+    {
+        height : 60px;
     }
 }

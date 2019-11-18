@@ -9,7 +9,6 @@
     <!--css-->
     <link rel="stylesheet" href="/css/boutique.css">
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     @yield('css')
     <!--css-->
@@ -39,7 +38,7 @@
                     @yield('search_bar')
 
                     @if(session()->has('user'))
-                    <a href="/users/show" class="m-link">{{ session('username') }}</a>
+                    <div class="test"><a href="/users/show" class="m-link">{{ session('username') }}</a></div>
                     @yield('basket')
                     <a href="/logout" class="m-link"><i class="fa fa-sign-in"></i> Déconnexion</a>
                     @else
