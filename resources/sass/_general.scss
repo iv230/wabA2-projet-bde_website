@@ -1,0 +1,26 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+html
+{
+    height: 100%;
+}
+
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;
+}
+
+@mixin bg_blue
+{
+    background-color : $blue;
+    color : $white;
+    text-decoration: none;
+}
+
+@mixin shadow
+{
+    border:none;
+    border-radius:2px;
+    box-shadow:2px 2px 6px #999;
+}

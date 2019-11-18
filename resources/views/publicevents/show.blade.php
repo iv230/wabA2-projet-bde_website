@@ -1,6 +1,6 @@
 @extends('template_welcome')
 
-@section('index_scss')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/show.css') }}" />
 @endsection
 
@@ -27,11 +27,15 @@
             <p class="price">Coût de l'évènement : {{$event->price}} EUR</p>
         @endif
 
-    </article>
-@endsection
-
-
-@section('participation')
+      <ul>
+        <li>Name: {{ $event->name }}</li>
+        <li>Description: {{ $event->description }}</li>
+        <li>Location: {{ $event->location }}</li>
+        <li>Recurrence: {{ $event->recurrence }}</li>
+        <li>Event date: {{ $event->date_event }}</li>
+        <li>Price: {{ $event->price }}</li>
+        <li>State: {{ $event->state }}</li>
+      </ul>
 
     @if(session()->has('user'))
     @if (session('role') == 2)
@@ -106,4 +110,3 @@
     @endif
     @endif
 @endsection
-

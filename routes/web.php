@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('adminshop', 'ArticleController');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoryController');
 Route::resource('purchases', 'PurchaseController');
 Route::resource('baskets', 'BasketController');
@@ -24,7 +24,7 @@ Route::resource('toHave', 'ToHaveController');
 Route::resource('shop', 'PublicArticlesController');
 Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
-Route::resource('adminevents', 'EventController');
+Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::resource('publicevents', 'PublicEventController');
 Route::resource('comments', 'CommentController');
 Route::get('participants', 'ParticipantController@index');
@@ -33,13 +33,8 @@ Route::post('participants', 'ParticipantController@createParticipant');
 
 Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
 
-Route::get('adminevents/{id}/delete', 'EventController@destroy');
-
-Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController')->middleware('App\Http\Middleware\UserAuth');
 Route::get('/login', 'UserController@login');
 Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');
 
-Route::resource ('image', 'ImageController', [
-    'only' => ['create', 'store', 'destroy', 'update']
-]);

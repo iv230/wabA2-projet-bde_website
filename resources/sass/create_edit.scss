@@ -1,0 +1,129 @@
+@import'general';
+
+.creation
+{
+    margin-left: 16%;
+    margin-top: 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t1
+{
+    margin-top: 10px;
+    color : $black;
+    text-align: center;
+    font-size: 260%;
+    font-weight : normal;
+
+}
+
+.label
+
+{
+    font-size: 20pt;
+}
+
+input, textarea
+{
+    font-size: 15pt;
+    margin: 10px;
+    border: 2px  solid $blue;
+    border-radius:2px;
+    color: $black;
+    background-color:#FFD88F;
+}
+
+button
+{
+    @include bg_blue;
+    @include shadow;
+    font-size: 15pt;
+    padding:6px;
+    float :left;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    margin-right: 1%;
+    /*max-height: 40px;
+    max-width: 260px;*/
+
+}
+
+.list
+{
+    @include bg_blue;
+    @include shadow;
+    font-size: 15pt;
+    padding:6px;
+    margin-right: 1%;
+
+
+}
+
+.list::-ms-expand {
+    display: none;
+}
+
+.list:focus {
+    border-color: $orange;
+    color: $white;
+    outline: none;
+
+}
+
+button:hover
+{
+    background-color: $orange;
+}
+
+
+
+.choice
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+//MEDIA QUERIES FOR PHONE
+
+@media all and (max-device-width : 480px )
+{
+    .creation
+    {
+        margin-left: 0;
+        margin-top:160px ;
+    }
+
+    .create
+    {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .label
+    {
+        font-size: 36pt;
+    }
+
+    .t1
+    {
+        font-size: 46pt;
+    }
+
+    input, textarea
+    {
+        font-size: 36pt;
+        border: 5px solid $blue;
+    }
+
+    button
+    {
+        font-size: 46pt;
+        padding: 20px 50px;
+        margin-bottom: 180px;
+        margin-top: 50px;
+        margin-left: 1%;
+    }
+}

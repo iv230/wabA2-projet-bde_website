@@ -1,0 +1,187 @@
+.menu{
+    background: black;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+}
+
+.title{
+    height: 70px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 35px;
+    letter-spacing: 1px;
+    z-index: 99;
+    text-decoration: none;
+}
+
+.cesi{
+    height: 70px;
+    width: 70px;
+    float: left;
+    margin-right: 10px;
+}
+
+.logocesi{
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.m-left{
+    float: left;
+}
+
+.m-right{
+    float: right;
+}
+
+.m-link{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0 15px;
+
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    height: 70px;
+}
+
+.m-link:hover{
+    transition: 0.2s ease-in-out;
+    border-color: white;
+}
+
+.m-link i{
+    margin-right: 5px;
+}
+
+.m-nav-toggle{
+    width: 40px;
+    height: 70px;
+
+    display: none;
+    align-items: center;
+    float: right;
+    cursor: pointer;
+}
+
+span.m-toggle-icon, span.m-toggle-icon:before, span.m-toggle-icon:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+}
+
+span.m-toggle-icon:before{top: 12px;}
+span.m-toggle-icon:after{top: -14px;}
+
+@media only screen and (max-width: 1100px){
+    .m-right{
+        position: absolute;
+        top: 0;left: 0;right: 0;
+        width: 100%;
+        height: auto;
+        background: black;
+        transform: translateY(-100%);
+        transition: all 0.2s ease-in-out;
+        z-index: -1;
+    }
+    .m-link{
+        display: block;
+        text-align: center ;
+        padding: 0;
+        margin: auto;
+        height: 70px;
+        width: 100%;
+        margin: auto;
+    }
+        .m-nav-toggle{
+        display: flex;
+        cursor: pointer;
+    }
+
+ }
+
+ .m-right.is-open{
+     transform: translateX(0);
+     top: 70px;
+     z-index: 9999;
+ }
+
+ .m-nav-toggle.is-open span.m-toggle-icon{
+    background: transparent;
+ }
+
+ .m-nav-toggle.is-open span.m-toggle-icon:before, .m-nav-toggle.is-open span.m-toggle-icon:after{
+    transform-origin: center;
+    transform: rotate(45deg);
+    top: 0;
+ }
+
+ .m-nav-toggle.is-open span.m-toggle-icon:after{
+    transform: rotate(-45deg);
+ }
+
+ /* DONE */
+
+ .nav_left {
+     position: absolute;
+     background-color: #333333;
+     width: 15%;
+     height: 100%;
+}
+
+.img-cesi {
+    width: 100%;
+    height: 160px;
+    background-color: #ffffff;
+}
+
+.logo_cesi_ingenieur {
+    width: 100%;
+    height: auto;
+    padding: 10%;
+    background-size: cover;
+}
+
+ .surleteco {
+     width: 15%;
+     height: 100%;
+     background-color: #201f1f;
+     position: fixed;
+
+ }
+
+ .criteres {
+     margin-top: 100px;
+ }
+
+ .prix, .catégories {
+     position: static;
+     width: 100%;
+     height: 150px;
+     border-left: 3px solid black;
+     border-right: 3px solid black;
+     background-color: #1a1919;
+     color: white;
+     font-family: 'Roboto';
+     text-align: center;
+ }
+
+ .prix {
+     margin-bottom: 50px;
+ }

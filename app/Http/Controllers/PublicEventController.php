@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events as Events;
 use App\Comment as Comment;
+use App\Participant as Participant;
 
 class PublicEventController extends Controller
 {

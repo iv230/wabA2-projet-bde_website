@@ -155,16 +155,15 @@ class UserController extends Controller
         $params = array('email' => $request->input('email'));
         $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, $params)[0]);
 
-        if (password_verify($request->input('passwordHash'), $user->passwordHash))
-        {
+        if (password_verify($request->input('passwordHash'), $user->passwordHash)) {
             session(['user'     => $user->id]);
             session(['username' => $user->name]);
             session(['role'     => $user->role]);
             session(['school'   => $user->school]);
-            return redirect('/users');
+
+            return redirect('/');
         }
-        else
-        {
+        else  {
             return redirect('/login')->withErrors(array('password' => 'Email ou mot de passe incorrect'));
         }
     }
@@ -180,6 +179,6 @@ class UserController extends Controller
         if($request->session()->has('user'))
             $request->session()->forget('user');
 
-        return redirect('users');
+        return redirect('/');
     }
 }

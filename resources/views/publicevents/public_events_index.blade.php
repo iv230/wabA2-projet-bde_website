@@ -1,13 +1,17 @@
 
 @extends('template_welcome')
 
-@section('index_scss')
+@section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 
-@section('admin')
-    <a class="show_admin" href="/adminevents">Administration </a>
-@endsection
+@if(session()->has('user'))
+    @if(session('role') == 2 || session('role') == 4)
+        @section('admin')
+            <a class="show_admin" href="/adminevents">Administration </a>
+        @endsection
+    @endif
+@endif
 
 
 @section('welcome_events')
@@ -28,8 +32,10 @@
 
 
       @foreach ($events as $event)
-      @if ($event->state == 1)
 
+    @if ($event->state == 1)
+
+        <hr>
         <div class="event">
             @if(isset($event->image))
                 <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
@@ -53,12 +59,14 @@
 
 @section('past_events')
     <hr class="blue_bar">
-<article class="events">
+<article class="events" class="past_event">
       <h2 class="t1"> Évènements passés</h2>
       <p class="t2"> Commentez et ajoutez des photos !</p>
 
       @foreach ($events as $event)
-      @if ($event->state == 0)
+
+    @if ($event->state == 0)
+            <hr>
 
         <div class="event">
             @if(isset($event->image))
