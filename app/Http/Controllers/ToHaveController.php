@@ -3,19 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Repositories\CategoryRepository;
 
-class CategoryController extends Controller
+class ToHaveController extends Controller
 {
-
-    protected $repository;
-
-    public function __construct(CategoryRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('categories.index', array('categories' => $categories));
+        //
     }
 
     /**
@@ -34,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        //
     }
 
     /**
@@ -45,9 +34,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = $this->repository->store($request->all());
-
-        return redirect('categories')->withOk("La catégorie " . $category->name . " a été créé.");
+        //
     }
 
     /**
@@ -69,8 +56,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('categories.edit', array('category' => $category));
+        //
     }
 
     /**
@@ -82,9 +68,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->repository->update($id, $request->all());
-
-        return redirect('categories/')->withOk("La catégorie " . $request->input('name') . " a été modifiée.");
+        //
     }
 
     /**

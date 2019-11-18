@@ -15,10 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('adminshop', 'ArticleController');
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('articles', 'ArticleController');
 Route::resource('categories', 'CategoryController');
-Route::get('/articles/{id}/delete', 'ArticleController@destroy');
+Route::resource('purchases', 'PurchaseController');
+Route::resource('baskets', 'BasketController');
+Route::resource('toHave', 'ToHaveController');
+Route::resource('shop', 'PublicArticlesController');
+Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::resource('publicevents', 'PublicEventController');

@@ -15,11 +15,6 @@
                 <input type="number" name="price" placeholder="Prix de l'article" />
             </div>
             <div class="input-group">
-                <label>Image</label>
-                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                <input type="file" name="image" placeholder="Image de l'article"/>
-            </div>
-            <div class="input-group">
                 <label>Description</label>
                 <textarea rows="10" cols="40" name="description" placeholder="Description"></textarea>
             </div>
@@ -27,7 +22,7 @@
                 <label>Category</label>
                 <select name="category">
                     @foreach ($categories as $category)
-                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
             </div>         

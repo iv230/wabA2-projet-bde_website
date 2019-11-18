@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\BasketRepository;
+use App\Repositories\ToContainRepository;
+use App\ToContain;
 use Illuminate\Http\Request;
+use App\PublicArticles;
 use App\Article;
-use App\Category;
-use App\Repositories\ArticleRepository;
+use App\Basket;
 
-class ArticleController extends Controller
+class PublicArticlesController extends Controller
 {
+    protected $basketRepository, $containRepository;
 
-    protected $repository;
-
-    public function __construct(ArticleRepository $repository)
+    public function __construct(BasketRepository $basketRepository, ToContainRepository $containRepository)
     {
-        $this->repository = $repository;
+        $this->basketRepository = $basketRepository;
+        $this->containRepository = $containRepository;
     }
-    
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +27,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('adminshop.index', array('articles' => $articles));
+        return view('shop.index', array('articles' => $articles));
     }
 
     /**
@@ -35,8 +37,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('adminshop.create', array('categories' => $categories));
+        //
     }
 
     /**
@@ -47,12 +48,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //Stock l'image dans le dossier public/images
-        $request->file('image')->store('images');
-
-        $article = $this->repository->store($request->all());
-
-        return redirect('adminshop')->withOk("L'article " . $article->name . " a été créé.");
+        //
     }
 
     /**
@@ -64,9 +60,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        $category = Category::find($article->categoryId);
-
-        return view('adminshop.show', array('article' => $article, 'category' => $category));
+        return view('shop.show', array('article' => $article));
     }
 
     /**
@@ -77,9 +71,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::find($id);
-        $categories = Category::all();
-        return view('adminshop.edit', array('article' => $article), array('categories' => $categories));
+        //
     }
 
     /**
@@ -91,9 +83,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->repository->update($id, $request->all());
-
-        return redirect('adminshop/' . $request->input('id'))->withOk("L'article " . $request->input('name') . " a été modifié.");
+        //
     }
 
     /**
@@ -104,7 +94,26 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $this->repository->destroy($id);
-        return redirect('adminshop');
+        //
+    }
+
+    public function addtocart($id)
+    {
+        $article = Article::find($id);
+        $baskets = Basket::all();
+        $condition = True;
+        foreach($baskets as $basket){
+            if($basket->userId == session('user')){
+                $condition = False;
+                $contain = ToContain::where('basketId', $basket->id);
+                break;
+            }
+        }
+        if($condition) {
+            $baskets = $this->basketRepository->store(session('user'));
+            $contain = $this->containRepository->store($article->all(), $baskets->all());
+        }
+        $this->containRepository->update($contain->id, $article->all(), $baskets->all());
+        return view('basket.index', array('article' => $article));
     }
 }
