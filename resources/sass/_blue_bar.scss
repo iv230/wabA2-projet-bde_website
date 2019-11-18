@@ -1,0 +1,13 @@
+// BLUE BAR OF SEPARATION
+
+.blue_bar
+{
+    background-color: $blue;
+    width: 100%;
+    height: 10px;
+    margin:0;
+    @media all and (max-device-width: 480px)
+    {
+        height:30px
+    }
+}

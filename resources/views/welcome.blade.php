@@ -1,6 +1,6 @@
 @extends('template_welcome')
 
-@section('home_scss')
+@section('css')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
 @endsection
 
@@ -15,7 +15,7 @@
       </div>
 
 
-</aside><hr class="blue_bar">
+</aside><div class="blue_bar"></div>
 
 @endsection
 
@@ -25,14 +25,14 @@
         <img class="welcome_img" src="/img/evenement.jpg" alt="Evenement"/>
     <h2 class="show"><a class="link" href="/publicevents"> ACCÉDEZ À NOS ÉVÈNEMENTS </a></h2>
 
-    </article><hr class="blue_bar">
+    </article><div class="blue_bar"></div>
 @endsection
 
 @section('link_shop')
 
 <article class="welcome_link">
             <img class="welcome_img" src="/img/boutique.jpg" alt="BDE"/>
-            <h2 class="show"><a class="link" href="/shop">ACCÉDEZ À NOTRE BOUTIQUE</a></h2>
+            <h2 class="show"><a class="link" href="/articles">ACCÉDEZ À NOTRE BOUTIQUE</a></h2>
 
     </article>
 

@@ -1,37 +1,10 @@
-@import 'variables';
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-
-body{ overflow-y: hidden;
-    min-height:100%;
-    position: relative;
-}
-
-// BLUE BAR OF SEPARATION
-
-.blue_bar
-{
-    background-color: $blue;
-    width: 100%;
-    height: 10px;
-    margin:0;
-}
+@import 'general';
+@import 'welcome';
+@import 'blue_bar';
 
 
 // WELCOME ASIDE
 
-.welcome
-{
-    display: flex;
-    justify-content: center;
-    margin-left: 15%;
-    margin-top: 66px;
-}
-
-.welcome_img
-{
-    width: 100vw;
-    opacity: 0.6;
-}
 
 .presentation
 {
@@ -41,6 +14,12 @@ body{ overflow-y: hidden;
     flex-direction: column;
     margin-top: 10px;
 
+    //MEDIA QUERIES FOR PC AND IPAD
+    @media screen and (max-width: 600px)
+    {
+        width: 20%;
+        min-width: 150px ;
+    }
 }
 
 .logo
@@ -56,8 +35,13 @@ body{ overflow-y: hidden;
     text-align: center;
     font-weight : bold;
 
-
+    //MEDIA QUERIES FOR PC AND IPAD
+    @media screen and (max-width: 600px)
+    {
+        font-size: 120%;
+    }
 }
+
 
 // EVENTS AND SHOP LINK
 
@@ -79,6 +63,13 @@ body{ overflow-y: hidden;
     font-weight : normal;
     margin-top : 10%;
 
+    //MEDIA QUERIES FOR PC AND IPAD
+    @media screen and (max-width: 600px)
+    {
+        width: 20%;
+        min-width: 180px;
+        font-size:120%;
+    }
 }
 
 .link
@@ -88,49 +79,10 @@ body{ overflow-y: hidden;
 }
 
 
-//MEDIA QUERIES FOR PC AND IPAD
-
-@media screen and (max-width: 600px)
-{
-    .presentation
-    {
-        width: 20%;
-        min-width: 150px ;
-    }
-
-    .titre
-    {
-        font-size: 120%;
-    }
-
-    .show
-    {
-        width: 20%;
-        min-width: 180px;
-        font-size:120%;
-    }
-}
-
 //MEDIA QUERIES FOR PHONE
 
 @media all and (max-device-width : 480px )
 {
-    .blue_bar
-    {
-        height:30px
-    }
-
-
-
-    .welcome
-    {
-        margin:0;
-        margin-top: 160px;
-        width: 100%;
-
-
-    }
-
     .welcome_link
     {
         margin:0;
@@ -149,12 +101,8 @@ body{ overflow-y: hidden;
 
     }
 
-
     footer
     {
     height: 160px;
     }
-
-
 }
-

@@ -2,6 +2,9 @@
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;*/
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+html {
+  height: 100%; }
+
 body {
   overflow-y: hidden;
   min-height: 100%;
@@ -25,11 +28,6 @@ body {
   font-size: 160%;
   text-align: left;
   color: #000000;
-  font-weight: normal; }
-
-.event_date {
-  color: #000000;
-  font-size: 140%;
   font-weight: normal; }
 
 .event {
@@ -79,10 +77,13 @@ body {
   padding: 10px;
   float: right;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 80px;
   border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999; }
+
+.show:hover {
+  background-color: #FFC252; }
 
 .buttons_action {
   display: flex;
@@ -97,16 +98,24 @@ body {
   font-size: 18pt; }
 
 button {
-  font-size: 18pt;
-  border: none;
   background-color: #5D89DA;
-  padding: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 6px #999;
-  color: #FFFFFF; }
+  font-size: 18pt;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #999; }
 
 button:hover {
   background-color: #FFC252; }
+
+.adminevents {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 16%; }
 
 @media screen and (max-width: 1100px) {
   .event {
@@ -149,13 +158,29 @@ button:hover {
     padding: 6px;
     border-radius: 2px;
     box-shadow: 2px 2px 6px #999;
-    color: #FFFFFF; } }
+    color: #FFFFFF; }
+
+  .show {
+    float: right;
+    margin-bottom: 80px;
+    margin-right: 25%; }
+
+  .adminevents {
+    justify-content: space-around; }
+
+  .adminevents > a {
+    margin-right: 0; } }
 @media screen and (max-width: 800px) {
   .img_event {
     width: 400px; }
 
   .texte {
-    width: 400px; } }
+    width: 400px; }
+
+  .show {
+    float: right;
+    margin-bottom: 80px;
+    margin-right: 12%; } }
 @media all and (max-device-width: 480px) {
   .events {
     margin-left: 0;
@@ -193,12 +218,20 @@ button:hover {
     /*margin-right: 130px;*/
     float: left;
     margin: 3% 30%;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 180px; }
 
   .price {
-    font-size: 32pt; }
+    font-size: 15pt; }
 
   button {
-    font-size: 33pt; } }
+    font-size: 33pt; }
+
+  .adminevents {
+    justify-content: space-around;
+    margin-left: 0; }
+
+  .adminevents > a {
+    margin-left: 0; } }
 
 /*# sourceMappingURL=show.css.map */
