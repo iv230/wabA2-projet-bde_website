@@ -49,7 +49,10 @@ class PublicEventController extends Controller
             array_push($images, $image);
         }
 
-        return view('publicevents.show', array('event' => $event, 'comments' => $comments, 'images' => $images));
+        $likeController = new LikeController();
+        $likeCount = $likeController->countLikes($id);
+
+        return view('publicevents.show', array('event' => $event, 'comments' => $comments, 'images' => $images, 'likeCount' => $likeCount));
     }
 
     /**

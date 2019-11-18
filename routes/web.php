@@ -31,6 +31,7 @@ Route::resource('comments', 'CommentController');
 Route::get('participants', 'ParticipantController@index');
 Route::get('participants/{id_event}', 'ParticipantController@show');
 Route::post('participants', 'ParticipantController@createParticipant');
+Route::post('like', 'LikeController@likeEvent');
 
 Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
 
