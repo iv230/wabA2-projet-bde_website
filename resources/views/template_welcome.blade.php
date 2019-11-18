@@ -23,10 +23,10 @@
 
 <body>
 
-<!--NAV-BAR-->
-<header >
+    <!--NAV-BAR-->
+    <header>
 
-<nav class="menu" role="navigation">
+        <nav class="menu" role="navigation">
             <div class="container_navbar">
                 <div class="cesi">
                     <img class="logocesi" src="/img/logo.png" alt="logo cesi">
@@ -95,7 +95,7 @@
         </div>
 
     </header>
-<!--END-OF-NAV-BAR-->
+    <!--END-OF-NAV-BAR-->
 
     @yield('welcome')
     @yield('welcome_events')
@@ -121,24 +121,26 @@
     @yield('return')
     @yield('comments')
 
-<!--FOOTER-->
-<footer >
-    <div class="logo_footer">
-        <img class="footer_cesi" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
-        <img class="footer_bde" src="/img/logo.png" alt="logo cesi">
+    @yield('credits')
+
+    <!--FOOTER-->
+    <footer>
+        <div class="logo_footer">
+            <img class="footer_cesi" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
+            <img class="footer_bde" src="/img/logo.png" alt="logo cesi">
 
         </div>
         <div class="link_footer">
-            <a href="#" class="footer_link"> Mentions légales </a>
+            <a href="/credits" class="footer_link"> Mentions légales </a>
             <a href="#" class="footer_link"> Conditions générales de vente </a>
             <a href="#" class="footer_link"> © CESI 2019 </a>
         </div>
 
-</footer>
-<!--END-OF-FOOTER-->
+    </footer>
+    <!--END-OF-FOOTER-->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/js/nav_bar.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/js/nav_bar.js" charset="utf-8"></script>
 </body>
 
 </html>
