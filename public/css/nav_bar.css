@@ -1,3 +1,15 @@
+/*$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+html {
+  height: 100%; }
+
+body {
+  overflow-y: hidden;
+  min-height: 100%;
+  position: relative; }
+
 .nav_left {
   background-color: black;
   top: 66px;
@@ -99,7 +111,7 @@ footer {
   position: fixed;
   z-index: 11; }
 
-.bde {
+.title {
   height: 66px;
   margin: 0;
   padding: 0;
@@ -112,7 +124,7 @@ footer {
   text-decoration: none; }
 
 .fa {
-  color: #fa6807; }
+  color: #FFC252; }
 
 .cesi {
   height: 66px;
@@ -128,26 +140,28 @@ footer {
   vertical-align: middle; }
 
 .m-left {
-  float: left;
-  /*height: 66px;*/ }
+  float: left; }
 
 .m-right {
   float: right; }
 
 .m-link {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0;
   margin: 0 15px;
   border-bottom: 3px solid transparent;
-  height: 66px;
-  display: flex; }
+  display: inline-block;
+  height: 66px; }
 
 .m-link:hover {
-  border-color: white;
-  transition: 0.2s ease-in-out; }
+  transition: 0.2s ease-in-out;
+  border-color: white; }
+
+.m-link i {
+  margin-right: 5px; }
 
 .m-nav-toggle {
   width: 40px;
@@ -182,7 +196,7 @@ span.m-toggle-icon:after {
     height: auto;
     background: black;
     transform: translateY(-100%);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     z-index: -1; }
 
   .m-link {
@@ -212,7 +226,6 @@ span.m-toggle-icon:after {
 .m-nav-toggle.is-open span.m-toggle-icon:after {
   transform: rotate(-45deg); }
 
-/*MEDIA QUERIES FOR PHONE*/
 @media all and (max-device-width: 480px) {
   /*NAV BAR*/
   .menu {

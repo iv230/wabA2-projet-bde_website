@@ -9,18 +9,14 @@
     <!--css-->
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header.css">
-    <!-- <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">-->
+    <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
+    @yield('css')
     <!--css-->
 
-    <!--font-family-->
-
-    <!--font-family-->
 
     <!-- font-awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- font-awesome-->
-    
-    @yield('css')
 
 </head>
 
@@ -32,16 +28,23 @@
 <nav class="menu" role="navigation">
             <div class="container_navbar">
                 <div class="cesi">
-                    <img class="logocesi" src="/home/lucas/projet/app-laravel/public/img/logo.png" alt="logo cesi">
+                    <img class="logocesi" src="/img/logo.png" alt="logo cesi">
                 </div>
                 <div class="m-left">
                     <a href="#" class="title"> BDE Cesi Nice</a>
                 </div>
 
                 <div class="m-right">
-                    <a href="#" class="m-link"><i class="fa fa-shopping-basket"></i> Panier</a>
+                    @yield('search_bar')
+
+                    @if(session()->has('user'))
+                    <a class="m-link">{{ session('username') }}</a>
+                    @yield('basket')
+                    <a href="/logout" class="m-link"><i class="fa fa-sign-in"></i> Déconnexion</a>
+                    @else
                     <a href="#" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
                     <a href="#" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                    @endif
                 </div>
 
                 <div class="m-nav-toggle">
@@ -50,13 +53,7 @@
             </div>
         </nav>
 
-        <nav class="aside">
-            <div class="nav_left">
-                <div class="img-cesi">
-                    <img class="logo_cesi_ingenieur" src="" alt="logo cesi ingenieur">
-                </div>
-            </div>
-        </nav>
+
 
         <!--<nav class="menu">
             <div class="inner">

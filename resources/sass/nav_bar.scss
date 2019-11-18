@@ -1,3 +1,4 @@
+@import 'general';
 @import 'nav_left';
 @import 'footer';
 
@@ -8,10 +9,9 @@
     line-height: 66px;
     position: fixed;
     z-index: 11;
-
 }
 
-.bde{
+.title{
     height: 66px;
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@
 }
 
 .fa {
-    color: rgb(250, 104, 7);
+    color: $orange;
 }
 
 .cesi{
@@ -45,7 +45,6 @@
 
 .m-left{
     float: left;
-    /*height: 66px;*/
 }
 
 .m-right{
@@ -53,22 +52,25 @@
 }
 
 .m-link{
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
     padding: 0;
-    margin: 0 15px ;
+    margin: 0 15px;
     border-bottom: 3px solid transparent;
+    display: inline-block;
     height: 66px;
-    display:flex;
 }
 
 .m-link:hover{
-    border-color: white;
     transition: 0.2s ease-in-out;
+    border-color: white;
 }
 
+.m-link i{
+    margin-right: 5px;
+}
 
 .m-nav-toggle{
     width: 40px;
@@ -79,6 +81,7 @@
     float: right;
     cursor: pointer;
 }
+
 
 span.m-toggle-icon, span.m-toggle-icon:before, span.m-toggle-icon:after{
     content: "";
@@ -94,7 +97,6 @@ span.m-toggle-icon, span.m-toggle-icon:before, span.m-toggle-icon:after{
 span.m-toggle-icon:before{top: 12px;}
 span.m-toggle-icon:after{top: -14px;}
 
-
 @media only screen and (max-width: 1100px){
     .m-right{
         position: absolute;
@@ -103,10 +105,9 @@ span.m-toggle-icon:after{top: -14px;}
         height: auto;
         background: black;
         transform: translateY(-100%);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
         z-index: -1;
     }
-
     .m-link{
         display: block;
         text-align: center ;
@@ -115,13 +116,12 @@ span.m-toggle-icon:after{top: -14px;}
         height: 66px;
         width: 100%;
     }
-
     .m-nav-toggle{
         display: flex;
         cursor: pointer;
     }
-}
 
+}
 
 .m-right.is-open{
     transform: translateX(0);
@@ -142,8 +142,6 @@ span.m-toggle-icon:after{top: -14px;}
 .m-nav-toggle.is-open span.m-toggle-icon:after{
     transform: rotate(-45deg);
 }
-
-/*MEDIA QUERIES FOR PHONE*/
 
 @media all and (max-device-width : 480px ) {
 
@@ -228,5 +226,3 @@ span.m-toggle-icon:after{top: -14px;}
 
     }
 }
-
-
