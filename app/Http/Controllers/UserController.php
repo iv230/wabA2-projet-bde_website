@@ -18,6 +18,8 @@ class UserController extends Controller
 
     public function __construct()
     {
+        $this->middleware('App\Http\Middleware\UserAuth')->except('create', 'store', 'login', 'connect', 'logout');
+
         try
         {
             $this->token = UserAuthApiGestion::authenticate();

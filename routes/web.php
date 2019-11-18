@@ -33,7 +33,7 @@ Route::post('participants', 'ParticipantController@createParticipant');
 
 Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
 
-Route::resource('/users', 'UserController')->middleware('App\Http\Middleware\UserAuth');
+Route::resource('/users', 'UserController');
 Route::get('/login', 'UserController@login');
 Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');
