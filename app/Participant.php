@@ -33,6 +33,8 @@ class Participant extends Model
 
     public function user()
     {
-        return ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $this->id_user)));
+        $user = new User;
+        $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $this->id_user))[0]);
+        return $user;
     }
  }

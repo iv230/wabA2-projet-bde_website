@@ -40,11 +40,9 @@ class ParticipantController extends Controller
 	public function show($id_event) {
 
 		$participants = Participant::where('id_event', $id_event)->get();
+		$event = Events::find($id_event);
 
-		//$user = new User();
-        //$user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => $participants->id_user)));
-
-		return view('participants.show', array('participants' => $participants, 'id_event' => $id_event));
+		return view('participants.show', array('participants' => $participants, 'event' => $event));
 	}
 
     public function isParticipating($id_user, $id_event) {

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Event $id_event</title>
+      <title>Partiticpants à {{ $event->name }}</title>
   </head>
   <body>
     <h1>Participants :</h1>
     <div id="content">
+        <p>Nom de l'évènement : {{ $event->name }}</p>
+        <p>Lieu : {{ $event->location }}</p>
+        <p>Date et heure : {{ $event->date_event }} à {{ $event->time_event }}</p>
+
         <table class="table table-striped">
             <colgroup>
                 <col width="30%">
@@ -13,15 +17,15 @@
             </colgroup>
             <thead>
             <tr class='warning'>
-                <th>ID User</th>
                 <th>User Name</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>
             @foreach($participants as $participant)
             <tr>
-                <td>{{ $participant->id_user }}</td>
                 <td>{{ $participant->user()->name }}</td>
+                <td>{{ $participant->user()->email }}</td>
             </tr>
             @endforeach
             </tbody>
