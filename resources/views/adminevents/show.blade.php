@@ -55,13 +55,19 @@
 
             <input type="hidden" name="iduser" value="{{ session('user') }}">
 
+            <input type="hidden" name="iduser" value="{{ session('user') }}">
+
             <input type="hidden" name="idevent" value="{{$event->id}}">
         </form>
     </div>
     @endif
 </div> <br>
 <div class="adminevents">
-    <a class="show" href="/adminevents/{{ $event->id }}/delete"> Supprimer </a>
+    <form method="POST" action="/adminevents/{{ $event->id }}">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <input type="submit" class="show" value="Supprimer" />
+    </form>
     <a class="show" href="/adminevents/{{ $event->id }}/edit"> Editer </a>
 
 </div>
