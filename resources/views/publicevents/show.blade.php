@@ -27,8 +27,42 @@
     <p class="price">Coût de l'évènement : {{$event->price}} EUR</p>
     @endif
 
+    @if(session()->has('user'))
+    @if (session('role') == 2 || session('role') == 4)
+    <div class="participate">
+        <a href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
+    </div>
+    @endif
+    @endif
 
-    <div class="buttons_like">
+    <hr>
+    <h3>Photos des utilisateurs :</h3>
+    @foreach($images as $image)
+    <img src="{{ $image->path }}" alt="Image de l'évènement" />
+    @endforeach
+
+    <hr>
+    @if(session()->has('user'))
+    <div class="addImage"></div>
+    <form action="/publicevents/postphoto" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <div>
+            {!! $errors->first('photo', '<small>:message</small>') !!}
+            <input type="file" name="photo">
+        </div>
+
+        <div>
+            <button type="submit"> Ajouter une photo </button>
+        </div>
+
+        <input type="hidden" name="id_user" value="{{ session('user') }}">
+
+        <input type="hidden" name="id_event" value="{{$event->id}}">
+    </form>
+    @endif
+
+    <hr>
+    <div class="buttons_action">
         <a class="like" href="">J'aime (15)</a><br>
     </div>
 
@@ -77,7 +111,11 @@
 
     @if(session()->has('user'))
     @if(session('role') >= 3)
-    <button type="submit"> Supprimer </button>
+    <form action="/comments/{{ $comment->id }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button type="submit"> Supprimer </button>
+    </form>
     @endif
     @endif
     @endif

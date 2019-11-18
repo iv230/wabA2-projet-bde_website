@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment as Comment;
+use App\EventImage;
 use App\Gestion\FileUploadGestion;
 use App\Image;
 use Illuminate\Http\Request;
@@ -81,7 +83,17 @@ class EventController extends Controller
         if (!isset($event))
             abort(404, 'Not Found - L\'évènement #' . $id . 'n\'existe pas.');
 
-        return view('adminevents.show', array('event' => $event));
+        $comments = Comment::where('id_event', $event->id)->get();
+        $event_images = EventImage::where('id_event', $event->id)->get();
+
+        $images = [];
+
+        foreach ($event_images as $event_image) {
+            $image = Image::find($event_image->id_image);
+            array_push($images, $image);
+        }
+
+        return view('adminevents.show', array('event' => $event, 'comments' => $comments, 'images' => $images));
     }
 
     /**
