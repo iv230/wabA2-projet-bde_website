@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     @yield('css')
-    @yield('prout')
 </head>
 <body>
 <!-- NAV BAR -->
@@ -17,10 +16,10 @@
         <nav class="menu">
             <div class="inner">
                     <div class="cesi">
-                            <a href=""><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
+                            <a href="/"><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                     </div>
                     <div class="m-left">
-                            <a href="" class="bde">bde cesi nice</a>
+                            <a href="/" class="bde">bde cesi nice</a>
                     </div>
 
                     <div class="m-right">

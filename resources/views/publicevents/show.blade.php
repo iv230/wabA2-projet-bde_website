@@ -1,6 +1,6 @@
 @extends('template_welcome')
 
-@section('prout')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/show.css') }}" />
 @endsection
 

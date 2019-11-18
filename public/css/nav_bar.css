@@ -39,7 +39,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%; }
+  width: 85%;
+  height: 66px; }
 
 .footer_cesi {
   height: 40px;
