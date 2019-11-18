@@ -26,6 +26,7 @@ Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::resource('publicevents', 'PublicEventController');
+Route::post('/publicevents/postphoto', 'PublicEventController@storeImage');
 Route::resource('comments', 'CommentController');
 Route::get('participants', 'ParticipantController@index');
 Route::get('participants/{id_event}', 'ParticipantController@show');

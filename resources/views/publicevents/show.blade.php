@@ -35,23 +35,33 @@
     @endif
     @endif
 
-        @if(session()->has('user'))
-            <div class="addImage"></div>
-            <form action="/images" method="POST" enctype="multipart/form-data">
-                <div>
-                    {!! $errors->first('photo', '<small>:message</small>') !!}
-                    <input type="file" name="photo">
-                </div>
+    <hr>
+    <h3>Photos des utilisateurs :</h3>
+    @foreach($images as $image)
+    <img src="{{ $image->path }}" alt="Image de l'évènement" />
+    @endforeach
 
-                <div>
-                    <button type="submit"> Ajouter une photo </button>
-                </div>
+    <hr>
+    @if(session()->has('user'))
+    <div class="addImage"></div>
+    <form action="/publicevents/postphoto" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <div>
+            {!! $errors->first('photo', '<small>:message</small>') !!}
+            <input type="file" name="photo">
+        </div>
 
-                <input type="hidden" name="iduser" value="{{ session('user') }}">
+        <div>
+            <button type="submit"> Ajouter une photo </button>
+        </div>
 
-                <input type="hidden" name="idevent" value="{{$event->id}}">
-            </form>
-        @endif
+        <input type="hidden" name="id_user" value="{{ session('user') }}">
+
+        <input type="hidden" name="id_event" value="{{$event->id}}">
+    </form>
+    @endif
+
+    <hr>
     <div class="buttons_action">
         <a class="like" href="">J'aime (15)</a><br>
         @if ($event-> state == 1)
