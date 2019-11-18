@@ -19,7 +19,7 @@
 
     <div>
         {!! $errors->first('description', '<small>:message</small>') !!}
-        <textarea name="description" placeholder="Description"></textarea>
+        <textarea name="description" rows="10" cols="30" placeholder="Description"></textarea>
     </div>
 
     <div>

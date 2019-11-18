@@ -27,16 +27,6 @@
             <p class="price">Coût de l'évènement : {{$event->price}} EUR</p>
         @endif
 
-      <ul>
-        <li>Name: {{ $event->name }}</li>
-        <li>Description: {{ $event->description }}</li>
-        <li>Location: {{ $event->location }}</li>
-        <li>Recurrence: {{ $event->recurrence }}</li>
-        <li>Event date: {{ $event->date_event }}</li>
-        <li>Price: {{ $event->price }}</li>
-        <li>State: {{ $event->state }}</li>
-      </ul>
-
     @if(session()->has('user'))
     @if (session('role') == 2)
         <div class="participate">
@@ -65,28 +55,26 @@
     @endif
     </div> <br>
 
-@endsection
-
-@section('return')
+    </article>
     <a class="show" href="/publicevents"> Retourner à la liste des évènements </a>
 @endsection
 
+
 @section('comments')
 
+
     @if($event->state == 0)
+        <article class="comments">
     @foreach ($comments as $comment)
     @if ($comment->id_event == $event->id)
-    <!--<h4>Comment {{ $comment->id }}</h4>-->
-    <ul>
-      <li>{{ $comment->comment_date }} | {{ $comment->autor }}: </li>
-      {{ $comment->comment_content }}
-    </ul>
+      <p class="comment">{{ $comment->comment_date }} | {{ $comment->autor }}: <br> {{ $comment->comment_content }}</p>
     @endif
     @endforeach
 
     @if(session()->has('user'))
 
-    <h3>Comment:</h3>
+    <div class="to_comment">
+    <h3 class="t3">Commenter:</h3>
 
     <form action="/comments" method="POST">
     @csrf
@@ -97,16 +85,18 @@
 
       <div>
         {!! $errors->first('comment_content', '<small>:message</small>') !!}
-        <textarea name="comment_content" placeholder="..."></textarea>
+          <label for="comment_content">
+              <textarea name="comment_content" rows="3" cols="30" placeholder="..."></textarea>
+          </label>
       </div>
 
-      <div>
-        <button type="submit"> Comment </button>
-      </div>
 
-      <input type="hidden" name="idevent" value="{{$event->id}}">
+        <button type="submit"> Ajouter </button>
+        <input type="hidden" name="idevent" value="{{$event->id}}">
 
     </form>
+    </div>
     @endif
     @endif
+    </article>
 @endsection

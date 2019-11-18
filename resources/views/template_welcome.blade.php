@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     <!--css-links-->
-    
+
     @yield('css')
 </head>
 <body>
@@ -26,7 +26,7 @@
                         <a href="/"><img class="logocesi" src="/img/logo.png" alt="logo cesi"></a>
                     </div>
                     <div class="m-left">
-                            <a href="#" class="bde">bde cesi nice</a>
+                            <a href="/" class="bde">bde cesi nice</a>
                     </div>
 
                     <div class="m-right">

@@ -1,8 +1,14 @@
-@extends('template')
+@extends('template_welcome')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/index_users.css') }}" />
+@endsection
+
 
 @section('content')
 
-    <h1>Liste des utilisateurs</h1>
+    <article class="users">
+    <h1 class="t1">Liste des utilisateurs</h1>
 
     @if(session()->has('user'))
         <p>Bienvenue, <a href="/users/{{ session('user') }}">{{ session('username') }}</a>.
@@ -37,9 +43,10 @@
                     <input type="submit" value="Supprimer l'utilisateur"/>
                 </form>
 
+
             @endif
         @endif
 
     @endforeach
-
+        </article>
 @endsection
