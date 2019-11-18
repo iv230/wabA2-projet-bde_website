@@ -77,6 +77,10 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Events::find($id);
+
+        if (!isset($event))
+            abort(404, 'Not Found - L\'évènement #' . $id . 'n\'existe pas.');
+
         return view('adminevents.show', array('event' => $event));
     }
 
