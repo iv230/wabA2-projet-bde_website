@@ -1,39 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Creation</title>
-  </head>
-  <body>
+@extends('template_welcome')
 
-    <h1>Event Creation :</h1>
+@section('index_scss')
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}" />
+@endsection
+
+@section('create_event')
+    <section class="creation">
+    <h1 class="t1">Création d'un évènement</h1>
 
 
-  <form action="/adminevents" method="POST" enctype="multipart/form-data">
+  <form class="create" action="/adminevents" method="POST" enctype="multipart/form-data">
   @csrf
 
     <div>
         {!! $errors->first('name', '<small>:message</small>') !!}
-        <input type="text" name="name" placeholder="Event name">
+        <input type="text" name="name" placeholder="Nom">
     </div>
 
     <div>
         {!! $errors->first('description', '<small>:message</small>') !!}
-        <textarea name="description" placeholder=" Event description"></textarea>
+        <textarea name="description" placeholder="Description"></textarea>
     </div>
 
     <div>
         {!! $errors->first('location', '<small>:message</small>') !!}
-        <input type="text" name="location" placeholder="Event location">
+        <input type="text" name="location" placeholder="Lieu">
     </div>
 
     <div>
         {!! $errors->first('recurrence', '<small>:message</small>') !!}
-        <input type="text" name="recurrence" placeholder="Event recurrence">
+        <input type="text" name="recurrence" placeholder="Recurrence si oui">
     </div>
 
     <div>
         {!! $errors->first('date_event', '<small>:message</small>') !!}
-        <input type="date" name="date_event" placeholder="Event date">
+        <input type="date" name="date_event" placeholder="Date">
     </div>
 
       <div>
@@ -43,7 +44,7 @@
 
     <div>
         {!! $errors->first('price', '<small>:message</small>') !!}
-        <input type="number" name="price" placeholder="Price">
+        <input type="number" name="price" placeholder="Prix">
     </div>
 
     <div>
@@ -52,10 +53,10 @@
     </div>
 
     <div>
-      <button type="submit"> Add </button>
+      <button type="submit"> Ajouter </button>
     </div>
 
   </form>
+</section>
+@endsection
 
-  </body>
-</html>

@@ -1,6 +1,10 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;
+}
 
 // BLUE BAR OF SEPARATION
 
@@ -9,6 +13,7 @@
     background-color: $blue;
     width: 100%;
     height: 10px;
+    margin:0;
 }
 
 
@@ -18,12 +23,13 @@
 {
     display: flex;
     justify-content: center;
-    margin-left: 15%
+    margin-left: 15%;
+    margin-top: 66px;
 }
 
 .welcome_img
 {
-    width: 100%;
+    width: 100vw;
     opacity: 0.6;
 }
 
@@ -33,7 +39,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 50pt;
+    margin-top: 10px;
+
 }
 
 .logo
@@ -54,6 +61,14 @@
 
 // EVENTS AND SHOP LINK
 
+
+.welcome_link
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+}
+
 .show
 {
     position: absolute;
@@ -73,11 +88,9 @@
 }
 
 
-
-
 //MEDIA QUERIES FOR PC AND IPAD
 
-@media screen and (max-width: 1100px)
+@media screen and (max-width: 600px)
 {
     .presentation
     {
@@ -102,23 +115,46 @@
 
 @media all and (max-device-width : 480px )
 {
-    .presentation
+    .blue_bar
     {
-        width: 240px;
+        height:30px
+    }
+
+
+
+    .welcome
+    {
+        margin:0;
+        margin-top: 160px;
+        width: 100%;
+
 
     }
+
+    .welcome_link
+    {
+        margin:0;
+    }
+
     .titre
     {
 
-        font-size: 25pt;
-        color: red;
+        font-size: 42pt;
     }
 
     .show
     {
-        font-size: 25pt;
-        width: 350px;
+        font-size: 42pt;
+        width: 400px;
+
     }
+
+
+    footer
+    {
+    height: 160px;
+    }
+
 
 }
 

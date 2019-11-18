@@ -1,0 +1,313 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+body{ overflow-y: hidden;
+    min-height:100%;
+    position: relative;}
+
+.events
+{
+    margin-top: 76px;
+    margin-left: 16%;
+}
+.img_event
+{
+    width: 600px;
+    margin : 20px;
+}
+
+.t1
+{
+    color : $black;
+    text-align: center;
+    font-size: 180%;
+    font-weight : normal;
+
+}
+
+.t2
+{
+    font-size: 160%;
+    text-align: left;
+    color : $black;
+    font-weight : normal;
+}
+
+.event_date
+{
+    color: $black;
+    font-size: 140%;
+    font-weight: normal;
+}
+
+
+.event
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.texte
+{
+    width: 160%;
+}
+
+.event_date
+{
+    color: $orange;
+    font-weight: bold;
+    font-size: 20pt;
+    margin: 10px;
+    margin-left: 20px;
+
+}
+
+.location, .description
+{
+    color: $black;
+    font-size: 18pt;
+}
+
+.location
+{
+    margin: 0;
+    margin-left: 20px;
+
+}
+
+.name
+{
+    color: $orange;
+    font-size: 36pt;
+    text-transform: uppercase;
+    margin: 10px;
+    margin-left: 20px;
+    top:66px;
+}
+
+.price
+{
+    color: $black;
+    font-size: 18pt;
+    margin:0;
+    margin-left: 20px;
+    width: 600px;
+    text-align: center;
+
+}
+.show
+{
+    background-color : $blue;
+    color : $white;
+    text-decoration: none;
+    font-size: 120%;
+    padding : 10px;
+    float: right;
+    margin-right:10px ;
+    margin-bottom: 10px;
+    border:none;
+    border-radius:2px;
+    box-shadow:2px 2px 6px #999;
+}
+
+.buttons_action
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 10px;
+
+}
+
+.like
+{
+    margin-left: 16%;
+    text-decoration: none;
+    color: $black;
+    font-size: 18pt;
+}
+
+button
+{
+    font-size: 18pt;
+    border:none;
+    background-color: $blue;
+    padding:6px;
+    border-radius:2px;
+    box-shadow:2px 2px 6px #999;
+    color: $white;
+
+}
+
+button:hover
+{
+    background-color: $orange;
+}
+
+
+
+
+//MEDIA QUERIES FOR PC AND IPAD
+
+
+@media screen and (max-width: 1100px)
+{
+    .event
+    {
+
+        flex-direction :column;
+        align-items: center;
+
+    }
+
+    .name, .description, .location, .event_date
+    {
+        text-align: center;
+    }
+
+    .img_event
+    {
+        width: 550px;
+        margin-bottom: 0;
+        border-bottom: $blue 10px solid;
+    }
+
+    .texte
+    {
+        width: 550px;
+        /*border: 3px orange solid;
+        padding: 5px*/
+        border-bottom: $blue 10px solid;
+    }
+
+    .price
+    {
+        font-size: 16pt;
+        margin: 10px 0 10px 0;
+        width:100%;
+
+    }
+
+    .buttons_action
+    {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .like
+    {
+        margin-left: 16%;
+        text-decoration: none;
+        color: $black;
+        font-size: 18pt;
+    }
+
+    button
+    {
+        font-size: 18pt;
+        border:none;
+        background-color: $blue;
+        padding:6px;
+        border-radius:2px;
+        box-shadow:2px 2px 6px #999;
+        color: $white;
+
+    }
+
+}
+
+
+//MEDIA QUERIES FOR PC AND IPAD
+@media screen and (max-width: 800px)
+{
+    .img_event
+    {
+        width:400px;
+    }
+
+    .texte
+    {
+        width: 400px;
+    }
+}
+
+//MEDIA QUERIES FOR PHONE
+
+@media all and (max-device-width : 480px )
+{
+
+    .events
+    {
+        margin-left: 0;
+        margin-top: 220px;
+    }
+
+    .event
+    {
+
+        flex-direction :column;
+        align-items: center;
+
+    }
+
+    .img_event
+    {
+        width: 550px;
+        border-bottom: 30px solid $blue;
+    }
+
+    .texte
+    {
+        width: 550px;
+        border-bottom: 30px solid $blue;
+    }
+
+    .event_date
+    {
+        font-size: 34pt;
+    }
+
+    .location, .description
+    {
+        font-size: 33pt;
+        margin:30px;
+    }
+
+    .name{
+        font-size: 44pt;
+        margin:40px;
+
+    }
+
+    .like
+    {
+        font-size: 33pt;
+        margin: 0;
+    }
+
+    .show
+    {
+        font-size: 30pt;
+        /*margin-right: 130px;*/
+        float:left;
+       margin: 3% 30%;
+        text-align: center;
+
+
+    }
+
+    .price
+    {
+        font-size: 32pt;
+    }
+
+    button
+    {
+        font-size: 33pt;
+    }
+
+
+}

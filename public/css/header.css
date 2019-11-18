@@ -5,12 +5,13 @@
     line-height: 66px;
     position: fixed;
     z-index: 10;
-    
+
 }
 
 .nav_left
 {
     background-color: black;
+    top:66px;
     width: 15%;
     height: 100%;
     z-index: 9;
@@ -23,7 +24,7 @@
     background-color: white;
     width: 80%;
     z-index: 23;
-    margin-top: 66px;
+    top: 66px;
     padding: 10%;
 }
 
@@ -32,7 +33,6 @@
     padding: 0;
     color: white;
     text-transform: uppercase;
-    font-family: 'Roboto';
     font-weight: 900;
     font-size: 35px;
     letter-spacing: 1px;
@@ -66,20 +66,16 @@
     text-transform: uppercase;
     font-weight: 700;
     padding: 0;
-    margin: 0 15px;
-
-    border-bottom: 2px solid transparent;
-    display: inline-block;
+    margin: 0 15px ;
+    border-bottom: 3px solid transparent;
     height: 64px;
+    display:flex;
 }
 
 .m-link:hover{
     border-color: white;
 }
 
-.m-link i{
-    margin-right: 5px;
-}
 
 .m-nav-toggle{
     width: 40px;
@@ -89,6 +85,22 @@
     align-items: center;
     float: right;
     cursor: pointer;
+}
+
+.link_nav
+{
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+
+.basket , .login , .co
+{
+    width: 35px;
+    height: 35px;
+    margin-top: 12px;
+    margin-right: 5px;
 }
 
 span.m-toggle-icon, span.m-toggle-icon:before, span.m-toggle-icon:after{
@@ -105,99 +117,294 @@ span.m-toggle-icon, span.m-toggle-icon:before, span.m-toggle-icon:after{
 span.m-toggle-icon:before{top: 12px;}
 span.m-toggle-icon:after{top: -14px;}
 
+footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 66px;
+
+
+}
+
+.logo_footer
+{
+    z-index: 92;
+    background-color: white;
+    width: 15%;
+    height: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link_footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+
+.footer_cesi
+{
+
+    height: 40px;
+    width: 95px;
+    padding-right : 5%;
+
+}
+.footer_bde
+{
+    width: 20%;
+
+}
+
+.footer_link
+{
+    text-decoration: none;
+    color: white;
+    margin: 5%;
+    text-align: center;
+}
+
 @media only screen and (max-width: 1100px){
     .m-right{
         position: absolute;
         top: 0;left: 0;right: 0;
         width: 100%;
-        height: auto;
+        height: 72px;
         background: black;
         transform: translateY(-100%);
         transition: all 0.3s ease-in-out;
         z-index: -1;
     }
+
+    .md-form
+    {
+        margin-top:5px;
+        margin-left: 5px;
+    }
     .m-link{
-        display: block;
+        display: flex;
         text-align: center ;
         padding: 0;
-        margin: 0 20px;
+        margin: 15px 20px;
         height: 55px;
         width: 200px;
-        margin: auto;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .basket, .login, .co
+    {
+        margin-top: 0;
+        margin-right: 10px;
     }
         .m-nav-toggle{
         display: flex;
     }
 
+    .logo_footer
+    {
+        flex-direction: column;
+    }
+
+
+    .footer_cesi
+    {
+        width:60px;
+        height: 25px;
+    }
+
+    .link_nav
+    {
+        height: 66px;
+    }
+
+
+
+
  }
 
- .m-right.is-open{
+
+.m-right.is-open{
     transform: translateX(0);
-    top: 66px;
+    top: 65px;
 }
 
 .m-nav-toggle.is-open span.m-toggle-icon{
-   background: transparent;
+    background: transparent;
 }
 
 .m-nav-toggle.is-open span.m-toggle-icon:before, .m-nav-toggle.is-open span.m-toggle-icon:after{
-   transform-origin: center;
-   transform: rotate(45deg);
-   top: 0;
+    transform-origin: center;
+    transform: rotate(45deg);
+    top: 0;
 }
 
 .m-nav-toggle.is-open span.m-toggle-icon:after{
-   transform: rotate(-45deg);     
+    transform: rotate(-45deg);
 }
 
 .span.searchbar{
-     float: left;
-     display: block;
-     color: black;
-     text-align: center;
-     padding: 14px 16px;
-     text-decoration: none;
-     font-size: 17px;
- }
-
-.footer
- {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-    height: 66px;
- }
-
- .logo_footer
- {
-     z-index: 92;
-     background-color: white;
-     width: 15%;
-     height: 66px;
- }
-
- .footer_cesi
- {
-     width: 50%;
-     padding-left : 10%;
-     padding-right : 10%;
-
- }
- .footer_bde
- {
-     width: 20%;
-
- }
-
- .footer_link
- {
-     text-decoration: none;
-     color: white;
-     margin: 5%;
- }
-
- .md-form {
     float: left;
- }
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+
+.md-form {
+    float: left;
+}
+
+
+/*MEDIA QUERIES FOR PHONE*/
+
+@media all and (max-device-width : 480px ) {
+
+    /*NAV BAR*/
+
+    .menu
+    {
+        height: 160px;
+        line-height: 160px;
+
+    }
+
+    .m-left
+    {
+        height: 160px;
+    }
+
+    .bde
+    {
+
+        font-size: 46pt;
+    }
+
+    .cesi
+    {
+        max-width: 150px;
+        max-height: 150px;
+        margin: 0 20px 0 0;
+    }
+
+    .logocesi
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+    .m-nav-toggle
+    {
+        height: 160px;
+        width: 90px;
+    }
+    .md-form
+    {
+        margin-left:40%;
+    }
+
+
+    .m-right
+    {
+        line-height: 0;
+
+
+    }
+
+    .m-right.is-open
+    {
+        height:480px;
+        top:158px;
+        line-height: 160px;
+
+
+
+    }
+
+
+    .m-link
+    {
+        height: 160px;
+        font-size: 22pt;
+
+    }
+
+    .link_nav
+    {
+        height: 160px;
+        flex-direction: column;
+
+        margin:0;
+    }
+
+    .m-link
+    {
+        margin:0;
+        width: 400px;
+
+    }
+
+    .basket, .login, .co
+    {
+        height: 60px;
+        width: 60px;
+    }
+
+    /*NAV LEFT*/
+    .nav_left
+    {
+        width:0;
+    }
+
+    /*FOOTER*/
+
+    footer
+    {
+        max-height: 160px;
+    }
+
+    .footer_link
+    {
+        padding: 0;
+        font-size:20pt;
+
+        margin: 0 20px;
+        margin-bottom: 15px;
+    }
+
+
+    .footer_cesi
+    {
+        width: 140px;
+        height: 55px;
+        margin-bottom: 10px;
+
+    }
+
+    .footer_bde
+    {
+        width:55px;
+    }
+
+    .logo_footer
+    {
+       flex-direction: column ;
+        width:230px;
+        height: 160px;
+
+    }
+}
+
