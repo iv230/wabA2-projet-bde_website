@@ -8,7 +8,7 @@
 @endsection
 
 @section('basket')
-<a href="#" class="m-link"> <img class="basket" src="/img/basket.png" alt="Logo panier"> Panier</a>
+    <a href="#" class="m-link"><i class="fa fa-shopping-basket"></i> Panier</a>
 @endsection
 
 
