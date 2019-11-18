@@ -27,16 +27,12 @@
     <p class="price">Coût de l'évènement : {{$event->price}} EUR</p>
     @endif
 
-    @if(session()->has('user'))
-    @if (session('role') == 2 || session('role') == 4)
-    <div class="participate">
-        <a href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
-    </div>
-    @endif
-    @endif
-    <div class="buttons_action">
+
+    <div class="buttons_like">
         <a class="like" href="">J'aime (15)</a><br>
-        @if ($event-> state == 1)
+    </div>
+
+@if ($event-> state == 1)
 
         <div class="participate">
             <form action="/participants" method="POST">
@@ -51,11 +47,22 @@
                 <input type="hidden" name="idevent" value="{{$event->id}}">
             </form>
         </div>
-        @endif
-    </div> <br>
 
+<br>
+
+    @endif
+    <div class="action">
+    <a class="show" href="/publicevents"> Retourner à la liste des évènements </a>
+    @if(session()->has('user'))
+        @if (session('role') == 2 || session('role') == 4)
+
+                <a class="show" href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
+
+        @endif
+    @endif
+    </div>
 </article>
-<a class="show" href="/publicevents"> Retourner à la liste des évènements </a>
+
 @endsection
 
 

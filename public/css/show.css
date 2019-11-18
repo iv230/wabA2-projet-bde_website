@@ -12,9 +12,13 @@ body {
 
 .comments {
   margin: 60px 10px 80px 16%; }
+  @media screen and (max-width: 1100px) {
+    .comments {
+      margin-top: 180px; } }
   @media all and (max-device-width: 480px) {
     .comments {
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       margin: 1%;
       margin-bottom: 180px; } }
@@ -27,25 +31,27 @@ textarea {
   color: #000000;
   background-color: #FFD88F; }
 
+.t3 {
+  font-weight: normal; }
+
 .comment {
   border: solid 1px #5D89DA;
-  padding: 5px; }
-
-.t3 {
-  font-weight: normal;
-  margin: 10px; }
+  padding: 5px;
+  font-size: 15pt; }
+  @media all and (max-device-width: 480px) {
+    .comment {
+      font-size: 30pt; } }
 
 @media all and (max-device-width: 480px) {
   .to_comment {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    font-size: 30pt; }
 
-  .t3 {
-    font-size: 45px; }
-
-  .show {
-    margin-bottom: 0; } }
+  .action {
+    display: flex;
+    align-items: center; } }
 .events {
   margin-top: 76px;
   margin-left: 16%; }
@@ -121,14 +127,14 @@ textarea {
 .show:hover {
   background-color: #FFC252; }
 
-.buttons_action {
-  display: flex;
-  justify-content: space-between;
+.buttons_like {
   margin-left: 20px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  width: 600px;
+  text-align: center;
+  margin-bottom: 5px; }
 
 .like {
-  margin-left: 16%;
   text-decoration: none;
   color: #000000;
   font-size: 18pt; }
@@ -143,7 +149,8 @@ button {
   font-size: 120%;
   padding: 6px;
   border-radius: 2px;
-  box-shadow: 2px 2px 6px #999; }
+  box-shadow: 2px 2px 6px #999;
+  margin-right: 10px; }
 
 button:hover {
   background-color: #FFC252; }
@@ -152,6 +159,15 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-left: 16%; }
+
+.action {
+  margin-left: 20px;
+  margin-right: 10px; }
+
+.participate {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 150%; }
 
 @media screen and (max-width: 1100px) {
   .event {
@@ -177,14 +193,11 @@ button:hover {
     margin: 10px 0 10px 0;
     width: 100%; }
 
-  .buttons_action {
-    display: flex;
-    justify-content: space-evenly; }
+  .buttons_like {
+    width: 100%;
+    margin: 10px 0 10px 0; }
 
   .like {
-    margin-left: 16%;
-    text-decoration: none;
-    color: #000000;
     font-size: 18pt; }
 
   button {
@@ -205,7 +218,10 @@ button:hover {
     justify-content: space-around; }
 
   .adminevents > a {
-    margin-right: 0; } }
+    margin-right: 0; }
+
+  .action {
+    height: 100%; } }
 @media screen and (max-width: 800px) {
   .img_event {
     width: 400px; }
@@ -269,11 +285,17 @@ button:hover {
   .show {
     font-size: 30pt;
     float: left;
-    margin: 1% 20%;
+    margin: 1% 1%;
     text-align: center;
     margin-bottom: 180px; }
 
   button {
+    font-size: 33pt; }
+
+  .description {
+    text-align: justify; }
+
+  .price {
     font-size: 30pt; } }
 
 /*# sourceMappingURL=show.css.map */
