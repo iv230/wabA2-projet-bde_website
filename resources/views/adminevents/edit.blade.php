@@ -45,6 +45,12 @@
         </div>
 
         <div>
+            <label class="label" for=> Heure :
+                <input type="time" name="time" value="{{ $event->time_event }}" placeholder="Heure de l'évènement">
+            </label>
+        </div>
+
+        <div>
             <label class="label" for="Price"> Prix :
                 <input type="number" name="price" value="{{ $event-> price}}" placeholder="New price">
             </label>
