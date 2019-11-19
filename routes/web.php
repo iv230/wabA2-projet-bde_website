@@ -19,9 +19,11 @@ Route::resource('adminshop', 'ArticleController');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoryController');
 Route::resource('purchases', 'PurchaseController');
-Route::resource('baskets', 'BasketController');
+Route::resource('basket', 'BasketController');
 Route::resource('toHave', 'ToHaveController');
+Route::resource('toContain', 'ToContainController');
 Route::resource('shop', 'PublicArticlesController');
+Route::post('/shop/{id}/addtocart', 'PublicArticlesController@addtocart');
 Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');

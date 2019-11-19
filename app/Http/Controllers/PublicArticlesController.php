@@ -97,23 +97,19 @@ class PublicArticlesController extends Controller
         //
     }
 
-    public function addtocart($id)
+    public function addToCart($id)
     {
-        $article = Article::find($id);
-        $baskets = Basket::all();
-        $condition = True;
-        foreach($baskets as $basket){
-            if($basket->userId == session('user')){
-                $condition = False;
-                $contain = ToContain::where('basketId', $basket->id);
-                break;
-            }
+        $article = Article::all();
+        /*$baskets = Basket::all();*/
+        $basket = Basket::where('userId', '=', session('user'));
+        if(! isset($basket))
+        {
+            $this->basketRepository->store();
+            $this->containRepository->store($article->find($id), $baskets->where('userId', session('user'))->get());
         }
-        if($condition) {
-            $baskets = $this->basketRepository->store(session('user'));
-            $contain = $this->containRepository->store($article->all(), $baskets->all());
-        }
-        $this->containRepository->update($contain->id, $article->all(), $baskets->all());
-        return view('basket.index', array('article' => $article));
+        /*$contain = ToContain::where('basketId', $basket->id)->where('articleId', $article->id)->get();
+        $this->containRepository->update($contain->id, $article->all(), $baskets->where('userId', session('user'))->get());
+        $articles = Article::find($contain->articleId);
+        return view('basket.index', array('articles' => $articles));*/
     }
 }

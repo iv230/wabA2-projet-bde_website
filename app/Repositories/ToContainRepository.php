@@ -24,8 +24,7 @@ class ToContainRepository
     public function store(Array $inputs1, Array $inputs2)
     {
         $contain = new $this->contain;
-        $contain->articleId = $inputs1['id'];
-        $inputs2['id'] = NULL;
+        $contain->basketId = $inputs2['id'];
         $this->save($contain, $inputs1, $inputs2);
         return $contain;
     }

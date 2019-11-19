@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
-use App\Repositories\ArticleRepository;
+use App\Repositories\ArticleRepository as ArticleRepository;
 
 class ArticleController extends Controller
 {
@@ -16,7 +16,7 @@ class ArticleController extends Controller
     {
         $this->repository = $repository;
     }
-    
+
     /**
      * Display a listing of the resource.
      *

@@ -12,6 +12,7 @@
       <li>Catégorie: {{ $category->name }}</li>
     </ul>
     <form action="/shop/{{ $article->id }}/addtocart" method="POST">
+        {{ csrf_field() }}
       <button type=submit>Ajouter au panier</button>
     </form>
     <div>
