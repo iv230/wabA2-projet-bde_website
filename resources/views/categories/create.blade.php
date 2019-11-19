@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Créer une catégorie</title>
-    </head>
-    <body>
+@extends ('template_shop')
+
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
+@endsection
+
+
+@section('content')
+
+    <article class="creation">
         <h1>Créer une catégorie</h1>
         <form action="/categories" method="POST" class="form-beau" enctype="multipart/form-data">
             <div class="input-group">
@@ -13,5 +18,5 @@
             <button type="submit">Ajouter</button>
             {{ csrf_field() }}
         </form>
-    </body>
-</html>
+    </article>
+@endsection

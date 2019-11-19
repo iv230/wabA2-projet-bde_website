@@ -17,8 +17,8 @@
 
         <div class="choice">
             {!! $errors->first('password', '<small>:message</small><br />') !!}
-            <button href="/users" type="submit"> Se connecter</button>
-            <button href="/users" type="button">Annuler</button>
+            <button type="submit"> Se connecter</button>
+            <a class="show" href="/users" >Annuler</a>
         </div>
     </form>
 

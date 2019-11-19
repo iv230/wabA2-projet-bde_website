@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
 @endsection
 
-@section('create_event')
+@section('content')
 <section class="creation">
     <h1 class="t1">Création d'un évènement</h1>
 
@@ -52,9 +52,11 @@
             <input type="file" name="photo">
         </div>
 
-        <div>
+        <div class="choice">
             <button type="submit"> Ajouter </button>
+            <a class="show" href="/adminevents"> Annuler </a>
         </div>
+
 
     </form>
 </section>

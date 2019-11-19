@@ -16,10 +16,10 @@
         <br />Ton centre : {{ $school->name }}
         <br />Ton rôle : {{ $role->name }}
     </p>
-    <a href="/logout" type="button">Déconnexion</a>
+    <a href="/logout" >Déconnexion</a>
     @else
-    <a href="/users/create" type="button">Inscription</a><br />
-    <a href="/login" type="button">Connexion</a><br />
+    <a href="/users/create" >Inscription</a><br />
+    <a href="/login" >Connexion</a><br />
     @endif
 
     @foreach($users as $user)
@@ -32,11 +32,11 @@
         <li>Role: {{ $user->role }}</li>
     </ul>
 
-    <a href="/users/{{ $user->id }}" type="button">Détails</a><br />
+    <a href="/users/{{ $user->id }}" >Détails</a><br />
     @if(session()->has('user'))
     @if(session('user') == $user->id)
 
-    <a href="/users/{{ $user->id }}/edit" type="button">Modifier</a><br />
+    <a href="/users/{{ $user->id }}/edit" >Modifier</a><br />
     <form method="POST" action="/users/{{ $user->id }}">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}

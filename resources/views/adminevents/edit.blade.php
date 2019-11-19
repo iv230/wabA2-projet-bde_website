@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
 @endsection
 
-@section('edit_event')
+@section('content')
 
 <section class="creation">
     <h1 class="t1">Edition d'évènement</h1>
@@ -15,49 +15,49 @@
         {{ method_field('PATCH') }}
 
         <div>
-            <label class="label" for="name"> Nom :
+            <label class="label"> Nom :
                 <input type="text" name="name" value="{{ $event-> name }}" placeholder="New name">
             </label>
         </div>
 
         <div>
-            <label class="label" for="description"> Description :
+            <label class="label"> Description :
                 <textarea name="description" rows="10" cols="30" placeholder="New description">{{ $event-> description }}</textarea>
             </label>
         </div>
 
         <div>
-            <label class="label" for=> Lieu :
+            <label class="label"> Lieu :
                 <input type="text" name="location" value="{{ $event-> location }}" placeholder="New location">
             </label>
         </div>
 
         <div>
-            <label class="label" for=> Récurrence :
+            <label class="label"> Récurrence :
                 <input type="text" name="recurrence" value="{{ $event-> recurrence }}" placeholder="New recurrence">
             </label>
         </div>
 
         <div>
-            <label class="label" for=> Date :
+            <label class="label"> Date :
                 <input type="date" name="date_event" value="{{ $event-> date_event }}" placeholder="New date">
             </label>
         </div>
 
         <div>
-            <label class="label" for=> Heure :
-                <input type="time" name="time" value="{{ $event->time_event }}" placeholder="Heure de l'évènement">
+            <label class="label"> Heure :
+                <input type="time" name="time" value="{{ $event-> time_event }}" placeholder="New date">
             </label>
         </div>
 
         <div>
-            <label class="label" for="Price"> Prix :
+            <label class="label"> Prix :
                 <input type="number" name="price" value="{{ $event-> price}}" placeholder="New price">
             </label>
         </div>
 
         <div>
-            <label class="label" for="number"> Etat :
+            <label class="label"> Etat :
                 <input type="number" name="state" value="{{ $event-> state}}" min="0" max="1" placeholder="New state">
             </label>
         </div>
@@ -69,7 +69,7 @@
 
         <div class="choice">
             <button type="submit"> Enregistrer </button>
-            <button href="/adminevents/{{$event->id}}"> Annuler </button>
+            <a class="show" href="/adminevents/{{$event->id}}"> Annuler </a>
         </div>
 
     </form>

@@ -143,7 +143,12 @@ footer {
   float: left; }
 
 .m-right {
-  float: right; }
+  float: right;
+  display: flex; }
+
+.md-form {
+  display: flex;
+  align-items: center; }
 
 .m-link {
   color: white;
@@ -197,7 +202,8 @@ span.m-toggle-icon:after {
     background: black;
     transform: translateY(-100%);
     transition: all 0.2s ease-in-out;
-    z-index: -1; }
+    z-index: -1;
+    display: block; }
 
   .m-link {
     display: block;
@@ -227,7 +233,6 @@ span.m-toggle-icon:after {
   transform: rotate(-45deg); }
 
 @media all and (max-device-width: 480px) {
-  /*NAV BAR*/
   .menu {
     height: 160px;
     line-height: 160px; }
@@ -238,12 +243,7 @@ span.m-toggle-icon:after {
   .bde {
     font-size: 46pt; }
 
-  .cesi {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 0 20px 0 0; }
-
-  .logocesi {
+  .logocesi, .cesi {
     width: 150px;
     height: 150px; }
 
@@ -271,6 +271,15 @@ span.m-toggle-icon:after {
 
   .m-link {
     margin: auto;
-    width: 400px; } }
+    width: 400px; }
+
+  .title {
+    font-size: 46pt; }
+
+  .md-form {
+    margin: 0 30%; }
+
+  .form-control {
+    height: 60px; } }
 
 /*# sourceMappingURL=nav_bar.css.map */

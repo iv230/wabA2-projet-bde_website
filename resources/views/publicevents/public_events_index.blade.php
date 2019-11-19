@@ -4,26 +4,24 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 
+
+@section('admin')
 @if(session()->has('user'))
 @if(session('role') == 2 || session('role') == 4)
-@section('admin')
 <a class="show_admin" href="/adminevents">Administration </a>
+@endif
+@endif
 @endsection
-@endif
-@endif
 
 
-@section('welcome_events')
+@section('content')
 <aside class="welcome">
 
     <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
     <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
 
 </aside>
-@endsection
 
-
-@section('actual_events')
 <hr class="blue_bar">
 <article class="events">
     <h2 class="t1"> Évènements actuels </h2>
@@ -43,7 +41,7 @@
         @endif
         <div class=texte>
             <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
-            <p class="location">{{ $event->location }}</p>
+            <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
             <h2 class="name">{{ $event->name }}</h2>
             <p class="description">{{ substr($event->description,0,150) }}...</p>
 
@@ -54,11 +52,10 @@
     @endif
     @endforeach
 </article>
-@endsection
 
-@section('past_events')
+
 <hr class="blue_bar">
-<article class="events" class="past_event">
+<article class="events">
     <h2 class="t1"> Évènements passés</h2>
     <p class="t2"> Commentez et ajoutez des photos !</p>
 
@@ -75,7 +72,7 @@
         @endif
         <div class=texte>
             <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
-            <p class="location">{{ $event->location }}</p>
+            <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
             <h2 class="name">{{ $event->name }}</h2>
             <p class="description">{{substr($event->description,0,100) }}...</p>
 
