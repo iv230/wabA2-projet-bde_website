@@ -38,6 +38,12 @@
                 @endforeach
             </select>
         </label>
+
+        {!! $errors->first('legals', '<br/><small>Vous devea ccépter les conditions générales de ventes pour vous inscrire</small>') !!}<br />
+        <label class="label" > J'accèpte les <a href="/cgv">conditions générales de ventes</a> et j'ai lu les <a href="/credits">mentions légales</a>.
+            <input type="checkbox" name="legals">
+        </label>
+
         <div class="choice">
             <button type="submit"> S'inscrire </button>
             <a class="show" href="/">En fait j'ai trop peur j'abandonne</a>

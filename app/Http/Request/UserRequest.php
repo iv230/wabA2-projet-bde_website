@@ -30,7 +30,8 @@ class UserRequest extends FormRequest
                 'email'                 => 'required|email',
                 'passwordHash'          => 'required|min:8|regex:/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/',
                 'password_confirmation' => 'same:passwordHash',
-                'school'                => 'required'
+                'school'                => 'required',
+                'legals'                => 'required'
             ];
     }
 }
