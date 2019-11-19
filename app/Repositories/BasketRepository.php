@@ -14,17 +14,17 @@ class BasketRepository
         $this->basket = $basket;
     }
 
-    private function save(basket $basket, Array $inputs)
+    private function save(basket $basket)
     {
-        $basket->userId = $inputs['userId'];
+        $basket->userId = session('user');
         $basket->save();
     }
 
-    public function store(Array $inputs)
+    public function store()
     {
         $basket = new $this->basket;
-        $basket->userId = $inputs['userId'];
-        $this->save($basket, $inputs);
+        $basket->userId = session('user');
+        $this->save($basket);
         return $basket;
     }
 
@@ -32,9 +32,9 @@ class BasketRepository
     {
         return $this->basket->findOrFail($id);
     }
-    public function update($id, Array $inputs)
+    public function update($id)
     {
-        $this->save($this->getById($id), $inputs);
+        $this->save($this->getById($id));
     }
     public function destroy($id)
     {

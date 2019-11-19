@@ -4,19 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Basket;
-use App\Articles;
-use App\Reporitories\BasketRepository;
+use App\Article;
+use App\ToContain;
+use App\Repositories\BasketRepository;
 
 class BasketController extends Controller
 {
-
-    protected $repository;
-
-    public function __construct(ArticleRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +18,9 @@ class BasketController extends Controller
     public function index()
     {
         $basket = Basket::where('userId', session('user'))->get();
-        $contain = Contain::where('basketId', $basket->id)->get();
+        $contain = ToContain::where('basketId', $basket->id)->get();
         $articles = Article::where('id', $contain->articleId)->get();
-        return view('articles.index', array('articles' => $articles));
+        return view('basket.index', array('articles' => $articles));
     }
 
     /**
