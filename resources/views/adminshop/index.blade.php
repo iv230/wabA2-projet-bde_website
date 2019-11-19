@@ -1,11 +1,12 @@
 @extends('template_shop')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
 @endsection
 
 @section('admin')
-<a class="show_admin" href="/shop">Site public </a>
+    <a class="show_admin" href="/shop">Site public </a>
+    <a class="show_admin" href="/categories">Catégories</a>
 @endsection
 
 @section('bootstrap')

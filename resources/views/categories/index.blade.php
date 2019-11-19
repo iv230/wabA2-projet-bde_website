@@ -3,8 +3,12 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/index_categories.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
 @endsection
 
+@section('admin')
+    <a class="show_admin" href="/adminshop">Boutique </a>
+@endsection
 
 @section('content')
 
