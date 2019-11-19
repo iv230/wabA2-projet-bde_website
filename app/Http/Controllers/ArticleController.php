@@ -46,9 +46,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //Stock l'image dans le dossier public/images
-        $request->file('image')->store('images');
-
         $article = $this->repository->store($request->all());
 
         return redirect('adminshop')->withOk("L'article " . $article->name . " a été créé.");

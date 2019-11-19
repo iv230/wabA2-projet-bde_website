@@ -16,7 +16,7 @@
 
             <div class="description">
                 <p><strong>Description : {{ $article->description }}</strong><br><br><strong>Prix : {{ $article->price }} EUR</strong><br><br>
-                    <strong>Catégorie : {{ $article->category }}</strong> </p>
+                    <strong>Catégorie : {{ $category->name }}</strong> </p>
                 <a href="" class="purchase"> Ajouter au panier</a>
             </div>
 

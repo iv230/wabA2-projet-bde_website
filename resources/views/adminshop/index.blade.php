@@ -5,7 +5,7 @@
 @endsection
 
 @section('admin')
-<a class="show_admin" href="/adminshop">Administration </a>
+<a class="show_admin" href="/shop">Site public </a>
 @endsection
 
 @section('bootstrap')

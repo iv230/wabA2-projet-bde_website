@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\PublicArticles;
 use App\Article;
 use App\Basket;
+use App\Category;
 
 class PublicArticlesController extends Controller
 {
@@ -60,7 +61,8 @@ class PublicArticlesController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        return view('shop.show', array('article' => $article));
+        $category = Category::find($article->categoryId);
+        return view('shop.show', array('article' => $article, 'category' => $category));
     }
 
     /**
