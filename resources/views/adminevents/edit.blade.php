@@ -45,6 +45,12 @@
         </div>
 
         <div>
+            <label class="label"> Heure :
+                <input type="time" name="time" value="{{ $event-> time_event }}" placeholder="New date">
+            </label>
+        </div>
+
+        <div>
             <label class="label"> Prix :
                 <input type="number" name="price" value="{{ $event-> price}}" placeholder="New price">
             </label>
@@ -63,7 +69,7 @@
 
         <div class="choice">
             <button type="submit"> Enregistrer </button>
-            <a class="show" href="/adminevents/{{$event->id}}"> Annuler </button>
+            <a class="show" href="/adminevents/{{$event->id}}"> Annuler </a>
         </div>
 
     </form>

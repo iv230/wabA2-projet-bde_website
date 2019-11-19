@@ -9,7 +9,7 @@
 
     <h1 class="name">{{ $event->name }}</h1>
     <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
-    <p class="location">{{ $event->location }}</p>
+    <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
 
     <div class="event">
         @if(isset($event->image))

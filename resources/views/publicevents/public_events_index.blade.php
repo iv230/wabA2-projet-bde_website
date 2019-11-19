@@ -41,7 +41,7 @@
         @endif
         <div class=texte>
             <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
-            <p class="location">{{ $event->location }}ùùù {{$event->time}}</p>
+            <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
             <h2 class="name">{{ $event->name }}</h2>
             <p class="description">{{ substr($event->description,0,150) }}...</p>
 
@@ -72,7 +72,7 @@
         @endif
         <div class=texte>
             <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
-            <p class="location">{{ $event->location }}</p>
+            <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
             <h2 class="name">{{ $event->name }}</h2>
             <p class="description">{{substr($event->description,0,100) }}...</p>
 
