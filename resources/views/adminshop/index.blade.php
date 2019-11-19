@@ -7,6 +7,7 @@
 @section('admin')
     <a class="show_admin" href="/shop">Site public </a>
     <a class="show_admin" href="/categories">Catégories</a>
+    <a class="show_admin" href="/adminshop/create">Ajouter un article</a>
 @endsection
 
 @section('bootstrap')
