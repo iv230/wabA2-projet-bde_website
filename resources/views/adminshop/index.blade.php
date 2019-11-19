@@ -5,9 +5,13 @@
 @endsection
 
 @section('admin')
+    @if(session()->has('user'))
+        @if(session('role') == 2 || session('role') == 4)
     <a class="show_admin" href="/shop">Site public </a>
     <a class="show_admin" href="/categories">Catégories</a>
     <a class="show_admin" href="/adminshop/create">Ajouter un article</a>
+        @endif
+    @endif
 @endsection
 
 @section('bootstrap')

@@ -45,3 +45,7 @@ Route::get('/logout', 'UserController@logout');
 Route::view('/credits', 'credits');
 Route::view('/cgv', 'cgv');
 
+
+Route::get('/cookie/set','CookieController@setCookie');
+Route::get('/cookie/get','CookieController@getCookie');
+
