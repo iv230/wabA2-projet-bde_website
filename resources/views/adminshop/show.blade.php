@@ -11,13 +11,14 @@
             <h1 class="title_article">{{ $article->name }}</h1>
             <div class="container_img_article">
                 <!--<img class="img_article" src="/img/tshirt1.jpg" alt="article">-->
-                <img class="img_article" src="{{ $article->image }}" alt="article">
+                <img class="img_article" src="/img/tshirt1.jpg" alt="article">
             </div>
 
             <div class="description">
                 <p><strong>Description : {{ $article->description }}</strong><br><br><strong>Prix : {{ $article->price }} EUR</strong><br><br>
                     <strong>Catégorie : {{ $article->category }}</strong> </p>
                 <a href="" class="purchase"> Ajouter au panier</a>
+                <a href="/adminshop/edit" class="purchase"> Editer</a>
             </div>
 
     </article>

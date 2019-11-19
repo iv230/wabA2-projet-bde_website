@@ -11,7 +11,7 @@
             <h1 class="title_article">{{ $article->name }}</h1>
             <div class="container_img_article">
                 <!--<img class="img_article" src="/img/tshirt1.jpg" alt="article">-->
-                <img class="img_article" src="{{ $article->image }}" alt="article">
+                <img class="img_article" src="/img/tshirt1.jpg" alt="article">
             </div>
 
             <div class="description">
