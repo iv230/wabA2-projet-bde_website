@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Modifier Article #{{ $article->id }}</title>
-    </head>
-    <body>
-        <h1>Modifier Article #{{ $article->id }}</h1>
+<@extends ('template_shop')
+
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
+@endsection
+
+
+@section('content')
+    <article class="creation">
+        <h1 class="t1">Modifier Article #{{ $article->id }}</h1>
         <form action="/adminshop/{{ $article->id }}" method="POST" class="form-beau" enctype="multipart/form-data">
             <div class="input-group">
                 <label>Nom</label>
@@ -19,7 +23,7 @@
                 <textarea rows="10" cols="40" name="description" placeholder="Description">{{ $article->description }}</textarea>
             </div>
             <div class="input-group">
-                <label>Category</label>
+                <label>Categorie</label>
                 <select name="category">
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -31,5 +35,5 @@
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
         </form>
-    </body>
-</html>
+    </article>
+@endsection

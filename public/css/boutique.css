@@ -1,4 +1,4 @@
-.carousel_container {
+/*.carousel_container {
     width: 85%;
     float: right;
     margin-top: 120px;
@@ -29,4 +29,121 @@
    color: #333;
    text-align: center;
    margin: auto;
+}*/
+
+/* CAROUSEL */
+
+.carousel_container {
+   width: 85%;
+   float: right;
+   margin-top: 100px;
+   margin-bottom: 100px;
 }
+
+.carousel_title {
+  width: auto;
+  text-align: center;
+  border-bottom: 3px solid #f7b731;
+  font-weight: 900;
+  font-size: 40px;
+  color: #333;
+  margin: auto;
+}
+
+#carouselExemple {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+
+.carousel_title_container {
+  width: 500px;
+  margin: auto;
+}
+
+/* CAROUSEL */
+
+
+/* ARTICLES */
+.articles {
+  width: 100%;
+  height: auto;
+}
+
+.container_articles {
+  width: 85%;
+  height: 600px;
+  float: right;
+  margin-bottom: 1000px;
+
+}
+
+.articles_title_container {
+  width: 500px;
+  margin: auto;
+}
+.articles_title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: #333;
+  border-bottom: 3px solid #f7b731;
+  margin: auto;
+  width: auto;
+}
+
+.articles_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.article {
+  width: 30%;
+  height: 400px;
+  margin: 10px;
+  border-radius: 5px;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+  
+  .articles_items {
+     justify-content: center;
+  }
+
+  .article {
+     width: 400px;
+     margin-bottom: 20px;
+     margin-left: 20px;
+     margin-right: 20px;
+  }
+
+  .article:hover .article_icon {
+     transform: translateY(0);
+ }
+
+ .article_icon{
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+  height: 100%;
+  width: 100%;
+  font-size: 70px;
+  transform: translateY(100%);
+}
+/* ARTICLES */}

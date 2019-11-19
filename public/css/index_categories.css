@@ -10,12 +10,12 @@ body {
   min-height: 100%;
   position: relative; }
 
-.users {
+.categories {
   margin-left: 16%;
   margin-top: 66px;
   margin-bottom: 80px; }
   @media all and (max-device-width: 480px) {
-    .users {
+    .categories {
       margin-left: 0;
       margin-bottom: 180px;
       margin-top: 180px; } }
@@ -27,4 +27,12 @@ body {
   font-size: 260%;
   font-weight: normal; }
 
-/*# sourceMappingURL=index_users.css.map */
+input, textarea {
+  font-size: 15pt;
+  margin: 10px;
+  border: 2px solid #5D89DA;
+  border-radius: 2px;
+  color: #000000;
+  background-color: #FFD88F; }
+
+/*# sourceMappingURL=index_categories.css.map */

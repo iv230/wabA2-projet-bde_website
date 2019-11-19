@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Créer un article</title>
-    </head>
-    <body>
-        <h1>Créer un article</h1>
+@extends ('template_shop')
+
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/create_edit.css') }}" />
+@endsection
+
+
+@section('content')
+
+    <article class="creation">
+        <h1 class="t1">Créer un article</h1>
         <form action="/articles" method="POST" class="form-beau" enctype="multipart/form-data">
             <div class="input-group">
                 <label>Nom</label>
@@ -19,15 +24,16 @@
                 <textarea rows="10" cols="40" name="description" placeholder="Description"></textarea>
             </div>
             <div class="input-group">
-                <label>Category</label>
+                <label>Categorie</label>
                 <select name="category">
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
-            </div>         
+            </div>
             <button type="submit">Ajouter</button>
             {{ csrf_field() }}
         </form>
-    </body>
-</html>
+
+    </article>
+@endsection

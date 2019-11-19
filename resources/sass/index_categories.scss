@@ -1,17 +1,17 @@
 @import 'general';
 
-.users
+.categories
 {
     margin-left: 16%;
     margin-top: 66px;
     margin-bottom: 80px;
+
     @media all and (max-device-width: 480px)
     {
         margin-left: 0;
         margin-bottom: 180px;
         margin-top: 180px;
     }
-
 }
 
 .t1
@@ -21,4 +21,14 @@
     text-align: center;
     font-size: 260%;
     font-weight : normal;
+}
+
+input, textarea
+{
+    font-size: 15pt;
+    margin: 10px;
+    border: 2px  solid $blue;
+    border-radius:2px;
+    color: $black;
+    background-color:#FFD88F;
 }
