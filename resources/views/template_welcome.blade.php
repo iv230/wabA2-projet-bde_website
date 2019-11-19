@@ -122,6 +122,7 @@
     @yield('comments')
 
     @yield('credits')
+    @yield('cgv')
 
     <!--FOOTER-->
     <footer>
@@ -132,7 +133,7 @@
         </div>
         <div class="link_footer">
             <a href="/credits" class="footer_link"> Mentions légales </a>
-            <a href="#" class="footer_link"> Conditions générales de vente </a>
+            <a href="/cgv" class="footer_link"> Conditions générales de vente </a>
             <a href="#" class="footer_link"> © CESI 2019 </a>
         </div>
 

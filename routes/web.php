@@ -41,4 +41,5 @@ Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');
 
 Route::view('/credits', 'credits');
+Route::view('/cgv', 'cgv');
 
