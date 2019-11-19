@@ -1,7 +1,6 @@
 @extends('template_shop')
 
 @section('css')
-    <link rel="stylesheet" href="/css/boutique.css">
     <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
 @endsection
 
@@ -30,6 +29,8 @@
 
 
 @section('content')
+
+<script src="https://kit.fontawesome.com/9555223555.js" crossorigin="anonymous"></script>
 
     <aside class="welcome">
 
@@ -81,7 +82,7 @@
     <div class="articles">
         <div class="container_articles">
             <div class="articles_title_container">
-                <h2 class="articles_title"> Articles</h2>
+                <h2 class="articles_title"> Nos articles</h2>
             </div>
 
             <div class="articles_items">
