@@ -4,9 +4,13 @@
 <link rel="stylesheet" href="{{ asset('css/index_shop.css') }}" />
 @endsection
 
+@if(session()->has('user'))
+@if(session('role') == 2 || session('role') == 4)
 @section('admin')
 <a class="show_admin" href="/adminshop">Administration </a>
 @endsection
+@endif
+@endif
 
 @section('bootstrap')
 <!--bootstrap css-->
