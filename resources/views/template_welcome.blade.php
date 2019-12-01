@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
 
-    <title>BDE</title>
+    <title>BDE CESI</title>
+
+    <meta name="description" content="Le BDE CESI vous invite à participer à ses évènement et à visiter sa boutique" />
 
     @yield('bootstrap')
     <!--css-->
