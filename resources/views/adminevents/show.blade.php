@@ -38,7 +38,13 @@
     @endif
     @endif
     <div class="buttons_action">
-        <a class="like" href="">J'aime (15)</a><br>
+        <form action="/like" method="POST">
+            {{ csrf_field() }}
+            <button type="submit"> Like ({{ $likeCount }}) </button>
+            <input type="hidden" name="id_event" value="{{ $event->id }}">
+            <input type="hidden" name="id_user" value="{{ session('user') }}">
+        </form>
+        <br>
     </div>
     @if ($event-> state == 1)
 
