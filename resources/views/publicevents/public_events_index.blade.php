@@ -24,7 +24,7 @@
 
 <hr class="blue_bar">
 <article class="events">
-    <h2 class="t1"> Évènements actuels </h2>
+    <h2 class="t1"> Évènements du mois </h2>
     <p class="t2"> Inscrivez-vous à nos évènements du moment !</p>
 
 
