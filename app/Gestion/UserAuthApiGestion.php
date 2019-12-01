@@ -6,7 +6,7 @@ namespace App\Gestion;
 class UserAuthApiGestion
 {
     const API_USER = "utilisateurultrasecretdelapi";
-    const API_PASSWORD = "motdepasseultrascretdelapi";
+    const API_PASSWORD = 'motdepasseultrascretdelapi';
 
     /**
      * Generate a token for API REST requetes
@@ -16,8 +16,8 @@ class UserAuthApiGestion
     {
         return APIRequestGestion::post('/auth', null,
             [
-                'username'       => self::API_USER,
-                'password' => self::API_PASSWORD
+                'username' => self::API_USER,
+                'password' => sha1(self::API_PASSWORD),
             ])->{'token'};
     }
 }
