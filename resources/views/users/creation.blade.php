@@ -30,6 +30,8 @@
         <label class="label" > Confirmation du mot de passe :
             <input type="password" name="password_confirmation" placeholder="Confirmation du mot de passe" />
         </label><br />
+
+        {!! $errors->first('school', '<small>:message</small>') !!}<br />
         <label class="label" > Centre :
             <select class="list" name="school">
                 <option value="" selected disabled hidden>Choisissez votre centre</option>
