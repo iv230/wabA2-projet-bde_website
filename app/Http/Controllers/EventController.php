@@ -93,7 +93,10 @@ class EventController extends Controller
             array_push($images, $image);
         }
 
-        return view('adminevents.show', array('event' => $event, 'comments' => $comments, 'images' => $images));
+        $likeController = new LikeController();
+        $likeCount = $likeController->countLikes($id);
+
+        return view('adminevents.show', array('event' => $event, 'comments' => $comments, 'images' => $images, 'likeCount' => $likeCount));
     }
 
     /**
