@@ -57,9 +57,13 @@
         </div>
 
         <div>
-            <label class="label"> Etat :
-                <input type="number" name="state" value="{{ $event-> state}}" min="0" max="1" placeholder="New state">
-            </label>
+            <input type="radio" id="month_events"
+                   name="state" value="{{ $event-> state = 1}}" checked>
+            <label for="month_events">Actuel</label>
+
+            <input type="radio" id="past_events"
+                   name="state" value="{{ $event-> state = 0}}">
+            <label for="past_events">Passé</label>
         </div>
 
         <div>

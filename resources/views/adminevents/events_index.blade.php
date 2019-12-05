@@ -47,7 +47,9 @@
     @endforeach
 </article>
 <a class="create" href="/adminevents/create"> Ajouter un évènement </a>
-
+<button onclick="download_images_into_zip();">Télécharger toutes les photos</button>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/js/jszip.debug.js" charset="utf-8"></script>
 
 <hr class="blue_bar">
 <article class="events">
