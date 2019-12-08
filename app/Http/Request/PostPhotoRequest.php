@@ -2,6 +2,7 @@
 
 namespace App\Http\Request;
 
+use App\Http\Controllers\ParticipantController;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostPhotoRequest extends FormRequest
@@ -9,14 +10,21 @@ class PostPhotoRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      * Must be logged into an account.
-     * TO DO: Must be a participant of the event
      *
      * @return bool
      */
     public function authorize()
     {
-        // TO DO: Only for participants
-        return (session()->has('user'));
+        if (session()->has('user'))
+        {
+            $participantController = new ParticipantController();
+
+            return $participantController->isParticipating($this->input('id_user'), $this->input('id_event'));
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**

@@ -64,10 +64,11 @@
         </div>
 
         <div>
-            <input type="radio" id="month_events" name="state" @if($event->state == 1) checked @endif>
+            {!! $errors->first('state', '<small>:message</small>') !!}<br />
+            <input type="radio" id="month_events" name="state" value="1" @if($event->state == 1) checked @endif>
             <label for="month_events">Actuel</label>
 
-            <input type="radio" id="past_events" name="state" @if($event->state == 0) checked @endif>
+            <input type="radio" id="past_events" name="state" value="0" @if($event->state == 0) checked @endif>
             <label for="past_events">Passé</label>
         </div>
 

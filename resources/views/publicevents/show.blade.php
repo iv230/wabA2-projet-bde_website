@@ -82,7 +82,6 @@
     </div>
 
     @if(session()->has('user'))
-
     <form action="/publicevents/postphoto" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div>
