@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment as Comment;
 use App\EventImage;
 use App\Gestion\FileUploadGestion;
+use App\Http\Request\EditEventRequest;
 use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
@@ -118,7 +119,7 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditEventRequest $request, $id)
     {
         $event = Events::find($id);
         $event -> name = $request -> input('name');

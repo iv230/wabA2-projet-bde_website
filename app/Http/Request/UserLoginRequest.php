@@ -30,4 +30,18 @@ class UserLoginRequest extends FormRequest
                 'passwordHash'  => 'required'
             ];
     }
+
+    /**
+     * Get the error messages
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return
+        [
+            'email'         => 'Email invalide',
+            'passwordHash'  => 'Mot de passe requis'
+        ];
+    }
 }
