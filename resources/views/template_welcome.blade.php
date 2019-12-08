@@ -41,7 +41,7 @@
                     @yield('search_bar')
 
                     @if(session()->has('user'))
-                    <div class="test"><a href="/users/show" class="m-link">{{ session('username') }}</a></div>
+                    <div class="test"><a href="/users/{{ session('user') }}" class="m-link">{{ session('username') }}</a></div>
                     @yield('basket')
                     <a href="/logout" class="m-link"><i class="fa fa-sign-in"></i> Déconnexion</a>
                     @else
@@ -91,6 +91,18 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="/js/nav_bar.js"></script>
+
+    @yield('ajax')
+
 </body>
 
 </html>
+
+<!--<script>
+    $(document).ready(function(){
+
+        $('#event_name').keyup(function(){
+            var query = $(this).val();
+        });
+    });
+</script>-->

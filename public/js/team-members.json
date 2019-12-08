@@ -1,0 +1,19 @@
+{
+    "team-members": [
+        {
+            "name": "Jérémy GALLET",
+            "job": "Responsable des ventes",
+            "image": "jgallet.jpg"
+        },
+        {
+            "name": "Roland COMA",
+            "job": "Chef d'atelier",
+            "image": "rcoma.jpg"
+        },
+        {
+            "name": "Sébastien RAMON",
+            "job": "Technicien",
+            "image": "sramon.jpg"
+        }
+    ]
+}

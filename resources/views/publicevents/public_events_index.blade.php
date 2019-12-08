@@ -13,6 +13,20 @@
 @endif
 @endsection
 
+@section('ajax')
+    <script src="./js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./js/EasyAutocomplete/jquery.easy-autocomplete.min.js"></script>
+    <script src="./js/script.js"></script>
+
+@endsection
+
+@section('search_bar')
+    <div class="md-form mt-0">
+        <input class="form-control" type="search" id="events" name="search" placeholder="Rechercher" aria-label="Search">
+    </div>
+
+@endsection
+
 
 @section('content')
 <aside class="welcome">
