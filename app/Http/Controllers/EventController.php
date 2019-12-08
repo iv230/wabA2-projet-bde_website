@@ -37,7 +37,7 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\EventRequest  $request
+     * @param  \App\Http\Request\EventRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(EventRequest $request)
@@ -115,8 +115,8 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param EditEventRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(EditEventRequest $request, $id)

@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use App\Events as Events;
 use App\Comment as Comment;
 use App\Participant as Participant;
-use function Sodium\crypto_pwhash_scryptsalsa208sha256;
 
 class PublicEventController extends Controller
 {
@@ -58,7 +57,7 @@ class PublicEventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\EventRequest  $request
+     * @param PostPhotoRequest $request
      * @return \Illuminate\Http\Response
      */
     public function storeImage(PostPhotoRequest $request)
