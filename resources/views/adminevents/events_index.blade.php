@@ -28,6 +28,10 @@
 
     <hr>
     <div class="event">
+        @if($event->hidden)
+        <p>Cet évennement est masqué au public !</p>
+        @endif
+
         @if(isset($event->image))
         <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
         @else
@@ -61,7 +65,11 @@
 
     <hr>
     <div class="event">
-        @if(isset($event->image))
+    @if($event->hidden)
+        <p>Cet évennement est masqué au public !</p>
+    @endif
+
+    @if(isset($event->image))
         <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">
         @else
         <img class="img_event" src="/img/event.jpg" alt="Image de couverture">

@@ -7,6 +7,10 @@
 @section('content')
 <article class="events">
 
+    @if($event->hidden)
+        <p>Cet évennement est masqué au public !</p>
+    @endif
+
     <h1 class="name">{{ $event->name }}</h1>
     <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
     <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
@@ -78,6 +82,18 @@
         <a class="show" href="/adminevents"> Retourner à la liste des évènements </a>
         @if(session()->has('user'))
         @if (session('role') == 2 || session('role') == 4)
+
+        <form method="POST" action="/adminevents/{{ $event->id }}/lock">
+            {{ csrf_field() }}
+            <input type="hidden" name="id_event" value="{{ $event->id }}"/>
+            @if($event->hidden == 0)
+            <input type="hidden" name="action" value="1"/>
+            <input type="submit" class="show" value="Masquer au public" />
+            @else
+            <input type="hidden" name="action" value="0"/>
+            <input type="submit" class="show" value="Afficher au public" />
+            @endif
+        </form>
 
         <a class="show" href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
 

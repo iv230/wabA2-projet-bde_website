@@ -14,6 +14,12 @@ use App\Participant as Participant;
 
 class PublicEventController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('App\Http\Middleware\ShowEvent:id')->only(['show']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

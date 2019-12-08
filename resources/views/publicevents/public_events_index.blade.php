@@ -30,7 +30,7 @@
 
     @foreach ($events as $event)
 
-    @if ($event->state == 1)
+    @if ($event->state == 1 && !$event->hidden)
 
     <hr>
     <div class="event">
@@ -61,7 +61,7 @@
 
     @foreach ($events as $event)
 
-    @if ($event->state == 0)
+    @if ($event->state == 0 && !$event->hidden)
     <hr>
 
     <div class="event">

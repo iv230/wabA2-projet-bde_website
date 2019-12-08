@@ -6,6 +6,7 @@ use App\Comment as Comment;
 use App\EventImage;
 use App\Gestion\FileUploadGestion;
 use App\Http\Request\EditEventRequest;
+use App\Http\Request\HideEventRequest;
 use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
@@ -151,6 +152,25 @@ class EventController extends Controller
         }
 
         return redirect('adminevents/' . $event->id);
+    }
+
+    /**
+     * Set an event as hidden or not
+     *
+     * @param HideEventRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function hide(HideEventRequest $request, $id)
+    {
+        $event = Events::find($id);
+
+        $action = $request->input('action');
+
+        $event->hidden = $action;
+        $event->save();
+
+        return redirect()->back();
     }
 
     /**

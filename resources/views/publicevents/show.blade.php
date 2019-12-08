@@ -7,6 +7,10 @@
 @section('content')
 <article class="events">
 
+    @if($event->hidden)
+        <p>Cet évennement est masqué au public !</p>
+    @endif
+
     <h1 class="name">{{ $event->name }}</h1>
     <h3 class="event_date">{{ $event->date_event }} {{ $event->recurrence }}</h3>
     <p class="location">{{ $event->location }}, {{$event->time_event}}</p>
@@ -127,11 +131,8 @@
 
             <div>
                 {!! $errors->first('comment_content', '<small>:message</small>') !!}
-
                 <textarea name="comment_content" rows="3" cols="30" placeholder="..."></textarea>
-
             </div>
-
 
             <button type="submit"> Ajouter </button>
             <input type="hidden" name="idevent" value="{{$event->id}}">

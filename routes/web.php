@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// ===== Shop
+
 Route::resource('adminshop', 'ArticleController');
-//Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoryController');
 Route::resource('purchases', 'PurchaseController');
 Route::resource('basket', 'BasketController');
@@ -26,21 +28,35 @@ Route::resource('shop', 'PublicArticlesController');
 Route::post('/shop/{id}/addtocart', 'PublicArticlesController@addtocart');
 Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
-Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
+
+// ===== Events
+
+Route::get('publicevents/{id}', 'PublicEventController@show')->middleware('App\Http\Middleware\ShowEvent:id');
 Route::resource('publicevents', 'PublicEventController');
+
+Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
+Route::post('adminevents/{id}/lock', 'EventController@hide');
+
 Route::post('/publicevents/postphoto', 'PublicEventController@storeImage');
+
 Route::resource('comments', 'CommentController');
+
 Route::get('participants', 'ParticipantController@index');
 Route::get('participants/{id_event}', 'ParticipantController@show');
 Route::post('participants', 'ParticipantController@createParticipant');
+
 Route::post('like', 'LikeController@likeEvent');
 
-Route::get('publicevents/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
+
+// ===== Users
 
 Route::resource('/users', 'UserController');
 Route::get('/login', 'UserController@login');
 Route::post('/users/connect', 'UserController@connect');
 Route::get('/logout', 'UserController@logout');
+
+
+// ===== Footer
 
 Route::view('/credits', 'credits');
 Route::view('/cgv', 'cgv');
