@@ -21,8 +21,13 @@ class ShowEvent
 
         $event = Events::find($id);
 
-        if ($event->hidden)
+        if (!isset($event)) {
             abort(404);
+        }
+
+        if ($event->hidden) {
+            abort(404);
+        }
 
         return $next($request);
     }

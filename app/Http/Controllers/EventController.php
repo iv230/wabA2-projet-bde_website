@@ -82,9 +82,6 @@ class EventController extends Controller
     {
         $event = Events::find($id);
 
-        if (!isset($event))
-            abort(404, 'Not Found - L\'évènement #' . $id . 'n\'existe pas.');
-
         $comments = Comment::where('id_event', $event->id)->get();
         $event_images = EventImage::where('id_event', $event->id)->get();
 
