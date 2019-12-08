@@ -65,11 +65,11 @@
 
         <div>
             <input type="radio" id="month_events"
-                   name="state" value="{{ $event-> state = 1}}" checked>
+               name="state" @if($event->state == 1) checked @endif>
             <label for="month_events">Actuel</label>
 
             <input type="radio" id="past_events"
-                   name="state" value="{{ $event-> state = 0}}">
+               name="state" @if($event->state == 0) checked @endif>
             <label for="past_events">Passé</label>
         </div>
 
