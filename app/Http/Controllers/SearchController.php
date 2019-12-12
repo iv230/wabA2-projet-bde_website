@@ -10,7 +10,7 @@ class SearchController extends Controller
 {
     public function search(){
 
-        $input = 'cinema';
+        $input = 'cinema chezmoi';
         $events = Events::query()->whereRaw("`name` LIKE '%" . $input . "%'")->get();
 
         $names = [];

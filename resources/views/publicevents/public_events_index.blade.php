@@ -14,9 +14,6 @@
 @endsection
 
 @section('ajax')
-    <script src="./js/jquery/jquery-3.4.1.min.js"></script>
-    <script src="./js/EasyAutocomplete/jquery.easy-autocomplete.min.js"></script>
-    <script src="./js/script.js"></script>
 
 @endsection
 
