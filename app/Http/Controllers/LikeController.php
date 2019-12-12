@@ -27,6 +27,34 @@ class LikeController extends Controller
     }
 
     /**
+     * Creates a like on an event, called from API
+     *
+     * @param $id_event
+     * @return false|mixed|string
+     */
+    public function likeEventByApi($id_event) {
+        $id_user = session('user');
+        $code = '';
+
+        if (!isset($id_user)) {
+            $code = '401';
+        } else {
+            if (!self::hasLiked($id_event, $id_user)) {
+                $like = new Like;
+                $like -> id_event = $id_event;
+                $like -> id_user = $id_user;
+                $like -> save();
+
+                $code = '200';
+            } else {
+                $code = '403';
+            }
+        }
+
+        echo json_encode($code);
+    }
+
+    /**
      * Return the number of likes for an event
      *
      * @param $id_event

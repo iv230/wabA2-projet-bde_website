@@ -47,6 +47,11 @@ Route::post('participants', 'ParticipantController@createParticipant');
 
 Route::post('like', 'LikeController@likeEvent');
 
+Route::get('likeEvent/{id}', function ($id) {
+    $likeController = new \App\Http\Controllers\LikeController();
+    $likeController->likeEventByApi($id);
+});
+
 
 // ===== Users
 

@@ -93,6 +93,7 @@
     <script src="/js/nav_bar.js"></script>
 
     @yield('ajax')
+    @yield('js')
 
 </body>
 

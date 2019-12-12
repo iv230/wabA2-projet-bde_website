@@ -34,13 +34,8 @@
 
 
     <div class="buttons_action">
-        <form action="/like" method="POST">
-            {{ csrf_field() }}
-            <button type="submit"> Like ({{ $likeCount }}) </button>
-            <input type="hidden" name="id_event" value="{{ $event->id }}">
-            <input type="hidden" name="id_user" value="{{ session('user') }}">
-        </form>
-        <br>
+        <button type="submit" id="likeCount"> Like (Chargement...) </button>
+        <p id="error"></p>
     </div>
 
     @if ($event-> state == 1)
@@ -147,5 +142,5 @@
 @endsection
 
 @section('js')
-<script src="/js/like.js"></script>
+<script src="/js/likes.js"></script>
 @endsection
