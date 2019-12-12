@@ -46,7 +46,7 @@
                     <a href="/logout" class="m-link"><i class="fa fa-sign-in"></i> Déconnexion</a>
                     @else
                     <a href="/users/create" class="m-link"><i class="fa fa-user-plus"></i> Inscription</a>
-                    <a href="login" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                    <a href="/login" class="m-link"><i class="fa fa-sign-in"></i> Connexion</a>
                     @endif
                 </div>
 
