@@ -10,6 +10,26 @@ use mysql_xdevapi\Exception;
 
 class UserRequest extends FormRequest
 {
+    private $token;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        try
+        {
+            $this->token = UserAuthApiGestion::authenticate();
+
+            if($this->token == null)
+                throw new Exception('Couldn\'t get token');
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            exit();
+        }
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      * Everyone can create a new account.
@@ -28,7 +48,8 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        $max = '22';
+        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
+        $max = count($schools);
 
         return
             [
@@ -47,8 +68,6 @@ class UserRequest extends FormRequest
      * @return array|void
      */
     public function messages() {
-        $schools = ApiModelHydrator::hydrateAll('App\School', APIRequestGestion::get('/schools', $this->token, null));
-
         return
         [
             'name'                  => 'Nom d\'utilisateur invalide.',

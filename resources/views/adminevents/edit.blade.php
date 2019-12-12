@@ -15,54 +15,60 @@
         {{ method_field('PATCH') }}
 
         <div>
+            {!! $errors->first('name', '<small>:message</small>') !!}<br />
             <label class="label"> Nom :
-                <input type="text" name="name" value="{{ $event-> name }}" placeholder="New name">
+                <input type="text" name="name" value="{{ $event-> name }}">
             </label>
         </div>
 
         <div>
+            {!! $errors->first('description', '<small>:message</small>') !!}<br />
             <label class="label"> Description :
-                <textarea name="description" rows="10" cols="30" placeholder="New description">{{ $event-> description }}</textarea>
+                <textarea name="description" rows="10" cols="30">{{ $event-> description }}</textarea>
             </label>
         </div>
 
         <div>
+            {!! $errors->first('location', '<small>:message</small>') !!}<br />
             <label class="label"> Lieu :
-                <input type="text" name="location" value="{{ $event-> location }}" placeholder="New location">
+                <input type="text" name="location" value="{{ $event-> location }}">
             </label>
         </div>
 
         <div>
+            {!! $errors->first('recurrence', '<small>:message</small>') !!}<br />
             <label class="label"> Récurrence :
-                <input type="text" name="recurrence" value="{{ $event-> recurrence }}" placeholder="New recurrence">
+                <input type="text" name="recurrence" value="{{ $event-> recurrence }}">
             </label>
         </div>
 
         <div>
+            {!! $errors->first('date_event', '<small>:message</small>') !!}<br />
             <label class="label"> Date :
-                <input type="date" name="date_event" value="{{ $event-> date_event }}" placeholder="New date">
+                <input type="date" name="date_event" value="{{ $event-> date_event }}">
             </label>
         </div>
 
         <div>
+            {!! $errors->first('time', '<small>:message</small>') !!}<br />
             <label class="label"> Heure :
-                <input type="time" name="time" value="{{ $event-> time_event }}" placeholder="New date">
+                <input type="time" name="time" value="{{ $event-> time_event }}">
             </label>
         </div>
 
         <div>
+            {!! $errors->first('price', '<small>:message</small>') !!}<br />
             <label class="label"> Prix :
-                <input type="number" name="price" value="{{ $event-> price}}" placeholder="New price">
+                <input type="number" name="price" value="{{ $event-> price}}">
             </label>
         </div>
 
         <div>
-            <input type="radio" id="month_events"
-                   name="state" value="{{ $event-> state = 1}}" checked>
+            {!! $errors->first('state', '<small>:message</small>') !!}<br />
+            <input type="radio" id="month_events" name="state" value="1" @if($event->state == 1) checked @endif>
             <label for="month_events">Actuel</label>
 
-            <input type="radio" id="past_events"
-                   name="state" value="{{ $event-> state = 0}}">
+            <input type="radio" id="past_events" name="state" value="0" @if($event->state == 0) checked @endif>
             <label for="past_events">Passé</label>
         </div>
 

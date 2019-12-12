@@ -2,41 +2,40 @@
 
 namespace App\Http\Request;
 
-use App\Http\Controllers\ParticipantController;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostPhotoRequest extends FormRequest
+class HideEventRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     * Must be logged into an account.
+     * The user must be logged on a BDE or admin account
      *
      * @return bool
      */
     public function authorize()
     {
-        if (session()->has('user'))
+        if (session()-> has('user'))
         {
-            $participantController = new ParticipantController();
-
-            return $participantController->isParticipating($this->input('id_user'), $this->input('id_event'));
+            return (session('role') == 2 || session('role') == 4 );
         }
         else
         {
             return false;
         }
+
     }
 
     /**
      * Get the validation rules that apply to the request.
-     * The photo file must not be empty.
      *
      * @return array
      */
     public function rules()
     {
-        return [
-            'photo' => 'required'
-        ];
+        return
+            [
+                'id_event'   => 'required|numeric',
+                'action'     => 'required|min:0|max:1'
+            ];
     }
 }

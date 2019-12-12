@@ -14,10 +14,10 @@ class ParticipateRequest extends FormRequest
      */
     public function authorize()
     {
-        $participantController = new ParticipantController();
-
-        if (session()-> has('user'))
+        if (session()->has('user'))
         {
+            $participantController = new ParticipantController();
+
             return !$participantController->isParticipating($this->input('id_user'), $this->input('id_event'));
         }
         else

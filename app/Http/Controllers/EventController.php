@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Comment as Comment;
 use App\EventImage;
 use App\Gestion\FileUploadGestion;
+use App\Http\Request\EditEventRequest;
+use App\Http\Request\HideEventRequest;
 use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
@@ -36,7 +38,7 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\EventRequest  $request
+     * @param  \App\Http\Request\EventRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(EventRequest $request)
@@ -80,9 +82,6 @@ class EventController extends Controller
     {
         $event = Events::find($id);
 
-        if (!isset($event))
-            abort(404, 'Not Found - L\'évènement #' . $id . 'n\'existe pas.');
-
         $comments = Comment::where('id_event', $event->id)->get();
         $event_images = EventImage::where('id_event', $event->id)->get();
 
@@ -114,11 +113,11 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param EditEventRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditEventRequest $request, $id)
     {
         $event = Events::find($id);
         $event -> name = $request -> input('name');
@@ -150,6 +149,25 @@ class EventController extends Controller
         }
 
         return redirect('adminevents/' . $event->id);
+    }
+
+    /**
+     * Set an event as hidden or not
+     *
+     * @param HideEventRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function hide(HideEventRequest $request, $id)
+    {
+        $event = Events::find($id);
+
+        $action = $request->input('action');
+
+        $event->hidden = $action;
+        $event->save();
+
+        return redirect()->back();
     }
 
     /**
