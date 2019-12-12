@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('like/{id}', function ($id) {
+    $likeController = new \App\Http\Controllers\LikeController();
+    return json_encode($likeController->countLikes($id));
+});

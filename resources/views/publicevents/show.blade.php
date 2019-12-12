@@ -145,3 +145,7 @@
 @endif
 
 @endsection
+
+@section('js')
+<script src="/js/like.js"></script>
+@endsection
