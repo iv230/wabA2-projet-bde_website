@@ -21,3 +21,4 @@ Route::get('like/{id}', function ($id) {
     $likeController = new \App\Http\Controllers\LikeController();
     return json_encode($likeController->countLikes($id));
 });
+Route::get('/events', 'SearchController@search');

@@ -13,6 +13,17 @@
 @endif
 @endsection
 
+@section('ajax')
+
+@endsection
+
+@section('search_bar')
+    <div class="md-form mt-0">
+        <input class="form-control" type="search" id="events" name="search" placeholder="Rechercher" aria-label="Search">
+    </div>
+
+@endsection
+
 
 @section('content')
 <aside class="welcome">
