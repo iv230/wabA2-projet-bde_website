@@ -14,6 +14,7 @@
 @endsection
 
 @section('ajax')
+<script src="/js/research.js"></script>
 
 @endsection
 
