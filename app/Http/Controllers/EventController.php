@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\ApiModelHydrator;
 use App\Comment as Comment;
 use App\EventImage;
+use App\Gestion\APIRequestGestion;
 use App\Gestion\FileUploadGestion;
+use App\Gestion\UserAuthApiGestion;
 use App\Http\Request\EditEventRequest;
 use App\Http\Request\HideEventRequest;
 use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
 use App\Events as Events;
+use Illuminate\Support\Facades\Mail;
+use mysql_xdevapi\Exception;
 
 class EventController extends Controller
 {
+    private $token;
+
+    public function __construct() {
+        try
+        {
+            $this->token = UserAuthApiGestion::authenticate();
+
+            if($this->token == null)
+                throw new Exception('Couldn\'t get token');
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            exit();
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -166,6 +188,18 @@ class EventController extends Controller
 
         $event->hidden = $action;
         $event->save();
+
+        if ($action == 1) {
+            $users = $users = ApiModelHydrator::hydrateAll('App\User', APIRequestGestion::get('/users', $this->token, null));
+
+            foreach ($users as $user) {
+                if ($user->role == 2) {
+                    Mail::to($user->email);
+                }
+            }
+
+            die;
+        }
 
         return redirect()->back();
     }

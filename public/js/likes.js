@@ -34,7 +34,7 @@ element.addEventListener('click', function(event){
             default:
                 message = "Erreur inconnue (" + data + ")";
         }
-        
+
         error.innerText = message;
     });
 
