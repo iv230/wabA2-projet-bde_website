@@ -113,6 +113,18 @@ body {
 .create:hover {
   background-color: #FFC252; }
 
+.search-bar {
+  display: inline-block; }
+
+#result-search {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #FFFFFF; }
+
+.search-bar:active #result-search {
+  background-color: #000000; }
+
 .events {
   margin-left: 15%;
   margin-bottom: 66px; }
