@@ -35,7 +35,9 @@
     <p class="t2"> Inscrivez-vous à nos évènements du moment !</p>
 
     @foreach($monthEvents as $event)
+    @if(!$event->hidden)
     @include('publicevents.index_event', ['event' => $event])
+    @endif
     @endforeach
 </article>
 
@@ -46,7 +48,9 @@
     <p class="t2"> Inscrivez-vous pour plus tard !</p>
 
     @foreach($nextEvents as $event)
+    @if(!$event->hidden)
     @include('publicevents.index_event', ['event' => $event])
+    @endif
     @endforeach
 </article>
 
@@ -57,7 +61,9 @@
     <p class="t2"> Commentez et ajoutez des photos !</p>
 
     @foreach($passedEvents as $event)
+    @if(!$event->hidden)
     @include('publicevents.index_event', ['event' => $event])
+    @endif
     @endforeach
 </article>
 @endsection
