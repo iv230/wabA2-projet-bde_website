@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\User;
+use App\Events;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +13,19 @@ class EventHidden extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $user;
+    private $event;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param User $user
+     * @param Events $event
      */
-    public function __construct()
+    public function __construct(User $user, Events $event)
     {
-        //
+        $this->event = $event;
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +35,7 @@ class EventHidden extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject("BDE CESI Nice - Evènement masqué")
+                    ->view('mail.event-censor', array('event' => $this->event, 'user' => $this->user));
     }
 }

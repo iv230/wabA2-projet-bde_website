@@ -11,6 +11,7 @@ use App\Gestion\UserAuthApiGestion;
 use App\Http\Request\EditEventRequest;
 use App\Http\Request\HideEventRequest;
 use App\Image;
+use App\Mail\EventHidden;
 use Illuminate\Http\Request;
 use App\Http\Request\EventRequest;
 use App\Events as Events;
@@ -191,14 +192,13 @@ class EventController extends Controller
 
         if ($action == 1) {
             $users = $users = ApiModelHydrator::hydrateAll('App\User', APIRequestGestion::get('/users', $this->token, null));
+            $caller = $user = ApiModelHydrator::hydrate('App\User', APIRequestGestion::get('/users', $this->token, array('id' => session('user')))[0]);
 
             foreach ($users as $user) {
                 if ($user->role == 2) {
-                    Mail::to($user->email);
+                    Mail::to($user->email)->send(new EventHidden($caller, $event));
                 }
             }
-
-            die;
         }
 
         return redirect()->back();
