@@ -45,7 +45,32 @@ class EventController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('adminevents.events_index', array('events' => $events));
+
+        $passedEvents = [];
+        $monthEvents = [];
+        $nextEvents = [];
+
+        $date = date('Y-m-d', strtotime(" +1 months"));
+        $timestamp = strtotime($date);
+
+        foreach ($events as $event) {
+            if ($event->state == 0) {
+                array_push($passedEvents, $event);
+            } else {
+                $eventTimestamp = strtotime($event->date_event);
+
+                if ($eventTimestamp < $timestamp) {
+                    array_push($monthEvents, $event);
+                } else {
+                    array_push($nextEvents, $event);
+                }
+            }
+        }
+
+        return view(
+            'adminevents.events_index',
+            array('passedEvents' => $passedEvents, 'monthEvents' => $monthEvents, 'nextEvents' => $nextEvents)
+        );
     }
 
     /**
