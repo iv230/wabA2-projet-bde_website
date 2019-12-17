@@ -26,3 +26,8 @@ Route::get('/events/{name}', function($name) {
     $searchController = new \App\Http\Controllers\SearchController();
     return $searchController->search($name);
 });
+
+Route::get('/events', function() {
+    $searchController = new \App\Http\Controllers\SearchController();
+    return $searchController->getAll();
+});

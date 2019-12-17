@@ -32,7 +32,10 @@ Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 // ===== Events
 
 Route::get('publicevents/{id}', 'PublicEventController@show')->middleware('App\Http\Middleware\ShowEvent:id');
-Route::resource('publicevents', 'PublicEventController');
+Route::get('publicevents', ['as' => 'eventName', 'uses' => 'PublicEventController@showName']);
+Route::resource('publicevents', 'PublicEventController')->except([
+    'index'
+]);
 
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::post('adminevents/{id}/lock', 'EventController@hide');

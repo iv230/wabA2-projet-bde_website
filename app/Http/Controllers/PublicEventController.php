@@ -57,6 +57,28 @@ class PublicEventController extends Controller
     }
 
     /**
+     * Redirect to the event with specified name
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
+     */
+    public function showName(Request $request) {
+        $name = $request->input('eventName');
+
+        if (!$name) {
+            return $this->index();
+        }
+
+        $event = Events::query()->where('name', $name)->get();
+
+        if (!$event) {
+            return $this->index();
+        }
+
+        return redirect("/publicevents/" . $event[0]->id);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
