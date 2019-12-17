@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function search(){
-
-        $input = 'cinema chezmoi';
+    public function search($input) {
         $events = Events::query()->whereRaw("`name` LIKE '%" . $input . "%'")->get();
 
         $names = [];

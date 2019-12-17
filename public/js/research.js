@@ -1,29 +1,29 @@
-function ajax_get(url, callback) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            try {
-                var data = JSON.parse(xmlhttp.responseText);
-            } catch (err) {
-                console.log(err.message + " in " + xmlhttp.responseText);
-                return;
-            }
-            callback(data);
-        }
-    };
+console.log('Starting script');
 
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
+let baseUrl = 'http://localhost:3000/';
+let apiUrl = baseUrl + 'api/';
 
-ajax_get('./team-members.json', function (data) {
-    let html = "";
-    for (let i = 0; i < data["team-members"].length; i++) {
-        html += '<div class="col-lg-4 col-sm-6 col-xs-12">';
-        html += '<img class="rounded-circle" src="./assets/images/' + data["team-members"][i]["image"] + '" alt="' + data["team-members"][i]["name"] + '" width="96" height="96">';
-        html += '<h3 class="mb-0 mt-2">' + data["team-members"][i]["name"] + '</h3>';
-        html += '<h4><small class="text-muted text-uppercase">' + data["team-members"][i]["job"] + '</small></h4>'
-        html += '</div>';
-    }
-    document.getElementById("team-members").innerHTML = html;
+let element = document.getElementById("events");
+
+element.addEventListener('keyup', function(event) {
+    console.log('Bar updated');
+
+    let name = element.value;
+
+    fetch(apiUrl + 'events/' + name)
+        .then(res => res.json())
+        .then(data => {
+            /*
+             data contient tous les noms correspondant à la recherche.
+             Il faut donc maintenant placer tous ces noms dans la barre
+             déroulante.
+             */
+            data.forEach(element => console.log(element));
+            //data.forEach(element => document.getElementById("events")).innerHTML = ;
+            //data.forEach(element => $('result-search').append(element));
+            $("#events").easyAutocomplete(data.forEach(element => ));
+
+        });
 });
+
+

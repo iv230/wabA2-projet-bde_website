@@ -3,6 +3,26 @@
 @import 'blue_bar';
 @import 'admin';
 
+
+//SEARCH BAR
+.search-bar
+{
+    display: inline-block;
+}
+
+#result-search
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color : $white;
+}
+
+.search-bar:active #result-search
+{
+    background-color: $black;
+}
+
 // ACTUAL EVENTS & PAST EVENTS
 
 .events
