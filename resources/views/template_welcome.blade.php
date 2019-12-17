@@ -59,6 +59,7 @@
         <div class="nav_left">
             <img class="logo_cesi_ingenieur" src="/img/logo_cesi.png" alt="logo cesi ingenieur">
             @yield('admin')
+            @yield('sort')
 
         </div>
 

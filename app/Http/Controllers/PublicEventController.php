@@ -20,6 +20,19 @@ class PublicEventController extends Controller
     }
 
 
+    public function route(Request $request) {
+        $name = $request->input('eventName');
+        $sort = $request->input('sort');
+
+        if ($name != null) {
+            return $this->showName($name);
+        } elseif ($sort != null) {
+            return $this->sort($sort);
+        } else {
+            return $this->index();
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -56,19 +69,52 @@ class PublicEventController extends Controller
         );
     }
 
+    public function sort($sort) {
+        switch ($sort) {
+            case 1:
+                $events = Events::all();
+
+                $sorted = array();
+
+                foreach ($events as $event) {
+                    array_push($sorted, $event);
+                }
+
+                usort($sorted, function($a, $b) {
+                    return $a->price > $b->price;
+                });
+
+                return view('publicevents.sorted_index', array('events' => $sorted));
+                break;
+
+            case 2:
+                $events = Events::all();
+
+                $sorted = array();
+
+                foreach ($events as $event) {
+                    array_push($sorted, $event);
+                }
+
+                usort($sorted, function($a, $b) {
+                    return $a->price < $b->price;
+                });
+
+                return view('publicevents.sorted_index', array('events' => $sorted));
+                break;
+
+            default:
+                return $this->index();
+        }
+    }
+
     /**
      * Redirect to the event with specified name
      *
-     * @param Request $request
+     * @param $name
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function showName(Request $request) {
-        $name = $request->input('eventName');
-
-        if (!$name) {
-            return $this->index();
-        }
-
+    public function showName($name) {
         $event = Events::query()->where('name', $name)->get();
 
         if (!$event) {

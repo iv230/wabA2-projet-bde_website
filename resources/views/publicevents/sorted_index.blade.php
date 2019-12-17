@@ -1,16 +1,16 @@
 @extends('template_welcome')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 
 
 @section('admin')
-@if(session()->has('user'))
-@if(session('role') == 2 || session('role') == 4)
-<a class="show_admin" href="/adminevents">Administration </a>
-@endif
-@endif
+    @if(session()->has('user'))
+    @if(session('role') == 2 || session('role') == 4)
+    <a class="show_admin" href="/adminevents">Administration </a>
+    @endif
+    @endif
 @endsection
 
 @section('bootstrap')
@@ -26,8 +26,8 @@
 @endsection
 
 @section('ajax')
-<script src="/js/research.js"></script>
-<script src="/EasyAutocomplete/jquery.easy-autocomplete.min.js"></script>
+    <script src="/js/research.js"></script>
+    <script src="/EasyAutocomplete/jquery.easy-autocomplete.min.js"></script>
 
 @endsection
 
@@ -119,48 +119,22 @@
 @endsection
 
 @section('content')
-<aside class="welcome">
+    <aside class="welcome">
 
-    <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
-    <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
+        <img class="welcome_img" src="/img/fond_events.jpg" alt="Events">
+        <h1 class="welcome_t"> PARTICIPEZ À NOS ÉVÈNEMENTS ! </h1>
 
-</aside>
+    </aside>
 
-<hr class="blue_bar">
-<article class="events">
-    <h2 class="t1"> Évènements du mois </h2>
-    <p class="t2"> Inscrivez-vous à nos évènements du moment !</p>
+    <hr class="blue_bar">
+    <article class="events">
+        <h2 class="t1"> Évènements du mois </h2>
+        <p class="t2"> Inscrivez-vous à nos évènements du moment !</p>
 
-    @foreach($monthEvents as $event)
-    @if(!$event->hidden)
-    @include('publicevents.index_event', ['event' => $event])
-    @endif
-    @endforeach
-</article>
-
-
-<hr class="blue_bar">
-<article class="events">
-    <h2 class="t1"> Évènements à venir</h2>
-    <p class="t2"> Inscrivez-vous pour plus tard !</p>
-
-    @foreach($nextEvents as $event)
-    @if(!$event->hidden)
-    @include('publicevents.index_event', ['event' => $event])
-    @endif
-    @endforeach
-</article>
-
-
-<hr class="blue_bar">
-<article class="events">
-    <h2 class="t1"> Évènements passés</h2>
-    <p class="t2"> Commentez et ajoutez des photos !</p>
-
-    @foreach($passedEvents as $event)
-    @if(!$event->hidden)
-    @include('publicevents.index_event', ['event' => $event])
-    @endif
-    @endforeach
-</article>
+        @foreach($events as $event)
+        @if(!$event->hidden)
+        @include('publicevents.index_event', ['event' => $event])
+        @endif
+        @endforeach
+    </article>
 @endsection
