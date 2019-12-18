@@ -36,7 +36,8 @@
     @include('adminevents.index_event', ['event' => $event])
     @endforeach
 </article>
-
+<a class="create" href="/adminevents/create"> Ajouter un évènement </a>
+<a class="create" href="{{ route('zip-archive',['download'=>'zip']) }}"> Télécharger toutes les photos </a>
 
 <hr class="blue_bar">
 <article class="events">

@@ -40,6 +40,8 @@ Route::resource('publicevents', 'PublicEventController')->except([
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
 Route::post('adminevents/{id}/lock', 'EventController@hide');
 
+Route::get('ziparchive', 'ZipArchiveController@zipDownload')->name('zip-archive');
+Route::resource('publicevents', 'PublicEventController');
 Route::post('/publicevents/postphoto', 'PublicEventController@storeImage');
 
 Route::resource('comments', 'CommentController');
