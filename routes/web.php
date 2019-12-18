@@ -27,6 +27,7 @@ Route::post('/shop/{id}/addtocart', 'PublicArticlesController@addtocart');
 Route::get('/adminshop/{id}/delete', 'ArticleController@destroy');
 
 Route::resource('adminevents', 'EventController')->middleware('App\Http\Middleware\AdminEventAuth');
+Route::get('ziparchive', 'ZipArchiveController@zipDownload')->name('zip-archive');
 Route::resource('publicevents', 'PublicEventController');
 Route::post('/publicevents/postphoto', 'PublicEventController@storeImage');
 Route::resource('comments', 'CommentController');
