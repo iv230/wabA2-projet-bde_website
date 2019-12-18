@@ -5,23 +5,106 @@
 
 
 //SEARCH BAR
-.search-bar
+
+.block-search-bar
 {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+
+}
+            .autocomplete {
+                /*the container must be positioned relative:*/
+                position: relative;
+                display: inline-block;
+                
+            }
+            input {
+                border: 1px solid transparent;
+                background-color: $white;
+                padding: 10px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+            input[type=text] {
+                background-color: $white;
+                width: 100%;
+            }
+            input[type=submit] {
+                background-color: $blue;
+                color: $white;
+            }
+            .autocomplete-items {
+                position: absolute;
+                border: 1px solid #d4d4d4;
+                border-bottom: none;
+                border-top: none;
+                z-index: 99;
+                top: 100%;
+                left: 0;
+                right: 0;
+
+                @media screen and (max-width: 1000px)
+                {
+                    top:85%;
+                }
+
+            }
+
+            .autocomplete-items div {
+                padding: 10px;
+                cursor: pointer;
+                background-color: $white;
+                border-bottom: 1px solid #d4d4d4;
+
+                @media screen and (max-width: 400px)
+                {
+                    padding: 5px;
+                }
+            }
+
+            .autocomplete-items div:hover {
+                background-color: #e9e9e9;
+            }
+            .autocomplete-active {
+                background-color: $blue !important;
+                color: $white;
+            }
+
+
+
+//SORT
+.sort
+{
+    margin-top: 50px;
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#result-search
+
+.title-sort
 {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    background-color : $white;
+    font-size: 10pt;
+    color: $white;
+    text-align: left;
+    font-weight: normal;
+    width: 100px;
 }
 
-.search-bar:active #result-search
+.list-sort
 {
-    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
+
+.validate
+{
+    width: 100px;
+}
+
 
 // ACTUAL EVENTS & PAST EVENTS
 
