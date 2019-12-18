@@ -5,10 +5,11 @@
 @endsection
 
 @section('content')
+
 <article class="events">
 
-    @if($event->hidden)
-        <p>Cet évennement est masqué au public !</p>
+@if($event->hidden)
+        <p class="masked">Cet évennement est masqué au public !</p>
     @endif
 
     <h1 class="name">{{ $event->name }}</h1>
@@ -82,6 +83,10 @@
         <a class="show" href="/adminevents"> Retourner à la liste des évènements </a>
         @if(session()->has('user'))
         @if (session('role') == 2 || session('role') == 4)
+        <a class="show" href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
+
+        @endif
+        @endif
 
         <form method="POST" action="/adminevents/{{ $event->id }}/lock">
             {{ csrf_field() }}
@@ -94,11 +99,6 @@
             <input type="submit" class="show" value="Afficher au public" />
             @endif
         </form>
-
-        <a class="show" href="/participants/{{ $event->id }}">Télécharger la liste des participants</a>
-
-        @endif
-        @endif
     </div>
 </article>
 

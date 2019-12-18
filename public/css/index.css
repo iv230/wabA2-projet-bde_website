@@ -113,6 +113,10 @@ body {
 .create:hover {
   background-color: #FFC252; }
 
+.masked {
+  text-align: center;
+  color: red; }
+
 .block-search-bar {
   display: flex;
   justify-content: center;

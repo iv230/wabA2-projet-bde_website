@@ -1,8 +1,8 @@
 <hr>
-<div class="event">
-    @if($event->hidden)
-    <p>Cet évennement est masqué au public !</p>
+@if($event->hidden)
+    <p class="masked"> Cet évennement est masqué au public !</p>
     @endif
+<div class="event">
 
     @if(isset($event->image))
     <img class="img_event" src="{{ $event->image->path }}" alt="Image de couverture">

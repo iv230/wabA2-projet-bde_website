@@ -289,5 +289,11 @@ button:hover {
 
   .action {
     justify-content: center; } }
+.masked {
+  text-align: center;
+  color: red; }
+
+input {
+  margin-top: 0; }
 
 /*# sourceMappingURL=show.css.map */
