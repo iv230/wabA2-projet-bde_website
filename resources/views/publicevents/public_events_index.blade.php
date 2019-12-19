@@ -38,15 +38,15 @@
         <form action="/publicevents" class="list-sort">
         <div>
             <input type="radio" id="category" name="sort" value="0">
-            <label for="month_events" class="title-sort">Catégorie</label>
+            <label class="title-sort">Catégorie</label>
         </div>
         <div>
             <input type="radio" id="price" name="sort" value="1">
-            <label for="past_events" class="title-sort">Prix croissant</label>
+            <label class="title-sort">Prix croissant</label>
         </div>
         <div>
             <input type="radio" id="date" name="sort" value="2">
-            <label for="past_events" class="title-sort">Prix décroissant</label>
+            <label class="title-sort">Prix décroissant</label>
         </div>
             <input type="submit" class="validate">
         </form>
