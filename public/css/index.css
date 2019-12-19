@@ -173,7 +173,6 @@ input[type=submit] {
 
 .sort {
   margin-top: 50px;
-  display: flexbox;
   flex-direction: column;
   justify-content: center; }
 
