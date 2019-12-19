@@ -20,6 +20,12 @@ class PublicEventController extends Controller
     }
 
 
+    /**
+     * Redirect to index, sorted view or specific event
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function route(Request $request) {
         $name = $request->input('eventName');
         $sort = $request->input('sort');
@@ -69,6 +75,12 @@ class PublicEventController extends Controller
         );
     }
 
+    /**
+     * Returns all events sorted
+     *
+     * @param $sort
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function sort($sort) {
         switch ($sort) {
             case 1:
@@ -112,7 +124,7 @@ class PublicEventController extends Controller
      * Redirect to the event with specified name
      *
      * @param $name
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
+     * @return @mixed
      */
     public function showName($name) {
         $event = Events::query()->where('name', $name)->get();
@@ -128,7 +140,7 @@ class PublicEventController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -157,7 +169,7 @@ class PublicEventController extends Controller
      * Store a newly created resource in storage.
      *
      * @param PostPhotoRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function storeImage(PostPhotoRequest $request)
     {
